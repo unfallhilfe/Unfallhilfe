@@ -1429,3 +1429,247 @@ body {
     transition-delay: 0s;
   }
 }
+/* =========================================================
+   SCHWEBENDE SCHNELLKONTAKT-BUTTONS
+   Telefon oben, WhatsApp darunter – unten links
+========================================================= */
+
+.contact-buttons {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 1300;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Gemeinsames Design beider Buttons */
+
+.quick-contact {
+  position: relative;
+  overflow: hidden;
+
+  min-width: 220px;
+  min-height: 60px;
+  padding: 9px 17px 9px 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 999px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+/* Telefonbutton */
+
+.phone-contact {
+  background:
+    linear-gradient(
+      135deg,
+      #1495eb,
+      #005493
+    );
+}
+
+/* WhatsApp-Button */
+
+.whatsapp-contact {
+  background:
+    linear-gradient(
+      135deg,
+      #2bd36c,
+      #128c4a
+    );
+}
+
+/* Runde Fläche für das Symbol */
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* SVG-Symbole */
+
+.contact-icon svg {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  fill: currentColor;
+}
+
+/* Beschriftung */
+
+.contact-label {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.15;
+}
+
+.contact-label strong {
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.contact-label small {
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+/* Lichtreflex */
+
+.quick-contact::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -130%;
+
+  width: 75%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent,
+      rgba(255, 255, 255, 0.28),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  transition: left 0.55s ease;
+}
+
+/* Maus-Effekte */
+
+.quick-contact:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  filter: brightness(1.06);
+}
+
+.quick-contact:hover::before {
+  left: 145%;
+}
+
+.quick-contact:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Fokus für Tastaturbedienung */
+
+.quick-contact:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   SMARTPHONE
+   Nur runde Symbole, damit wenig verdeckt wird
+========================================================= */
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    left: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .quick-contact {
+    min-width: 58px;
+    width: 58px;
+    min-height: 58px;
+    height: 58px;
+
+    padding: 8px;
+
+    justify-content: center;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .contact-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contact-label {
+    display: none;
+  }
+}
+
+/* Sehr kleine Smartphones */
+
+@media (max-width: 350px) {
+  .contact-buttons {
+    left: 9px;
+    bottom: 9px;
+  }
+
+  .quick-contact {
+    width: 54px;
+    min-width: 54px;
+    height: 54px;
+    min-height: 54px;
+  }
+
+  .contact-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+}
+
+/* Weniger Bewegung bei entsprechender Geräteeinstellung */
+
+@media (prefers-reduced-motion: reduce) {
+  .quick-contact,
+  .quick-contact::before {
+    transition: none;
+  }
+}
