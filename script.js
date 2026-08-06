@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroImage = document.querySelector(".hero > img");
 
   const heroImages = [
-    "images/hero.pgn",
-    "images/unfall.pgn",
-    "images/trecker.pgn",
-    "images/boot.pgn"
+    "images/hero.jpg",
+    "images/unfall.jpg",
+    "images/trecker.jpg",
+    "images/boot.jpg"
   ];
 
   let currentHeroImage = 0;
