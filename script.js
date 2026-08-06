@@ -1,20 +1,22 @@
-// ==========================================
-// SVB-MV Sachverständigenbüro
+// =========================================================
+// SVB-MV – Sachverständigenbüro Bernd Hackbarth
 // script.js
-// ==========================================
+// =========================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* Hamburger-Menü */
+  // -------------------------------------------------------
+  // Hamburger-Menü
+  // -------------------------------------------------------
 
   const menuButton = document.querySelector(".menu-button");
-  const navigation = document.querySelector("nav");
+  const navigation = document.querySelector("header nav");
 
   if (menuButton && navigation) {
     menuButton.addEventListener("click", () => {
-      const menuIsOpen = navigation.classList.toggle("nav-open");
+      const isOpen = navigation.classList.toggle("nav-open");
 
-      menuButton.setAttribute("aria-expanded", String(menuIsOpen));
-      menuButton.classList.toggle("menu-open", menuIsOpen);
+      menuButton.classList.toggle("menu-open", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
     });
 
     navigation.querySelectorAll("a").forEach((link) => {
@@ -26,17 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* Leistungskarten beim Scrollen einblenden */
+  // -------------------------------------------------------
+  // Leistungskarten beim Scrollen einblenden
+  // -------------------------------------------------------
 
   const cards = document.querySelectorAll(".card");
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries, cardObserver) => {
+    const cardObserver = new IntersectionObserver(
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            cardObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -45,12 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    cards.forEach((card) => observer.observe(card));
+    cards.forEach((card) => {
+      cardObserver.observe(card);
+    });
   } else {
-    cards.forEach((card) => card.classList.add("show"));
+    cards.forEach((card) => {
+      card.classList.add("show");
+    });
   }
 
-  /* Automatischer Bildwechsel im Titelbereich */
+  // -------------------------------------------------------
+  // Automatischer Wechsel des Titelbildes
+  // -------------------------------------------------------
 
   const heroImage = document.querySelector(".hero > img");
 
@@ -65,7 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (heroImage) {
     window.setInterval(() => {
-      currentHeroImage = (currentHeroImage + 1) % heroImages.length;
+      currentHeroImage =
+        (currentHeroImage + 1) % heroImages.length;
 
       heroImage.classList.add("hero-image-fade");
 
@@ -73,10 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
         heroImage.src = heroImages[currentHeroImage];
         heroImage.classList.remove("hero-image-fade");
       }, 350);
-    }, 6000);
+    }, 7000);
   }
 
-  /* Copyright-Jahr automatisch einsetzen */
+  // -------------------------------------------------------
+  // Aktuelles Jahr im Footer
+  // -------------------------------------------------------
 
   const yearElement = document.querySelector("#current-year");
 
