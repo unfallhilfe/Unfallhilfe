@@ -1,0 +1,361 @@
+/* =========================
+   Grundeinstellungen
+========================= */
+
+:root {
+  --navy: #003b68;
+  --dark-navy: #002b4d;
+  --blue: #007ed3;
+  --light-blue: #12a8f4;
+  --white: #ffffff;
+  --light-gray: #f3f6f8;
+  --gray: #647484;
+  --text: #102f4c;
+  --shadow: 0 12px 30px rgba(0, 45, 80, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   Kopfbereich
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 78px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--dark-navy), var(--navy));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.logo img {
+  width: 180px;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--white);
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.75;
+}
+
+/* =========================
+   Titelbereich
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.hero > img {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 46, 80, 0.78) 0%,
+      rgba(0, 55, 95, 0.34) 48%,
+      rgba(0, 25, 45, 0.55) 100%
+    );
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 58px 24px 40px;
+  color: var(--white);
+}
+
+.hero-text h1 {
+  max-width: 760px;
+  font-size: clamp(2.1rem, 7vw, 4.4rem);
+  line-height: 1.08;
+  margin-bottom: 25px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.28);
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 25px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--light-blue), var(--blue));
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(0, 126, 211, 0.32);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 126, 211, 0.4);
+}
+
+/* =========================
+   Leistungen
+========================= */
+
+#leistungen {
+  padding: 70px 18px;
+  background: var(--light-gray);
+}
+
+#leistungen h2,
+#kontakt h2 {
+  text-align: center;
+  color: var(--dark-navy);
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 42px;
+}
+
+#leistungen h2::after,
+#kontakt h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: var(--light-blue);
+}
+
+.cards {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 45, 80, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 22px 22px 8px;
+  color: var(--dark-navy);
+  font-size: 1.35rem;
+}
+
+.card p {
+  padding: 0 22px 26px;
+  color: var(--gray);
+}
+
+/* =========================
+   Kontakt
+========================= */
+
+#kontakt {
+  padding: 75px 22px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 49, 86, 0.94), rgba(0, 38, 68, 0.96));
+  color: var(--white);
+}
+
+#kontakt h2 {
+  color: var(--white);
+}
+
+#kontakt p {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-size: 1.08rem;
+}
+
+#kontakt strong {
+  font-size: 1.25rem;
+}
+
+/* =========================
+   Fußbereich
+========================= */
+
+footer {
+  padding: 24px 18px;
+  text-align: center;
+  background: #001f38;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (min-width: 700px) {
+  header {
+    padding: 16px 38px;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  .hero-text {
+    padding: 90px 55px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   Desktop
+========================= */
+
+@media (min-width: 1050px) {
+  header {
+    padding: 18px 60px;
+  }
+
+  .logo img {
+    width: 230px;
+  }
+
+  .hero,
+  .hero > img {
+    height: 760px;
+  }
+
+  .hero-text {
+    padding: 105px 70px;
+  }
+
+  .hero-text p {
+    font-size: 1.4rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card:nth-child(4),
+  .card:nth-child(5) {
+    transform: translateX(50%);
+  }
+
+  .card:nth-child(4):hover,
+  .card:nth-child(5):hover {
+    transform: translateX(50%) translateY(-6px);
+  }
+}
+
+/* =========================
+   Kleine Smartphones
+========================= */
+
+@media (max-width: 420px) {
+  .logo img {
+    width: 145px;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero > img {
+    height: 650px;
+  }
+
+  .hero-text {
+    padding: 45px 18px 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .card img {
+    height: 190px;
+  }
+}
