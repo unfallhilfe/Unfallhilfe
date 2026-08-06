@@ -991,3 +991,520 @@ footer {
     height: 190px;
   }
 }
+/* =========================================================
+   SVB-MV – STYLE.CSS
+   TEIL 2
+   Leistungen, Kontakt, WhatsApp und Footer
+========================================================= */
+
+/* =========================
+   Überschriften allgemein
+========================= */
+
+#leistungen,
+#kontakt {
+  scroll-margin-top: var(--header-height);
+}
+
+#leistungen h2,
+#kontakt h2 {
+  margin-bottom: 42px;
+
+  color: var(--navy-dark);
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+#leistungen h2::after,
+#kontakt h2::after {
+  content: "";
+
+  display: block;
+
+  width: 76px;
+  height: 5px;
+  margin: 15px auto 0;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--blue)
+    );
+}
+
+/* =========================
+   Leistungen
+========================= */
+
+#leistungen {
+  padding: 76px 18px 88px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7fafc 0%,
+      var(--background) 100%
+    );
+}
+
+.cards {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+/* =========================
+   Leistungskarten
+========================= */
+
+.card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(250, 252, 254, 0.98)
+    );
+
+  box-shadow: var(--shadow-small);
+
+  opacity: 0;
+  transform: translateY(36px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(0, 126, 211, 0.24);
+
+  box-shadow: var(--shadow-medium);
+}
+
+/* Bildbereich */
+
+.card img {
+  width: 100%;
+  height: 225px;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.55s ease,
+    filter 0.35s ease;
+}
+
+.card:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.06) contrast(1.03);
+}
+
+/* Blaue Zierlinie */
+
+.card::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--blue)
+    );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Text */
+
+.card h3 {
+  padding: 24px 22px 8px;
+
+  color: var(--navy-dark);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.card p {
+  padding: 0 22px 28px;
+
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* =========================
+   Kontaktbereich
+========================= */
+
+#kontakt {
+  position: relative;
+
+  padding: 82px 20px 90px;
+
+  overflow: hidden;
+
+  text-align: center;
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 44, 78, 0.98),
+      rgba(0, 27, 50, 0.99)
+    );
+}
+
+/* Hintergrundeffekte */
+
+#kontakt::before {
+  content: "";
+
+  position: absolute;
+  top: -130px;
+  right: -130px;
+
+  width: 340px;
+  height: 340px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 169, 238, 0.28),
+      transparent 70%
+    );
+}
+
+#kontakt::after {
+  content: "";
+
+  position: absolute;
+  bottom: -170px;
+  left: -170px;
+
+  width: 380px;
+  height: 380px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 126, 211, 0.2),
+      transparent 72%
+    );
+}
+
+#kontakt > * {
+  position: relative;
+  z-index: 2;
+}
+
+#kontakt h2 {
+  color: var(--white);
+}
+
+#kontakt h2::after {
+  background:
+    linear-gradient(
+      90deg,
+      #8adfff,
+      var(--cyan)
+    );
+}
+
+#kontakt p,
+#kontakt address {
+  width: min(100%, 650px);
+  margin-right: auto;
+  margin-left: auto;
+
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.08rem;
+}
+
+#kontakt p {
+  margin-bottom: 16px;
+}
+
+#kontakt address {
+  margin-bottom: 22px;
+}
+
+#kontakt strong {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--white);
+  font-size: 1.28rem;
+}
+
+#kontakt a:not(.button) {
+  color: #8bdcff;
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+#kontakt a:not(.button):hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+#kontakt .button {
+  margin-top: 18px;
+}
+
+/* =========================
+   WhatsApp-Schaltfläche
+========================= */
+
+.whatsapp-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1200;
+
+  min-height: 52px;
+  padding: 13px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2bc968,
+      #168b49
+    );
+
+  color: var(--white);
+  font-size: 0.98rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+  filter: brightness(1.04);
+}
+
+.whatsapp-button:active {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  padding: 26px 18px;
+
+  background: #001b31;
+
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer p {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (min-width: 700px) {
+  #leistungen {
+    padding: 92px 34px 105px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .card img {
+    height: 245px;
+  }
+
+  #kontakt {
+    padding: 96px 34px 105px;
+  }
+
+  .whatsapp-button {
+    right: 24px;
+    bottom: 24px;
+    padding-inline: 24px;
+  }
+}
+
+/* =========================
+   Desktop
+========================= */
+
+@media (min-width: 1050px) {
+  #leistungen {
+    padding:
+      110px
+      max(50px, calc((100vw - var(--content-width)) / 2))
+      125px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .card img {
+    height: 235px;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: 50%;
+  }
+
+  .card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: 50%;
+  }
+
+  #kontakt {
+    padding:
+      115px
+      max(50px, calc((100vw - 900px) / 2))
+      125px;
+  }
+
+  #kontakt p,
+  #kontakt address {
+    font-size: 1.12rem;
+  }
+
+  footer {
+    padding: 30px 24px;
+  }
+}
+
+/* =========================
+   Kleine Smartphones
+========================= */
+
+@media (max-width: 420px) {
+  #leistungen {
+    padding: 64px 14px 76px;
+  }
+
+  #leistungen h2,
+  #kontakt h2 {
+    margin-bottom: 34px;
+  }
+
+  .cards {
+    gap: 22px;
+  }
+
+  .card img {
+    height: 195px;
+  }
+
+  .card h3 {
+    padding: 20px 18px 7px;
+    font-size: 1.22rem;
+  }
+
+  .card p {
+    padding: 0 18px 24px;
+  }
+
+  #kontakt {
+    padding: 70px 18px 82px;
+  }
+
+  #kontakt p,
+  #kontakt address {
+    font-size: 1rem;
+  }
+
+  #kontakt .button {
+    width: 100%;
+  }
+
+  .whatsapp-button {
+    right: 12px;
+    bottom: 12px;
+
+    min-width: 108px;
+    min-height: 48px;
+    padding: 11px 16px;
+
+    font-size: 0.92rem;
+  }
+}
