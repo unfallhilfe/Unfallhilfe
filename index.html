@@ -1,40 +1,242 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>SVB-MV | Sachverständigenbüro Bernd Hackbarth</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<link rel="stylesheet" href="style.css">
+  <title>SVB-MV | Sachverständigenbüro Bernd Hackbarth</title>
 
-<meta name="description" content="Unabhängige Gutachten für Fahrzeuge, Land- und Baumaschinen sowie Boote.">
+  <meta
+    name="description"
+    content="Unabhängige Gutachten für Fahrzeuge, Land- und Baumaschinen sowie Boote und Yachten."
+  >
 
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+  <header>
+    <div class="logo">
+      <a href="#startseite" aria-label="Zur Startseite">
+        <img
+          src="images/logo.png"
+          alt="SVB-MV Sachverständigenbüro Bernd Hackbarth"
+        >
+      </a>
+    </div>
 
-<div class="logo">
-<img src="images/logo.png" alt="SVB-MV Logo">
-</div>
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-<nav>
-<a href="#">Startseite</a>
-<a href="#leistungen">Leistungen</a>
-<a href="#kontakt">Kontakt</a>
-</nav>
+    <nav aria-label="Hauptnavigation">
+      <a href="#startseite">Startseite</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
 
-</header>
+  <main>
 
-<section class="hero">
+    <section class="hero" id="startseite">
+      <img
+        src="images/hero.jpg"
+        alt="Auto, Lastkraftwagen, Traktor und Boot"
+      >
 
-<img src="images/hero.jpg" alt="Auto LKW Trecker Boot">
+      <div class="hero-text">
+        <h1>
+          Unabhängige Gutachten für Fahrzeuge,
+          Land- und Baumaschinen sowie Boote
+        </h1>
 
-<div class="hero-text">
+        <p>
+          Kompetent.<br>
+          Neutral.<br>
+          Schnell.
+        </p>
 
-<h1>
+        <a
+          class="button"
+          href="tel:+4915205270675"
+        >
+          Jetzt Termin vereinbaren
+        </a>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <h2>Unsere Leistungen</h2>
+
+      <div class="cards">
+
+        <article class="card">
+          <img
+            src="images/unfall.jpg"
+            alt="Beschädigtes Fahrzeug nach einem Unfall"
+            loading="lazy"
+          >
+
+          <h3>Kfz-Unfallgutachten</h3>
+
+          <p>
+            Professionelle Schadenaufnahme, Fotodokumentation
+            und nachvollziehbare Gutachtenerstellung nach einem Unfall.
+          </p>
+        </article>
+
+        <article class="card">
+          <img
+            src="images/oldtimer.jpg"
+            alt="Klassischer Oldtimer für ein Wertgutachten"
+            loading="lazy"
+          >
+
+          <h3>Wertgutachten</h3>
+
+          <p>
+            Bewertung von Fahrzeugen für Verkauf, Versicherung,
+            Leasingrückgabe, Erbschaft oder zur Dokumentation des Fahrzeugwertes.
+          </p>
+        </article>
+
+        <article class="card">
+          <img
+            src="images/kamera.jpg"
+            alt="Kamera zur Beweissicherung und Schadendokumentation"
+            loading="lazy"
+          >
+
+          <h3>Beweissicherung</h3>
+
+          <p>
+            Sorgfältige Fotodokumentation und technische Beweissicherung
+            bei Schäden, Streitfällen oder unklaren Schadenursachen.
+          </p>
+        </article>
+
+        <article class="card">
+          <img
+            src="images/trecker.jpg"
+            alt="Traktor und landwirtschaftliche Maschine"
+            loading="lazy"
+          >
+
+          <h3>Land- und Baumaschinen</h3>
+
+          <p>
+            Gutachten und Bewertungen für Traktoren,
+            landwirtschaftliche Maschinen und Baumaschinen.
+          </p>
+        </article>
+
+        <article class="card">
+          <img
+            src="images/boot.jpg"
+            alt="Motorboot auf dem Wasser"
+            loading="lazy"
+          >
+
+          <h3>Boote und Yachten</h3>
+
+          <p>
+            Schaden- und Wertgutachten für Boote und Yachten.
+            Einsätze sind auf Wunsch EU-weit möglich.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+
+      <p>
+        <strong>
+          SVB-MV Sachverständigenbüro Bernd Hackbarth
+        </strong>
+      </p>
+
+      <address>
+        Schillerstraße 12<br>
+        17235 Neustrelitz
+      </address>
+
+      <p>
+        Telefon:
+        <a href="tel:+4939812629855">
+          03981 2629855
+        </a>
+      </p>
+
+      <p>
+        Mobil:
+        <a href="tel:+4915205270675">
+          01520 5270675
+        </a>
+      </p>
+
+      <p>
+        E-Mail:
+        <a href="mailto:info@svb-mv.de">
+          info@svb-mv.de
+        </a>
+      </p>
+
+      <p>
+        Webseite:
+        <a
+          href="https://www.svb-mv.de"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.svb-mv.de
+        </a>
+      </p>
+
+      <a
+        class="button"
+        href="tel:+4915205270675"
+      >
+        Jetzt anrufen
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © <span id="current-year"></span>
+      SVB-MV Sachverständigenbüro Bernd Hackbarth
+    </p>
+  </footer>
+
+  <a
+    class="whatsapp-button"
+    href="https://wa.me/4915205270675"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nachricht über WhatsApp senden"
+  >
+    WhatsApp
+  </a>
+
+  <script src="script.js"></script>
+
+</body>
+</html><h1>
 Unabhängige Gutachten<br>
 für Fahrzeuge,<br>
 Land- und Baumaschinen<br>
