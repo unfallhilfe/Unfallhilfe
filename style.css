@@ -1508,3 +1508,589 @@ footer p {
     font-size: 0.92rem;
   }
 }
+/* =========================================================
+   SVB-MV – STYLE.CSS
+   TEIL 3
+   Feinschliff, Animationen, Desktop-Optimierung,
+   bessere Darstellung und Druckansicht
+========================================================= */
+
+/* =========================
+   Sanfter Seitenaufbau
+========================= */
+
+body {
+  animation: page-fade-in 0.55s ease both;
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Hero-Animationen
+========================= */
+
+.hero-text h1 {
+  animation: hero-heading-in 0.8s ease 0.1s both;
+}
+
+.hero-text p {
+  animation: hero-text-in 0.8s ease 0.25s both;
+}
+
+.hero-text .button {
+  animation: hero-button-in 0.8s ease 0.4s both;
+}
+
+@keyframes hero-heading-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-button-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   Hero-Bild optimieren
+========================= */
+
+.hero > img {
+  filter:
+    saturate(1.04)
+    contrast(1.03);
+}
+
+@media (min-width: 1050px) {
+  .hero > img {
+    animation: hero-image-zoom 12s ease-out both;
+  }
+}
+
+@keyframes hero-image-zoom {
+  from {
+    transform: scale(1.075);
+  }
+
+  to {
+    transform: scale(1.01);
+  }
+}
+
+/* =========================
+   Navigation aktiver wirken
+========================= */
+
+header nav a {
+  white-space: nowrap;
+}
+
+header nav a:focus-visible {
+  border-radius: 6px;
+}
+
+header nav a[href="#kontakt"] {
+  color: #9fe4ff;
+}
+
+/* =========================
+   Header bei großen Bildschirmen
+========================= */
+
+@media (min-width: 1250px) {
+  header {
+    min-height: 92px;
+  }
+
+  .logo img {
+    width: 235px;
+    height: 66px;
+  }
+
+  header nav {
+    gap: 34px;
+  }
+
+  header nav a {
+    font-size: 1.03rem;
+  }
+}
+
+/* =========================
+   Karten gestaffelt einblenden
+========================= */
+
+.card:nth-child(1) {
+  transition-delay: 0.04s;
+}
+
+.card:nth-child(2) {
+  transition-delay: 0.09s;
+}
+
+.card:nth-child(3) {
+  transition-delay: 0.14s;
+}
+
+.card:nth-child(4) {
+  transition-delay: 0.19s;
+}
+
+.card:nth-child(5) {
+  transition-delay: 0.24s;
+}
+
+/* =========================
+   Karten-Inhalte vereinheitlichen
+========================= */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  flex-grow: 1;
+}
+
+/* =========================
+   Saubere Anordnung der fünf Karten
+========================= */
+
+@media (min-width: 1050px) {
+  .cards {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .card {
+    grid-column: span 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 2 / span 2;
+    margin-left: 0;
+  }
+
+  .card:nth-child(5) {
+    grid-column: 4 / span 2;
+    margin-left: 0;
+  }
+}
+
+/* =========================
+   Sehr große Bildschirme
+========================= */
+
+@media (min-width: 1500px) {
+  :root {
+    --content-width: 1280px;
+  }
+
+  .hero {
+    min-height: 850px;
+  }
+
+  .hero-text h1 {
+    max-width: 970px;
+  }
+
+  .cards {
+    gap: 34px;
+  }
+
+  .card img {
+    height: 255px;
+  }
+}
+
+/* =========================
+   Kontakt als Glasfläche
+========================= */
+
+#kontakt p,
+#kontakt address {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+#kontakt strong {
+  padding: 14px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =========================
+   Telefon- und E-Mail-Links
+========================= */
+
+#kontakt a[href^="tel:"],
+#kontakt a[href^="mailto:"] {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+/* =========================
+   Button mit Lichtreflex
+========================= */
+
+.button,
+.whatsapp-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before,
+.whatsapp-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -130%;
+
+  width: 80%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent,
+      rgba(255, 255, 255, 0.32),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  transition: left 0.55s ease;
+}
+
+.button:hover::before,
+.whatsapp-button:hover::before {
+  left: 145%;
+}
+
+/* =========================
+   WhatsApp auf kleinen Geräten
+========================= */
+
+@media (max-width: 360px) {
+  .whatsapp-button {
+    min-width: auto;
+    padding-inline: 15px;
+  }
+}
+
+/* =========================
+   Verbesserte Lesbarkeit
+========================= */
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* =========================
+   Abstände für Ankerlinks
+========================= */
+
+#startseite,
+#leistungen,
+#kontakt {
+  scroll-margin-top: calc(var(--header-height) + 10px);
+}
+
+/* =========================
+   Hover nur auf Geräten mit Maus
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-8px);
+  }
+
+  .button:hover {
+    transform: translateY(-3px);
+  }
+
+  .whatsapp-button:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* =========================
+   Touch-Geräte
+========================= */
+
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-small);
+  }
+
+  .card:hover img {
+    transform: none;
+    filter: none;
+  }
+
+  .card:hover::after {
+    transform: scaleX(0);
+  }
+}
+
+/* =========================
+   Querformat auf Smartphones
+========================= */
+
+@media (
+  max-width: 900px
+) and (
+  orientation: landscape
+) {
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-text {
+    padding-top: 55px;
+    padding-bottom: 45px;
+  }
+
+  .hero-text h1 {
+    max-width: 720px;
+    font-size: clamp(2rem, 6vw, 3.6rem);
+  }
+}
+
+/* =========================
+   Geräte mit schmaler Höhe
+========================= */
+
+@media (max-height: 680px) and (min-width: 700px) {
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-text {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* =========================
+   Hochauflösende Bildschirme
+========================= */
+
+@media (min-resolution: 2dppx) {
+  .hero-text h1 {
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* =========================
+   Browser ohne Blur-Unterstützung
+========================= */
+
+@supports not (
+  (backdrop-filter: blur(10px))
+  or
+  (-webkit-backdrop-filter: blur(10px))
+) {
+  header {
+    background: rgba(0, 43, 77, 0.99);
+  }
+
+  #kontakt strong {
+    background: rgba(255, 255, 255, 0.09);
+  }
+}
+
+/* =========================
+   Fokus für Tastaturbedienung
+========================= */
+
+.card:focus-within {
+  outline: 3px solid rgba(22, 169, 238, 0.5);
+  outline-offset: 5px;
+}
+
+/* =========================
+   Druckansicht
+========================= */
+
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  header {
+    position: static;
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .logo img {
+    max-width: 190px;
+  }
+
+  .menu-button,
+  header nav,
+  .whatsapp-button,
+  .hero .button,
+  #kontakt .button {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .hero > img {
+    position: static;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+
+  .hero-text {
+    padding: 30px 0;
+    color: #000000;
+  }
+
+  .hero-text h1,
+  .hero-text p {
+    color: #000000;
+    text-shadow: none;
+  }
+
+  #leistungen,
+  #kontakt {
+    padding: 35px 0;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  #kontakt h2,
+  #kontakt p,
+  #kontakt address,
+  #kontakt strong,
+  #kontakt a {
+    color: #000000 !important;
+  }
+
+  .cards {
+    display: block;
+  }
+
+  .card {
+    margin-bottom: 22px;
+    opacity: 1;
+    transform: none;
+    break-inside: avoid;
+    border: 1px solid #cccccc;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  footer {
+    background: #ffffff;
+    color: #000000;
+    border-top: 1px solid #cccccc;
+  }
+}
+
+/* =========================
+   Bewegungen reduzieren
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .hero-text h1,
+  .hero-text p,
+  .hero-text .button,
+  .hero > img {
+    animation: none !important;
+  }
+
+  .card {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .button::before,
+  .whatsapp-button::before {
+    display: none;
+  }
+}
