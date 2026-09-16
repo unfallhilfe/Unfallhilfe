@@ -1,448 +1,610 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-    <title>Datenschutzerklärung | SVB-MV Sachverständigenbüro Bernd Hackbarth</title>
-    <meta name="robots" content="index, follow">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="favicons/site.webmanifest">
+  <title>Impressum | SVB-MV Sachverständigenbüro Bernd Hackbarth</title>
 
-    <!-- Haupt-Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta
+    name="description"
+    content="Impressum des SVB-MV Sachverständigenbüros Bernd Hackbarth in Neustrelitz."
+  >
 
-    <style>
-        .legal-page .content {
-            padding: 120px 20px 60px;
-            min-height: 70vh;
-        }
+  <link rel="stylesheet" href="style.css">
 
-        .legal-page .content .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+  <style>
+    /* =====================================================
+       IMPRESSUM – Ergänzungen zum bestehenden SVB-MV Design
+       ===================================================== */
 
-        .legal-page h1 {
-            font-size: 2.2rem;
-            color: #00305f;
-            text-shadow: none;
-            margin-bottom: 25px;
-            border-bottom: 3px solid #e63946;
-            padding-bottom: 10px;
-            width: 100%;
-        }
+    .legal-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px 70px;
+      text-align: center;
+      color: #ffffff;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 31, 58, 0.98),
+          rgba(0, 73, 120, 0.94)
+        );
+    }
 
-        .legal-page h2 {
-            font-size: 1.3rem;
-            margin-top: 35px;
-            margin-bottom: 12px;
-            color: #00305f;
-        }
+    .legal-hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -110px;
+      width: 420px;
+      height: 220px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-        .legal-page h3 {
-            font-size: 1.1rem;
-            margin-top: 22px;
-            margin-bottom: 8px;
-            color: #00305f;
-        }
+    .legal-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .legal-page p,
-        .legal-page ul {
-            margin: 10px 0;
-            color: #333;
-            line-height: 1.65;
-        }
+    .legal-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-        .legal-page li {
-            margin-bottom: 7px;
-        }
+    .legal-hero h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2.4rem, 8vw, 4.5rem);
+      line-height: 1.05;
+    }
 
-        .legal-page a {
-            color: #00305f;
-            text-decoration: underline;
-        }
-    </style>
+    .legal-hero p {
+      max-width: 620px;
+      margin: 18px auto 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .legal-red-line {
+      width: 85px;
+      height: 4px;
+      margin: 24px auto 0;
+      border-radius: 10px;
+      background: #e63946;
+    }
+
+
+    /* Inhalt */
+
+    .legal-main {
+      padding: 45px 18px 130px;
+      background: #f4f7fa;
+    }
+
+    .legal-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .legal-card {
+      margin-bottom: 22px;
+      padding: 28px;
+      border: 1px solid rgba(0, 48, 95, 0.09);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow:
+        0 8px 30px rgba(0, 35, 65, 0.07);
+    }
+
+    .legal-card h2 {
+      position: relative;
+      margin: 0 0 20px;
+      padding-left: 16px;
+      color: #00305f;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+
+    .legal-card h2::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: 0;
+      width: 4px;
+      border-radius: 4px;
+      background: #e63946;
+    }
+
+    .legal-card p {
+      margin: 7px 0;
+      color: #243746;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .legal-card strong {
+      color: #002b50;
+    }
+
+    .legal-card a {
+      color: #004f87;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .legal-card a:hover,
+    .legal-card a:focus {
+      text-decoration: underline;
+    }
+
+
+    /* Kontaktfelder */
+
+    .legal-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .legal-contact-item {
+      display: block;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f2f6f9;
+      color: #00305f;
+    }
+
+    .legal-contact-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #647787;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+
+    /* Zurück zur Startseite */
+
+    .back-home {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 999px;
+      background: #00305f;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0, 48, 95, 0.18);
+    }
+
+    .back-home a:hover,
+    .back-home a:focus {
+      background: #00477f;
+    }
+
+
+    /* Footer-Links */
+
+    footer .legal-links {
+      margin-top: 10px;
+    }
+
+    footer .legal-links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer .legal-links a:hover,
+    footer .legal-links a:focus {
+      text-decoration: underline;
+    }
+
+
+    /* Smartphone */
+
+    @media (max-width: 700px) {
+
+      .legal-hero {
+        padding: 55px 18px 50px;
+      }
+
+      .legal-hero p {
+        font-size: 0.98rem;
+      }
+
+      .legal-main {
+        padding: 28px 14px 130px;
+      }
+
+      .legal-card {
+        padding: 22px 19px;
+        border-radius: 15px;
+      }
+
+      .legal-card h2 {
+        font-size: 1.2rem;
+      }
+
+      .legal-contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
-<body class="legal-page">
 
-    <!-- Navigation -->
-    <div id="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+<body>
 
-    <div id="side-menu">
-        <a href="index.html">Startseite</a>
-        <a href="leistungen.html">Leistungen</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="galerie.html">Fotogalerie</a>
-        <a href="erfahrungen.html">Erfahrungen von Kunden</a>
-    </div>
+  <!-- =====================================================
+       HEADER – gleiche Struktur wie auf der Startseite
+       ===================================================== -->
 
+  <header>
 
-    <main class="content">
-        <div class="container">
+    <div class="logo">
+      <a href="index.html" aria-label="Zur Startseite">
 
-            <h1>Datenschutzerklärung</h1>
-
-
-            <section>
-                <h2>1. Datenschutz auf einen Blick</h2>
-
-                <h3>Allgemeine Hinweise</h3>
-
-                <p>
-                    Der Schutz Ihrer persönlichen Daten ist uns wichtig.
-                    Die folgenden Hinweise geben einen Überblick darüber,
-                    was mit Ihren personenbezogenen Daten passiert, wenn
-                    Sie diese Website besuchen oder mit uns Kontakt aufnehmen.
-                </p>
-
-                <p>
-                    Personenbezogene Daten sind alle Daten, mit denen Sie
-                    persönlich identifiziert werden können.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>2. Verantwortlicher</h2>
-
-                <p>
-                    Verantwortlicher für die Datenverarbeitung auf dieser
-                    Website und im Rahmen unserer Tätigkeit als
-                    Sachverständigenbüro ist:
-                </p>
-
-                <p>
-                    <strong>SVB-MV | Sachverständigenbüro Bernd Hackbarth</strong><br>
-                    Bernd Hackbarth<br>
-                    Schillerstraße 12<br>
-                    17235 Neustrelitz<br>
-                    Deutschland
-                </p>
-
-                <p>
-                    Telefon:
-                    <a href="tel:+4915205270675">+49 1520 5270675</a><br>
-
-                    E-Mail:
-                    <a href="mailto:info@svb-mv.de">info@svb-mv.de</a>
-                </p>
-            </section>
-
-
-            <section>
-                <h2>3. Hosting und Server-Logfiles</h2>
-
-                <h3>GitHub Pages</h3>
-
-                <p>
-                    Diese Website wird über GitHub Pages bereitgestellt.
-                    Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street,
-                    San Francisco, CA 94107, USA.
-                </p>
-
-                <p>
-                    Beim Aufruf der Website werden technisch erforderliche
-                    Daten verarbeitet. Dazu kann insbesondere die IP-Adresse
-                    des aufrufenden Gerätes gehören. GitHub protokolliert
-                    IP-Adressen von Besuchern von GitHub-Pages-Websites
-                    unter anderem zu Sicherheitszwecken.
-                </p>
-
-                <p>
-                    Die Verarbeitung dieser technischen Daten dient der
-                    sicheren, stabilen und fehlerfreien Bereitstellung
-                    der Website.
-                </p>
-
-                <p>
-                    Soweit die Verarbeitung in unserem Verantwortungsbereich
-                    erfolgt, beruht sie auf Art. 6 Abs. 1 lit. f DSGVO.
-                    Unser berechtigtes Interesse liegt in der sicheren und
-                    zuverlässigen Bereitstellung unseres Internetauftritts.
-                </p>
-
-                <p>
-                    Weitere Informationen zur Datenverarbeitung durch GitHub
-                    finden Sie in der Datenschutzerklärung von GitHub.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>4. Kontaktaufnahme per Telefon oder E-Mail</h2>
-
-                <p>
-                    Wenn Sie uns telefonisch oder per E-Mail kontaktieren,
-                    verarbeiten wir die von Ihnen mitgeteilten Daten zur
-                    Bearbeitung Ihrer Anfrage.
-                </p>
-
-                <p>
-                    Dies können insbesondere Ihr Name, Ihre Telefonnummer,
-                    Ihre E-Mail-Adresse sowie die von Ihnen übermittelten
-                    Informationen zu einem Fahrzeug, Schaden oder sonstigen
-                    Anliegen sein.
-                </p>
-
-                <p>
-                    Erfolgt die Kontaktaufnahme zur Anbahnung oder Durchführung
-                    eines Vertrags, ist Art. 6 Abs. 1 lit. b DSGVO die
-                    Rechtsgrundlage. In anderen Fällen erfolgt die Verarbeitung
-                    auf Grundlage unseres berechtigten Interesses an der
-                    Bearbeitung von Anfragen gemäß Art. 6 Abs. 1 lit. f DSGVO.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>5. Kontaktaufnahme über WhatsApp</h2>
-
-                <p>
-                    Auf unserer Website befindet sich ein Link zur
-                    Kontaktaufnahme über WhatsApp.
-                </p>
-
-                <p>
-                    Erst wenn Sie diesen Link anklicken, verlassen Sie unsere
-                    Website und werden zu WhatsApp weitergeleitet.
-                </p>
-
-                <p>
-                    Wenn Sie über WhatsApp Kontakt mit uns aufnehmen,
-                    verarbeiten wir insbesondere Ihre Telefonnummer,
-                    Ihren Namen beziehungsweise Profilnamen sowie die von
-                    Ihnen übermittelten Nachrichten, Bilder, Dokumente
-                    und sonstigen Informationen.
-                </p>
-
-                <p>
-                    Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage
-                    beziehungsweise zur Anbahnung oder Durchführung eines
-                    Auftrags auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
-                    Soweit keine vertragliche Beziehung betroffen ist,
-                    kann die Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO
-                    beruhen.
-                </p>
-
-                <p>
-                    Anbieter des WhatsApp-Dienstes für Nutzer im Europäischen
-                    Wirtschaftsraum ist:
-                </p>
-
-                <p>
-                    WhatsApp Ireland Limited<br>
-                    Merrion Road<br>
-                    Dublin 4<br>
-                    D04 X2K5<br>
-                    Irland
-                </p>
-
-                <p>
-                    Bei der Nutzung von WhatsApp werden Daten durch WhatsApp
-                    verarbeitet. Dabei kann es auch zu einer Verarbeitung
-                    beziehungsweise Übermittlung von Daten außerhalb der
-                    Europäischen Union oder des Europäischen Wirtschaftsraums
-                    kommen.
-                </p>
-
-                <p>
-                    Auf die eigenständige Datenverarbeitung durch WhatsApp
-                    haben wir keinen vollständigen Einfluss. Weitere
-                    Informationen hierzu finden Sie in der
-                    Datenschutzerklärung von WhatsApp.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>6. Datenverarbeitung bei der Gutachtenerstellung</h2>
-
-                <p>
-                    Im Rahmen unserer Tätigkeit als Sachverständigenbüro
-                    verarbeiten wir personenbezogene Daten, soweit dies
-                    zur Bearbeitung eines Auftrags erforderlich ist.
-                </p>
-
-                <p>Hierzu können insbesondere gehören:</p>
-
-                <ul>
-                    <li>Name und Kontaktdaten des Auftraggebers</li>
-                    <li>Fahrzeug- und Halterdaten</li>
-                    <li>Fahrzeugidentifikationsnummer (FIN)</li>
-                    <li>Kennzeichen und technische Fahrzeugdaten</li>
-                    <li>Angaben zum Schaden und zum Schadenereignis</li>
-                    <li>Fotografien des Fahrzeugs und der Schäden</li>
-                    <li>Rechnungen, Kostenvoranschläge und Reparaturdaten</li>
-                    <li>Versicherungs- und Schadennummern, soweit erforderlich</li>
-                    <li>
-                        Daten weiterer Beteiligter, soweit diese für die
-                        Gutachtenerstellung erforderlich sind
-                    </li>
-                </ul>
-
-                <p>
-                    Die Verarbeitung erfolgt insbesondere zur Erstellung
-                    von Schadengutachten, Wertgutachten, Beweissicherungen,
-                    technischen Bewertungen und sonstigen beauftragten
-                    sachverständigen Leistungen.
-                </p>
-
-                <p>
-                    Rechtsgrundlage ist grundsätzlich Art. 6 Abs. 1 lit. b
-                    DSGVO, soweit die Verarbeitung zur Durchführung eines
-                    Vertrags oder vorvertraglicher Maßnahmen erforderlich ist.
-                </p>
-
-                <p>
-                    Soweit Daten zur Geltendmachung, Ausübung oder Verteidigung
-                    von Rechtsansprüchen verarbeitet werden, kann die
-                    Verarbeitung außerdem auf Art. 6 Abs. 1 lit. f DSGVO
-                    beruhen.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>7. Weitergabe personenbezogener Daten</h2>
-
-                <p>
-                    Personenbezogene Daten werden nur weitergegeben, wenn
-                    dies für die Bearbeitung des Auftrags erforderlich ist,
-                    eine gesetzliche Verpflichtung besteht, Sie eingewilligt
-                    haben oder eine andere datenschutzrechtliche
-                    Rechtsgrundlage vorliegt.
-                </p>
-
-                <p>
-                    Je nach Auftrag können Empfänger beispielsweise
-                    Versicherungen, Rechtsanwälte, Werkstätten oder andere
-                    an der Schadenabwicklung beteiligte Stellen sein.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>8. Speicherdauer</h2>
-
-                <p>
-                    Personenbezogene Daten werden nur so lange gespeichert,
-                    wie dies für den jeweiligen Verarbeitungszweck erforderlich
-                    ist oder gesetzliche Aufbewahrungspflichten bestehen.
-                </p>
-
-                <p>
-                    Nach Wegfall des Verarbeitungszwecks und Ablauf
-                    gesetzlicher Aufbewahrungsfristen werden die Daten
-                    gelöscht, sofern keine andere rechtliche Grundlage
-                    eine weitere Speicherung erlaubt oder erfordert.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>9. Ihre Rechte</h2>
-
-                <p>
-                    Sie haben im Rahmen der gesetzlichen Voraussetzungen
-                    insbesondere das Recht auf:
-                </p>
-
-                <ul>
-                    <li>Auskunft über Ihre gespeicherten personenbezogenen Daten</li>
-                    <li>Berichtigung unrichtiger Daten</li>
-                    <li>Löschung Ihrer personenbezogenen Daten</li>
-                    <li>Einschränkung der Verarbeitung</li>
-                    <li>Datenübertragbarkeit</li>
-                    <li>
-                        Widerspruch gegen bestimmte Verarbeitungen
-                        personenbezogener Daten
-                    </li>
-                    <li>
-                        Widerruf einer erteilten Einwilligung mit Wirkung
-                        für die Zukunft
-                    </li>
-                </ul>
-            </section>
-
-
-            <section>
-                <h2>10. Beschwerderecht bei einer Aufsichtsbehörde</h2>
-
-                <p>
-                    Ihnen steht außerdem das Recht zu, sich bei einer
-                    Datenschutz-Aufsichtsbehörde über die Verarbeitung
-                    Ihrer personenbezogenen Daten zu beschweren.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>11. SSL-/TLS-Verschlüsselung</h2>
-
-                <p>
-                    Diese Website verwendet eine verschlüsselte
-                    HTTPS-Verbindung. Dadurch können Daten, die zwischen
-                    Ihrem Browser und der Website übertragen werden,
-                    nicht ohne Weiteres von Dritten mitgelesen werden.
-                </p>
-            </section>
-
-
-            <section>
-                <h2>12. Stand der Datenschutzerklärung</h2>
-
-                <p>Stand: September 2026</p>
-            </section>
-
-        </div>
-    </main>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-
-            <span>
-                © 2026 SVB-MV | Sachverständigenbüro Bernd Hackbarth
-            </span>
-
-            <div style="margin-top: 15px;">
-                <a href="impressum.html">Impressum</a> |
-                <a href="datenschutz.html">Datenschutz</a>
-            </div>
-
-        </div>
-    </footer>
-
-
-    <!-- WhatsApp -->
-    <a
-        href="https://wa.me/4915205270675"
-        class="whatsapp-widget"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="SVB-MV über WhatsApp kontaktieren"
-    >
         <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-            alt="WhatsApp"
+          src="images/logo.jpg"
+          alt="SVB-MV Sachverständigenbüro Bernd Hackbarth"
         >
-        <span>Gutachter beauftragen</span>
+
+      </a>
+    </div>
+
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <nav aria-label="Hauptnavigation">
+
+      <a href="index.html#startseite">
+        Startseite
+      </a>
+
+      <a href="index.html#leistungen">
+        Leistungen
+      </a>
+
+      <a href="index.html#kontakt">
+        Kontakt
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="legal-hero">
+
+      <div class="legal-hero-inner">
+
+        <span class="legal-kicker">
+          SVB-MV
+        </span>
+
+        <h1>
+          Impressum
+        </h1>
+
+        <div class="legal-red-line"></div>
+
+        <p>
+          Rechtliche Anbieterinformationen des
+          Sachverständigenbüros Bernd Hackbarth
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPRESSUM-INHALT -->
+
+    <section class="legal-main">
+
+      <div class="legal-container">
+
+
+        <article class="legal-card">
+
+          <h2>Angaben gemäß § 5 DDG</h2>
+
+          <p>
+            <strong>
+              SVB-MV | Sachverständigenbüro Bernd Hackbarth
+            </strong>
+          </p>
+
+          <p>
+            Bernd Hackbarth<br>
+            Schillerstraße 12<br>
+            17235 Neustrelitz<br>
+            Deutschland
+          </p>
+
+        </article>
+
+
+        <article class="legal-card">
+
+          <h2>Kontakt</h2>
+
+          <div class="legal-contact-grid">
+
+            <a
+              class="legal-contact-item"
+              href="tel:+4939812629866"
+            >
+              <span class="legal-contact-label">
+                Telefon
+              </span>
+
+              03981 2629866
+            </a>
+
+
+            <a
+              class="legal-contact-item"
+              href="tel:+4915205270675"
+            >
+              <span class="legal-contact-label">
+                Mobil
+              </span>
+
+              01520 5270675
+            </a>
+
+
+            <a
+              class="legal-contact-item"
+              href="mailto:info@svb-mv.de"
+            >
+              <span class="legal-contact-label">
+                E-Mail
+              </span>
+
+              info@svb-mv.de
+            </a>
+
+
+            <a
+              class="legal-contact-item"
+              href="https://www.svb-mv.de"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="legal-contact-label">
+                Internet
+              </span>
+
+              www.svb-mv.de
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="legal-card">
+
+          <h2>Berufsbezeichnung</h2>
+
+          <p>
+            Freier Sachverständiger für
+            Kraftfahrzeugschäden und -bewertung
+          </p>
+
+        </article>
+
+
+        <article class="legal-card">
+
+          <h2>Umsatzsteuer-Identifikationsnummer</h2>
+
+          <p>
+            Umsatzsteuer-Identifikationsnummer
+            gemäß § 27a Umsatzsteuergesetz:
+          </p>
+
+          <p>
+            <strong>DE255736630</strong>
+          </p>
+
+        </article>
+
+
+        <article class="legal-card">
+
+          <h2>Verantwortlich für den Inhalt</h2>
+
+          <p>
+            Bernd Hackbarth<br>
+            Schillerstraße 12<br>
+            17235 Neustrelitz
+          </p>
+
+        </article>
+
+
+        <div class="back-home">
+
+          <a href="index.html">
+            Zurück zur Startseite
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <p>
+      © <span id="current-year">2026</span>
+      SVB-MV | Sachverständigenbüro Bernd Hackbarth
+    </p>
+
+    <p class="legal-links">
+
+      <a href="impressum.html">
+        Impressum
+      </a>
+
+      <span aria-hidden="true"> | </span>
+
+      <a href="datenschutz.html">
+        Datenschutz
+      </a>
+
+    </p>
+
+  </footer>
+
+
+  <!-- =====================================================
+       SCHNELLKONTAKT
+       exakt im Aufbau der neuen Startseite
+       ===================================================== -->
+
+  <div
+    class="contact-buttons"
+    aria-label="Schnellkontakt"
+  >
+
+    <!-- Telefon -->
+
+    <a
+      class="quick-contact phone-contact"
+      href="tel:+4939812629866"
+      aria-label="Telefonisch unter 03981 2629866 anrufen"
+    >
+
+      <span
+        class="contact-icon"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"
+          />
+
+        </svg>
+
+      </span>
+
+      <span class="contact-label">
+
+        <strong>
+          Jetzt anrufen
+        </strong>
+
+        <small>
+          03981 2629866
+        </small>
+
+      </span>
+
     </a>
 
 
-    <script src="script.js"></script>
+    <!-- WhatsApp -->
+
+    <a
+      class="quick-contact whatsapp-contact"
+      href="https://wa.me/4915205270675?text=Hallo%20Herr%20Hackbarth%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Gutachten."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp-Nachricht an 01520 5270675 senden"
+    >
+
+      <span
+        class="contact-icon"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="M12.04 2a9.84 9.84 0 0 0-8.45 14.88L2 22l5.25-1.54A9.99 9.99 0 1 0 12.04 2Zm0 17.98a8.06 8.06 0 0 1-4.1-1.12l-.29-.17-3.12.91.93-3.04-.19-.31a7.98 7.98 0 1 1 6.77 3.73Zm4.42-5.98c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2a7.25 7.25 0 0 1-1.34-1.67c-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.4-.54-.41h-.46a.88.88 0 0 0-.64.3c-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.09 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.43-.58 1.63-1.15.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"
+          />
+
+        </svg>
+
+      </span>
+
+      <span class="contact-label">
+
+        <strong>
+          WhatsApp
+        </strong>
+
+        <small>
+          01520 5270675
+        </small>
+
+      </span>
+
+    </a>
+
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
