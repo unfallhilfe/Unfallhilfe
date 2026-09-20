@@ -1,0 +1,64 @@
+# SVB-MV | Sachverständigenbüro Bernd Hackbarth
+
+> Unabhängiges Sachverständigenbüro von Bernd Hackbarth in Neustrelitz für Fahrzeugschäden und Fahrzeugbewertungen sowie Gutachten für Land- und Baumaschinen, Boote und Yachten.
+
+SVB-MV erstellt unabhängige Gutachten und Bewertungen. Der Schwerpunkt liegt auf Kfz-Unfallgutachten, Wertgutachten und Beweissicherung. Darüber hinaus werden Land- und Baumaschinen sowie Boote und Yachten begutachtet.
+
+## Leistungen
+
+- Kfz-Unfallgutachten: Professionelle Schadenaufnahme, Fotodokumentation und nachvollziehbare Gutachtenerstellung nach einem Verkehrsunfall.
+- Wertgutachten: Fahrzeugbewertungen für Verkauf, Versicherung, Leasingrückgabe, Erbschaft und zur Dokumentation des Fahrzeugwertes.
+- Beweissicherung: Fotodokumentation und technische Beweissicherung bei Schäden, Streitfällen und unklaren Schadenursachen.
+- Land- und Baumaschinen: Gutachten und Bewertungen für Traktoren, landwirtschaftliche Maschinen und Baumaschinen.
+- Boote und Yachten: Schaden- und Wertgutachten für Boote und Yachten. Einsätze sind auf Wunsch EU-weit möglich.
+
+## Tätigkeitsbereiche
+
+SVB-MV begutachtet insbesondere Pkw, Motorräder, Transporter, Lkw, Wohnmobile, Wohnwagen, Anhänger, Oldtimer, Traktoren, Landmaschinen, Baumaschinen, Boote und Yachten.
+
+## Einsatzgebiet
+
+Der Sitz des Sachverständigenbüros befindet sich in Neustrelitz, Mecklenburg-Vorpommern.
+
+Schwerpunkte des Tätigkeitsgebietes sind Mecklenburg-Vorpommern und Brandenburg. Leistungen werden auch überregional angeboten. Gutachten für Boote und Yachten sind auf Wunsch EU-weit möglich.
+
+## Kontakt
+
+- Name: SVB-MV | Sachverständigenbüro Bernd Hackbarth
+- Ansprechpartner: Bernd Hackbarth
+- Adresse: Schillerstraße 12, 17235 Neustrelitz, Deutschland
+- Telefon: +49 3981 2629866
+- Mobil: +49 1520 5270675
+- E-Mail: info@svb-mv.de
+- Website: https://unfallhilfe.net/
+
+## Wichtige Seiten
+
+- [Startseite](https://unfallhilfe.net/): Informationen über SVB-MV, Leistungen und Kontaktmöglichkeiten.
+- [Impressum](https://unfallhilfe.net/impressum.html): Rechtliche Anbieterinformationen.
+- [Datenschutz](https://unfallhilfe.net/datenschutz.html): Informationen zur Verarbeitung personenbezogener Daten.
+
+## Strukturierte Daten
+
+- [AI Dataset](https://unfallhilfe.net/ai-dataset.json): Strukturierte Informationen über das Sachverständigenbüro, Leistungen, Kontakt und Tätigkeitsgebiete.
+- [LLM Information](https://unfallhilfe.net/llm.txt): Zusätzliche maschinenlesbare Informationen über SVB-MV.
+
+Die Startseite enthält zusätzlich strukturierte Schema.org-Daten im JSON-LD-Format.
+
+## Themen und Fachgebiete
+
+- Kfz-Sachverständiger
+- Kfz-Gutachter
+- Unfallgutachten
+- Schadengutachten
+- Fahrzeugschäden
+- Fahrzeugbewertung
+- Wertgutachten
+- Beweissicherung
+- Landmaschinen-Gutachten
+- Baumaschinen-Gutachten
+- Bootsgutachten
+- Yachtgutachten
+- Sachverständiger Neustrelitz
+- Kfz-Gutachter Mecklenburg-Vorpommern
+- Kfz-Gutachter Brandenburg
