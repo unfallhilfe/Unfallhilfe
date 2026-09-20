@@ -1,0 +1,73 @@
+{
+  "name": "SVB-MV | Sachverständigenbüro Bernd Hackbarth",
+  "alternateName": "SVB-MV",
+  "description": "Unabhängiges Sachverständigenbüro für Fahrzeugschäden und Fahrzeugbewertungen sowie Gutachten für Land- und Baumaschinen, Boote und Yachten.",
+  "url": "https://unfallhilfe.net",
+  "language": "de-DE",
+
+  "contact": {
+    "name": "Bernd Hackbarth",
+    "phone": "+4939812629866",
+    "mobile": "+4915205270675",
+    "email": "info@svb-mv.de",
+    "address": {
+      "street": "Schillerstraße 12",
+      "postalCode": "17235",
+      "city": "Neustrelitz",
+      "country": "Deutschland"
+    }
+  },
+
+  "services": [
+    {
+      "name": "Kfz-Unfallgutachten",
+      "description": "Schadenaufnahme, Fotodokumentation und Gutachtenerstellung nach einem Verkehrsunfall."
+    },
+    {
+      "name": "Wertgutachten",
+      "description": "Bewertung von Fahrzeugen für Verkauf, Versicherung, Leasingrückgabe, Erbschaft und Dokumentation des Fahrzeugwertes."
+    },
+    {
+      "name": "Beweissicherung",
+      "description": "Fotodokumentation und technische Beweissicherung bei Schäden, Streitfällen und unklaren Schadenursachen."
+    },
+    {
+      "name": "Land- und Baumaschinen",
+      "description": "Gutachten und Bewertungen für Traktoren, landwirtschaftliche Maschinen und Baumaschinen."
+    },
+    {
+      "name": "Boote und Yachten",
+      "description": "Schaden- und Wertgutachten für Boote und Yachten. Einsätze sind auf Wunsch EU-weit möglich."
+    }
+  ],
+
+  "serviceAreas": {
+    "primary": [
+      "Mecklenburg-Vorpommern",
+      "Brandenburg"
+    ],
+    "extended": [
+      "Deutschland"
+    ],
+    "boatsAndYachts": [
+      "Europäische Union"
+    ]
+  },
+
+  "keywords": [
+    "Kfz-Sachverständiger",
+    "Kfz-Gutachter",
+    "Unfallgutachten",
+    "Schadengutachten",
+    "Wertgutachten",
+    "Fahrzeugbewertung",
+    "Beweissicherung",
+    "Landmaschinen Gutachten",
+    "Baumaschinen Gutachten",
+    "Bootsgutachten",
+    "Yachtgutachten",
+    "Neustrelitz",
+    "Mecklenburg-Vorpommern",
+    "Brandenburg"
+  ]
+}
