@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://unfallhilfe.net/</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/impressum.html</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/datenschutz.html</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/llms.txt</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/llm.txt</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/ai-dataset.json</loc>
+  </url>
+
+  <url>
+    <loc>https://unfallhilfe.net/robots.txt</loc>
+  </url>
+
+</urlset>
