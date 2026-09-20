@@ -1,7 +1,6 @@
 /* =========================================================
    SVB-MV – SACHVERSTÄNDIGENBÜRO BERND HACKBARTH
    KOMPLETTE STYLE.CSS
-   Hero: vollständiges Bild ohne Beschnitt
 ========================================================= */
 
 :root {
@@ -23,8 +22,6 @@
   --text: #12314b;
   --text-dark: #082640;
 
-  --green: #1fa85b;
-
   --border: rgba(0, 59, 104, 0.14);
 
   --shadow-small:
@@ -37,7 +34,7 @@
   --radius-medium: 18px;
 
   --content-width: 1180px;
-  --header-height: 78px;
+  --header-height: 68px;
 }
 
 
@@ -66,6 +63,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
+
+  animation: page-fade-in 0.45s ease both;
 }
 
 body,
@@ -78,6 +77,7 @@ select {
 
 img {
   display: block;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -117,11 +117,6 @@ h3 {
   color: var(--white);
 }
 
-
-/* =========================================================
-   FOKUS
-========================================================= */
-
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--cyan-400);
@@ -138,25 +133,27 @@ header {
   top: 0;
   z-index: 1000;
 
+  height: var(--header-height);
   min-height: var(--header-height);
-  padding: 12px 18px;
+
+  padding: 7px 14px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 15px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(0, 28, 51, 0.99),
-      rgba(0, 59, 104, 0.97)
+      #001c33,
+      #00446e
     );
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.2);
+    0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
 
@@ -174,17 +171,18 @@ header {
 }
 
 .logo a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 
 .logo img {
-  width: 74px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
 
   object-fit: contain;
+  object-position: center;
 
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 
@@ -198,23 +196,22 @@ header {
 
   width: 48px;
   height: 46px;
-
   padding: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
 
-  border-radius: var(--radius-small);
-
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
 
   cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .menu-button span {
@@ -224,8 +221,7 @@ header {
   height: 3px;
 
   border-radius: 999px;
-
-  background: var(--white);
+  background: white;
 
   transition:
     transform 0.28s ease,
@@ -246,7 +242,7 @@ header {
 
 
 /* =========================================================
-   NAVIGATION
+   MOBILE NAVIGATION
 ========================================================= */
 
 header nav {
@@ -256,7 +252,6 @@ header nav {
 
   width: 100%;
   max-height: 0;
-
   padding: 0 18px;
 
   display: flex;
@@ -284,7 +279,6 @@ header nav {
 
 header nav.nav-open {
   max-height: 360px;
-
   padding: 14px 18px 22px;
 
   opacity: 1;
@@ -293,16 +287,13 @@ header nav.nav-open {
 
 header nav a {
   width: 100%;
+  padding: 14px 7px;
 
-  padding: 15px 7px;
-
-  color: var(--white);
-
+  color: white;
   font-weight: 700;
 
   border-bottom:
-    1px solid
-    rgba(255, 255, 255, 0.13);
+    1px solid rgba(255, 255, 255, 0.13);
 }
 
 header nav a:last-child {
@@ -313,9 +304,8 @@ header nav a:last-child {
 /* =========================================================
    HERO
    WICHTIG:
-   Das Bild selbst bestimmt die Höhe.
-   Kein cover.
-   Kein Beschnitt.
+   Das Bild bestimmt die Höhe.
+   Kein Abschneiden.
 ========================================================= */
 
 .hero {
@@ -325,17 +315,14 @@ header nav a:last-child {
 
   overflow: hidden;
 
-  background: #006ba7;
+  background: #003b68;
 }
 
 
 /*
-   Das Hero-Bild bleibt im normalen Dokumentfluss.
-
-   width: 100%
-   height: auto
-
-   = komplettes Bild bleibt sichtbar.
+   Das Bild bleibt im Original-Seitenverhältnis.
+   Kein object-fit: cover.
+   Keine feste Hero-Höhe.
 */
 
 .hero > img {
@@ -344,22 +331,16 @@ header nav a:last-child {
   width: 100%;
   height: auto;
 
-  max-width: none;
-
   object-fit: contain;
+
+  display: block;
 
   filter: none;
   transform: none;
-
-  z-index: 0;
 }
 
 
-/*
-   KEINE Abdunklung.
-   KEIN Verlauf.
-   KEIN Farbschleier.
-*/
+/* KEINE Abdunklung */
 
 .hero::before,
 .hero::after {
@@ -368,111 +349,79 @@ header nav a:last-child {
 
 
 /* =========================================================
-   HERO-TEXT
-
-   Absolut über dem Bild.
-   Schriftgrößen skalieren mit der Bildschirmbreite.
+   HERO TEXT
 ========================================================= */
 
 .hero-text {
   position: absolute;
-
-  top: 0;
-  left: 50%;
-
   z-index: 2;
 
-  transform: translateX(-50%);
+  top: 7%;
+  left: 4%;
 
-  width: min(100%, var(--content-width));
-  height: 100%;
+  width: 48%;
+  max-width: 620px;
 
-  padding:
-    clamp(22px, 5vw, 72px)
-    clamp(20px, 4vw, 50px);
+  padding: 0;
 
-  color: var(--white);
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  color: white;
 }
 
-
-/* =========================================================
-   HERO ÜBERSCHRIFT
-========================================================= */
-
 .hero-text h1 {
-  width: 56%;
-  max-width: 720px;
+  margin-bottom: 3%;
 
-  margin-bottom:
-    clamp(8px, 1.7vw, 24px);
-
-  font-size:
-    clamp(1.25rem, 4.1vw, 3.65rem);
-
-  line-height: 1.04;
-
-  letter-spacing: -0.035em;
+  font-size: clamp(1rem, 3.7vw, 3.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 
   font-weight: 800;
 
-  color: #ffffff;
-
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.95),
-    0 4px 10px rgba(0, 0, 0, 0.65);
+    0 4px 8px rgba(0, 0, 0, 0.7);
+
+  animation:
+    hero-heading-in 0.75s ease 0.1s both;
 }
 
-
-/* =========================================================
-   HERO UNTERTEXT
-========================================================= */
-
 .hero-text p {
-  margin-bottom:
-    clamp(10px, 2vw, 26px);
+  margin-bottom: 4%;
 
-  color: #ffffff;
+  color: white;
 
-  font-size:
-    clamp(0.78rem, 1.45vw, 1.3rem);
-
+  font-size: clamp(0.62rem, 1.45vw, 1.15rem);
   line-height: 1.4;
 
   font-weight: 800;
 
   text-shadow:
-    0 2px 3px rgba(0, 0, 0, 0.95),
-    0 3px 8px rgba(0, 0, 0, 0.6);
+    0 2px 4px rgba(0, 0, 0, 0.95);
+
+  animation:
+    hero-text-in 0.75s ease 0.23s both;
 }
 
 
 /* =========================================================
-   NORMALER BUTTON
+   BUTTON
 ========================================================= */
 
 .button {
   position: relative;
+  overflow: hidden;
 
-  min-height:
-    clamp(38px, 5vw, 56px);
+  min-height: 44px;
 
   padding:
-    clamp(8px, 1.3vw, 15px)
-    clamp(14px, 2.1vw, 24px);
+    clamp(8px, 1.2vw, 15px)
+    clamp(13px, 2vw, 24px);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   border: 0;
-
-  border-radius:
-    clamp(9px, 1.2vw, 14px);
+  border-radius: 14px;
 
   background:
     linear-gradient(
@@ -481,30 +430,30 @@ header nav a:last-child {
       var(--blue-600)
     );
 
-  color: var(--white);
+  color: white;
 
   font-size:
-    clamp(0.72rem, 1.2vw, 1rem);
+    clamp(0.65rem, 1.25vw, 1rem);
 
   font-weight: 800;
-
   text-align: center;
 
   box-shadow:
-    0 8px 22px
-    rgba(0, 126, 211, 0.38);
+    0 9px 22px rgba(0, 126, 211, 0.35);
 
   transition:
     transform 0.22s ease,
     box-shadow 0.22s ease;
+
+  animation:
+    hero-button-in 0.75s ease 0.36s both;
 }
 
 .button:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 14px 30px
-    rgba(0, 126, 211, 0.45);
+    0 14px 30px rgba(0, 126, 211, 0.42);
 }
 
 
@@ -539,7 +488,6 @@ header nav a:last-child {
     clamp(2rem, 7vw, 3.35rem);
 
   line-height: 1.08;
-
   letter-spacing: -0.025em;
 
   text-align: center;
@@ -572,15 +520,11 @@ header nav a:last-child {
 ========================================================= */
 
 .cards {
-  width:
-    min(100%, var(--content-width));
-
+  width: min(100%, var(--content-width));
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: 1fr;
-
   gap: 26px;
 }
 
@@ -595,13 +539,12 @@ header nav a:last-child {
   flex-direction: column;
 
   border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
   border-radius:
     var(--radius-medium);
 
-  background: #ffffff;
+  background: white;
 
   box-shadow:
     var(--shadow-small);
@@ -619,14 +562,11 @@ header nav a:last-child {
 
 .card.show {
   opacity: 1;
-
-  transform:
-    translateY(0);
+  transform: translateY(0);
 }
 
 .card:hover {
-  transform:
-    translateY(-7px);
+  transform: translateY(-7px);
 
   box-shadow:
     var(--shadow-medium);
@@ -638,17 +578,22 @@ header nav a:last-child {
 
   object-fit: cover;
   object-position: center;
+
+  transition:
+    transform 0.55s ease;
+}
+
+.card:hover img {
+  transform: scale(1.035);
 }
 
 .card h3 {
   padding:
     23px 21px 8px;
 
-  color:
-    var(--text-dark);
+  color: var(--text-dark);
 
   font-size: 1.3rem;
-
   line-height: 1.25;
 }
 
@@ -658,10 +603,58 @@ header nav a:last-child {
   padding:
     0 21px 27px;
 
-  color:
-    var(--gray-500);
+  color: var(--gray-500);
 
   font-size: 1rem;
+}
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan-400),
+      var(--blue-600)
+    );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.card:nth-child(1) {
+  transition-delay: 0.04s;
+}
+
+.card:nth-child(2) {
+  transition-delay: 0.09s;
+}
+
+.card:nth-child(3) {
+  transition-delay: 0.14s;
+}
+
+.card:nth-child(4) {
+  transition-delay: 0.19s;
+}
+
+.card:nth-child(5) {
+  transition-delay: 0.24s;
 }
 
 
@@ -678,9 +671,7 @@ header nav a:last-child {
   overflow: hidden;
 
   text-align: center;
-
-  color:
-    var(--white);
+  color: white;
 
   background:
     linear-gradient(
@@ -690,13 +681,8 @@ header nav a:last-child {
     );
 }
 
-#kontakt > * {
-  position: relative;
-  z-index: 2;
-}
-
 #kontakt h2 {
-  color: var(--white);
+  color: white;
 }
 
 #kontakt p,
@@ -725,9 +711,19 @@ header nav a:last-child {
 
   margin-bottom: 10px;
 
-  color: var(--white);
+  padding: 14px 18px;
+
+  color: white;
 
   font-size: 1.25rem;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
 }
 
 #kontakt a:not(.button) {
@@ -753,19 +749,67 @@ footer {
     rgba(255, 255, 255, 0.76);
 
   font-size: 0.9rem;
-
   text-align: center;
-
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.08);
 }
 
 footer p {
-  width:
-    min(100%, var(--content-width));
-
+  width: min(100%, var(--content-width));
   margin: 0 auto;
+}
+
+
+/* =========================================================
+   ANIMATIONEN
+========================================================= */
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-heading-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-button-in {
+  from {
+    opacity: 0;
+    transform:
+      translateY(12px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
 }
 
 
@@ -776,93 +820,77 @@ footer p {
 @media (max-width: 480px) {
 
   :root {
-    --header-height: 74px;
+    --header-height: 68px;
   }
 
   header {
-    padding: 10px 16px;
+    height: 68px;
+    min-height: 68px;
+
+    padding: 7px 14px;
   }
 
   .logo img {
-    width: 74px;
-    height: 74px;
+    width: 54px;
+    height: 54px;
   }
 
   .menu-button {
-    width: 54px;
-    height: 50px;
+    width: 46px;
+    height: 44px;
+
+    padding: 10px;
   }
 
-
   /*
-     WICHTIG:
-     Auch auf dem Smartphone bleibt das komplette
-     Bild im Original-Seitenverhältnis erhalten.
-  */
-
-  .hero > img {
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-  }
-
-
-  /*
-     Der Text wird proportional kleiner,
-     damit er zum kleineren Hero-Bild passt.
+     Hero bleibt proportional zum Bild.
+     Schrift und Button skalieren mit.
   */
 
   .hero-text {
-    padding:
-      4.5vw
-      4.5vw;
+    top: 5.5%;
+    left: 4.5%;
 
-    justify-content: center;
+    width: 55%;
   }
 
   .hero-text h1 {
-    width: 59%;
-
-    margin-bottom: 1.8vw;
+    margin-bottom: 4%;
 
     font-size:
-      clamp(1.05rem, 5.2vw, 1.55rem);
+      clamp(0.93rem, 4.45vw, 1.45rem);
 
-    line-height: 1.04;
-
-    text-shadow:
-      0 1px 2px rgba(0, 0, 0, 0.95),
-      0 2px 5px rgba(0, 0, 0, 0.65);
+    line-height: 1.08;
   }
 
   .hero-text p {
-    margin-bottom: 2.3vw;
+    margin-bottom: 5%;
 
     font-size:
-      clamp(0.62rem, 2.8vw, 0.85rem);
+      clamp(0.55rem, 2.3vw, 0.82rem);
 
-    line-height: 1.32;
+    line-height: 1.35;
   }
 
   .hero-text .button {
-    width: auto;
-
     min-height: 34px;
 
-    padding:
-      7px 12px;
+    padding: 7px 13px;
+
+    border-radius: 11px;
 
     font-size:
-      clamp(0.62rem, 2.6vw, 0.8rem);
-
-    border-radius: 9px;
+      clamp(0.57rem, 2.2vw, 0.76rem);
   }
-
 
   #leistungen {
     padding:
-      64px 14px 76px;
+      62px 14px 76px;
+  }
+
+  #leistungen h2,
+  #kontakt h2 {
+    font-size: 2rem;
   }
 
   .cards {
@@ -870,7 +898,10 @@ footer p {
   }
 
   .card img {
-    height: 210px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
   }
 
   .card h3 {
@@ -889,27 +920,38 @@ footer p {
     padding:
       70px 18px 82px;
   }
+
+  #kontakt p,
+  #kontakt address {
+    font-size: 1rem;
+  }
+
+  #kontakt .button {
+    width: 100%;
+  }
 }
 
 
 /* =========================================================
-   TABLET / DESKTOP NAVIGATION
+   TABLET
 ========================================================= */
 
 @media (min-width: 700px) {
 
   :root {
-    --header-height: 86px;
+    --header-height: 76px;
   }
 
   header {
-    padding:
-      14px 34px;
+    height: 76px;
+    min-height: 76px;
+
+    padding: 9px 34px;
   }
 
   .logo img {
-    width: 82px;
-    height: 62px;
+    width: 58px;
+    height: 58px;
   }
 
   .menu-button {
@@ -920,13 +962,10 @@ footer p {
     position: static;
 
     width: auto;
-
     max-height: none;
-
     padding: 0;
 
     flex-direction: row;
-
     align-items: center;
 
     gap: 26px;
@@ -934,11 +973,9 @@ footer p {
     overflow: visible;
 
     opacity: 1;
-
     visibility: visible;
 
     background: transparent;
-
     box-shadow: none;
   }
 
@@ -950,6 +987,13 @@ footer p {
     border: 0;
 
     font-size: 0.98rem;
+  }
+
+  .hero-text {
+    top: 13%;
+    left: 4%;
+
+    width: 49%;
   }
 
   #leistungen {
@@ -981,56 +1025,57 @@ footer p {
 
 @media (min-width: 1050px) {
 
+  :root {
+    --header-height: 78px;
+  }
+
   header {
+    height: 78px;
+    min-height: 78px;
+
     padding:
-      15px
+      9px
       max(
-        55px,
-        calc(
-          (100vw - var(--content-width)) / 2
-        )
+        45px,
+        calc((100vw - var(--content-width)) / 2)
       );
   }
 
   .logo img {
-    width: 90px;
-    height: 68px;
-  }
-
-
-  /*
-     Auch Desktop:
-     keine feste Hero-Höhe.
-     Bild bestimmt die Höhe.
-  */
-
-  .hero > img {
-    width: 100%;
-    height: auto;
+    width: 60px;
+    height: 60px;
   }
 
   .hero-text {
-    padding:
-      clamp(40px, 5vw, 80px)
-      0;
+    top: 18%;
+    left:
+      max(
+        4%,
+        calc((100vw - var(--content-width)) / 2)
+      );
+
+    width: 48%;
+    max-width: 600px;
   }
 
   .hero-text h1 {
-    width: 54%;
-    max-width: 720px;
+    font-size:
+      clamp(2rem, 3.25vw, 3.35rem);
   }
 
+  .hero-text p {
+    font-size:
+      clamp(0.8rem, 1.15vw, 1.15rem);
+  }
 
   #leistungen {
     padding:
-      110px
+      100px
       max(
         50px,
-        calc(
-          (100vw - var(--content-width)) / 2
-        )
+        calc((100vw - var(--content-width)) / 2)
       )
-      125px;
+      120px;
   }
 
   .cards {
@@ -1041,18 +1086,15 @@ footer p {
   }
 
   .card {
-    grid-column:
-      span 2;
+    grid-column: span 2;
   }
 
   .card:nth-child(4) {
-    grid-column:
-      2 / span 2;
+    grid-column: 2 / span 2;
   }
 
   .card:nth-child(5) {
-    grid-column:
-      4 / span 2;
+    grid-column: 4 / span 2;
   }
 
   .card img {
@@ -1061,14 +1103,36 @@ footer p {
 
   #kontakt {
     padding:
-      115px
+      110px
       max(
         50px,
-        calc(
-          (100vw - 900px) / 2
-        )
+        calc((100vw - 900px) / 2)
       )
-      125px;
+      120px;
+  }
+}
+
+
+/* =========================================================
+   GROSSE BILDSCHIRME
+========================================================= */
+
+@media (min-width: 1500px) {
+
+  :root {
+    --content-width: 1280px;
+  }
+
+  .hero-text {
+    max-width: 650px;
+  }
+
+  .cards {
+    gap: 34px;
+  }
+
+  .card img {
+    height: 255px;
   }
 }
 
@@ -1086,15 +1150,16 @@ footer p {
   z-index: 1300;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
 
   gap: 10px;
 }
 
 .quick-contact {
+  position: relative;
+  overflow: hidden;
+
   min-width: 220px;
   min-height: 60px;
 
@@ -1102,22 +1167,19 @@ footer p {
     9px 17px 9px 10px;
 
   display: flex;
-
   align-items: center;
 
   gap: 12px;
 
-  color: #ffffff;
+  color: white;
 
   border:
-    1px solid
-    rgba(255, 255, 255, 0.44);
+    1px solid rgba(255, 255, 255, 0.44);
 
   border-radius: 999px;
 
   box-shadow:
-    0 12px 30px
-    rgba(0, 0, 0, 0.3);
+    0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .phone-contact {
@@ -1145,7 +1207,6 @@ footer p {
   flex: 0 0 42px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 50%;
@@ -1163,17 +1224,15 @@ footer p {
 
 .contact-label {
   display: flex;
-
   flex-direction: column;
 
   line-height: 1.15;
 }
 
 .contact-label strong {
-  color: #ffffff;
+  color: white;
 
   font-size: 0.98rem;
-
   font-weight: 800;
 }
 
@@ -1184,13 +1243,12 @@ footer p {
     rgba(255, 255, 255, 0.86);
 
   font-size: 0.77rem;
-
   font-weight: 600;
 }
 
 
 /* =========================================================
-   KONTAKTBUTTONS SMARTPHONE
+   KONTAKT-BUTTONS SMARTPHONE
 ========================================================= */
 
 @media (max-width: 480px) {
@@ -1261,6 +1319,27 @@ footer p {
 
 
 /* =========================================================
+   TOUCHGERÄTE
+========================================================= */
+
+@media (hover: none) {
+
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-small);
+  }
+
+  .card:hover img {
+    transform: none;
+  }
+
+  .card:hover::after {
+    transform: scaleX(0);
+  }
+}
+
+
+/* =========================================================
    WENIGER BEWEGUNG
 ========================================================= */
 
@@ -1273,18 +1352,14 @@ footer p {
   *,
   *::before,
   *::after {
-    animation-duration:
-      0.01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 
   .card {
     opacity: 1;
     transform: none;
+    transition-delay: 0s;
   }
 }
