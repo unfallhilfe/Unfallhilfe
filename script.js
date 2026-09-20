@@ -59,35 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // -------------------------------------------------------
-  // Automatischer Wechsel des Titelbildes
-  // -------------------------------------------------------
-
-  const heroImage = document.querySelector(".hero > img");
-
-  const heroImages = [
-    "images/hero.jpg",
-    "images/unfall.jpg",
-    "images/trecker.jpg",
-    "images/boot.jpg"
-  ];
-
-  let currentHeroImage = 0;
-
-  if (heroImage) {
-    window.setInterval(() => {
-      currentHeroImage =
-        (currentHeroImage + 1) % heroImages.length;
-
-      heroImage.classList.add("hero-image-fade");
-
-      window.setTimeout(() => {
-        heroImage.src = heroImages[currentHeroImage];
-        heroImage.classList.remove("hero-image-fade");
-      }, 350);
-    }, 7000);
-  }
-
-  // -------------------------------------------------------
   // Aktuelles Jahr im Footer
   // -------------------------------------------------------
 
