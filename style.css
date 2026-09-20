@@ -304,11 +304,7 @@ header nav a:last-child {
 
 /* =========================================================
    HERO
-
-   WICHTIG:
-   Das Bild bestimmt die Höhe.
-   Kein object-fit: cover.
-   Dadurch wird nichts abgeschnitten.
+   Bild vollständig – kein Abschneiden
 ========================================================= */
 
 .hero {
@@ -321,9 +317,6 @@ header nav a:last-child {
 
   background: var(--navy-950);
 }
-
-
-/* HERO-BILD VOLLSTÄNDIG */
 
 .hero > img {
   position: relative;
@@ -340,9 +333,6 @@ header nav a:last-child {
 
   opacity: 1;
 }
-
-
-/* KEINE ABDUNKLUNG */
 
 .hero::before,
 .hero::after {
@@ -372,7 +362,7 @@ header nav a:last-child {
 }
 
 
-/* Überschrift über möglichst viel Himmel */
+/* Überschrift größer und über die verfügbare Himmelsbreite */
 
 .hero-text h1 {
   width: 100%;
@@ -383,20 +373,21 @@ header nav a:last-child {
   color: var(--white);
 
   font-size: clamp(
-    1rem,
-    4.15vw,
-    3.4rem
+    1.08rem,
+    4.6vw,
+    3.7rem
   );
 
-  line-height: 1.08;
+  line-height: 1.05;
   letter-spacing: -0.035em;
   font-weight: 800;
+
+  text-wrap: balance;
 
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.9),
     0 4px 8px rgba(0, 0, 0, 0.65);
 }
-
 
 .hero-text p {
   margin: 0 0 2.2%;
@@ -480,9 +471,6 @@ header nav a:last-child {
 .button:active {
   transform: translateY(0);
 }
-
-
-/* Alte Bildwechsel-Klasse neutralisieren */
 
 .hero > img.hero-image-fade {
   opacity: 1;
@@ -1081,11 +1069,15 @@ body {
   }
 
   .hero-text h1 {
+    width: 100%;
+    max-width: none;
+
     margin-bottom: 2%;
 
-    font-size: 4.1vw;
+    font-size: 4.65vw;
+    line-height: 1.05;
 
-    line-height: 1.08;
+    text-wrap: balance;
   }
 
   .hero-text p {
@@ -1271,7 +1263,7 @@ body {
   }
 
   .hero-text h1 {
-    font-size: 3.8vw;
+    font-size: 4.15vw;
   }
 
   .hero-text p {
@@ -1336,6 +1328,7 @@ body {
 
   .hero-text {
     top: 14%;
+
     left:
       max(
         4%,
@@ -1350,8 +1343,13 @@ body {
   }
 
   .hero-text h1 {
+    width: 100%;
+    max-width: none;
+
     font-size:
-      clamp(2rem, 3.4vw, 3.45rem);
+      clamp(2.2rem, 3.8vw, 3.8rem);
+
+    line-height: 1.05;
   }
 
   .hero-text p {
