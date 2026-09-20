@@ -1,0 +1,103 @@
+# SVB-MV | Sachverständigenbüro Bernd Hackbarth
+
+SVB-MV ist das unabhängige Sachverständigenbüro von Bernd Hackbarth mit Sitz in Neustrelitz, Mecklenburg-Vorpommern.
+
+Das Sachverständigenbüro erstellt Gutachten und Bewertungen für Kraftfahrzeuge, Land- und Baumaschinen sowie Boote und Yachten.
+
+## Ansprechpartner
+
+Bernd Hackbarth
+Kfz-Sachverständiger für Fahrzeugschäden und Fahrzeugbewertung
+
+## Kontakt
+
+- Sachverständigenbüro: SVB-MV | Sachverständigenbüro Bernd Hackbarth
+- Ansprechpartner: Bernd Hackbarth
+- Adresse: Schillerstraße 12, 17235 Neustrelitz, Deutschland
+- Telefon: +49 3981 2629866
+- Mobil: +49 1520 5270675
+- E-Mail: info@svb-mv.de
+- Website: https://unfallhilfe.net
+
+## Leistungen
+
+### Kfz-Unfallgutachten
+
+Professionelle Schadenaufnahme, Fotodokumentation und nachvollziehbare Gutachtenerstellung nach einem Verkehrsunfall.
+
+### Wertgutachten
+
+Bewertung von Fahrzeugen und Ermittlung des Fahrzeugwertes, unter anderem für Verkauf, Versicherung, Leasingrückgabe, Erbschaft und zur Dokumentation des Fahrzeugwertes.
+
+### Beweissicherung
+
+Sorgfältige Fotodokumentation und technische Beweissicherung bei Schäden, Streitfällen und unklaren Schadenursachen.
+
+### Land- und Baumaschinen
+
+Gutachten und Bewertungen für Traktoren, landwirtschaftliche Maschinen und Baumaschinen.
+
+### Boote und Yachten
+
+Schaden- und Wertgutachten für Boote und Yachten. Einsätze sind auf Wunsch EU-weit möglich.
+
+## Tätigkeitsbereiche
+
+Zu den begutachteten Fahrzeugen, Maschinen und Wasserfahrzeugen gehören insbesondere:
+
+- Pkw
+- Motorräder
+- Transporter
+- Lkw
+- Wohnmobile
+- Wohnwagen und Anhänger
+- Oldtimer
+- Traktoren
+- Landmaschinen
+- Baumaschinen
+- Boote
+- Yachten
+
+## Einsatzgebiet
+
+SVB-MV hat seinen Sitz in Neustrelitz in Mecklenburg-Vorpommern.
+
+Zu den wesentlichen Tätigkeitsregionen gehören:
+
+- Mecklenburg-Vorpommern
+- Brandenburg
+- Deutschland
+- Boote und Yachten: Einsätze auf Wunsch EU-weit
+
+## Schwerpunkte
+
+- Kfz-Sachverständiger
+- Kfz-Gutachter
+- Unfallgutachten
+- Schadengutachten
+- Fahrzeugbewertung
+- Wertgutachten
+- Beweissicherung
+- Landmaschinen-Gutachten
+- Baumaschinen-Gutachten
+- Bootsgutachten
+- Yachtgutachten
+
+## Rechtliche Informationen
+
+Impressum:
+https://unfallhilfe.net/impressum.html
+
+Datenschutz:
+https://unfallhilfe.net/datenschutz.html
+
+## Maschinenlesbare Informationen
+
+Strukturierte Unternehmensinformationen:
+https://unfallhilfe.net/ai-dataset.json
+
+Die Website enthält zusätzlich strukturierte Schema.org-Daten im JSON-LD-Format.
+
+## Stand
+
+September 2026
