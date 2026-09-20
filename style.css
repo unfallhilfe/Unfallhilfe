@@ -1,6 +1,7 @@
 /* =========================================================
    SVB-MV – SACHVERSTÄNDIGENBÜRO BERND HACKBARTH
    KOMPLETTE STYLE.CSS
+   Hero vollständig sichtbar – kein Bildbeschnitt
 ========================================================= */
 
 :root {
@@ -22,6 +23,7 @@
   --text: #12314b;
   --text-dark: #082640;
 
+  --green: #1fa85b;
   --border: rgba(0, 59, 104, 0.14);
 
   --shadow-small:
@@ -34,13 +36,12 @@
   --radius-medium: 18px;
 
   --content-width: 1180px;
-  --header-height: 68px;
+  --header-height: 78px;
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
+/* =========================
+   RESET / BASIS
+========================= */
 
 * {
   box-sizing: border-box;
@@ -60,7 +61,11 @@ body {
   background: var(--gray-50);
   color: var(--text);
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 16px;
   line-height: 1.6;
 
@@ -72,7 +77,10 @@ button,
 input,
 textarea,
 select {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
 img {
@@ -123,43 +131,39 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  height: var(--header-height);
   min-height: var(--header-height);
-
-  padding: 7px 14px;
+  padding: 12px 18px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 18px;
 
   background:
     linear-gradient(
       135deg,
-      #001c33,
-      #00446e
+      rgba(0, 28, 51, 0.99),
+      rgba(0, 59, 104, 0.97)
     );
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.18);
+    0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-/* =========================================================
+/* =========================
    LOGO
-========================================================= */
+========================= */
 
 .logo {
   position: relative;
@@ -171,24 +175,23 @@ header {
 }
 
 .logo a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
 .logo img {
-  width: 54px;
-  height: 54px;
+  width: 74px;
+  height: 56px;
 
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
 
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-
-/* =========================================================
+/* =========================
    HAMBURGER
-========================================================= */
+========================= */
 
 .menu-button {
   position: relative;
@@ -202,16 +205,25 @@ header {
   flex-direction: column;
   justify-content: space-between;
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius-small);
 
-  background: rgba(255, 255, 255, 0.07);
-
+  background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
 
   transition:
     background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
+.menu-button:active {
+  transform: scale(0.96);
 }
 
 .menu-button span {
@@ -221,7 +233,7 @@ header {
   height: 3px;
 
   border-radius: 999px;
-  background: white;
+  background: var(--white);
 
   transition:
     transform 0.28s ease,
@@ -240,10 +252,9 @@ header {
   transform: translateY(-11px) rotate(-45deg);
 }
 
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 header nav {
   position: absolute;
@@ -258,7 +269,6 @@ header nav {
   flex-direction: column;
 
   overflow: hidden;
-
   opacity: 0;
   visibility: hidden;
 
@@ -269,12 +279,14 @@ header nav {
       rgba(0, 27, 50, 0.995)
     );
 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: var(--shadow-medium);
 
   transition:
     max-height 0.35s ease,
     padding 0.35s ease,
-    opacity 0.25s ease;
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
 header nav.nav-open {
@@ -287,26 +299,23 @@ header nav.nav-open {
 
 header nav a {
   width: 100%;
-  padding: 14px 7px;
+  padding: 15px 7px;
 
-  color: white;
+  color: var(--white);
   font-weight: 700;
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 header nav a:last-child {
   border-bottom: 0;
 }
 
-
-/* =========================================================
+/* =========================
    HERO
-   WICHTIG:
-   Das Bild bestimmt die Höhe.
-   Kein Abschneiden.
-========================================================= */
+   Bild bestimmt die Höhe.
+   Kein cover, kein Beschnitt.
+========================= */
 
 .hero {
   position: relative;
@@ -315,15 +324,10 @@ header nav a:last-child {
 
   overflow: hidden;
 
-  background: #003b68;
+  background: var(--navy-950);
 }
 
-
-/*
-   Das Bild bleibt im Original-Seitenverhältnis.
-   Kein object-fit: cover.
-   Keine feste Hero-Höhe.
-*/
+/* DAS BILD BLEIBT VOLLSTÄNDIG SICHTBAR */
 
 .hero > img {
   position: relative;
@@ -333,88 +337,186 @@ header nav a:last-child {
 
   object-fit: contain;
 
-  display: block;
-
   filter: none;
   transform: none;
 }
 
-
-/* KEINE Abdunklung */
+/* KEIN dunkler Verlauf */
 
 .hero::before,
 .hero::after {
   display: none;
 }
 
-
-/* =========================================================
-   HERO TEXT
-========================================================= */
+/* =========================
+   HERO-TEXT
+========================= */
 
 .hero-text {
   position: absolute;
+
+  /*
+     Textfläche bewusst fast über
+     die gesamte Breite des Himmels
+  */
+
+  top: 9%;
+  left: 4%;
+  right: 4%;
+
   z-index: 2;
 
-  top: 7%;
-  left: 4%;
-
-  width: 48%;
-  max-width: 620px;
-
+  width: auto;
   padding: 0;
 
-  color: white;
+  color: var(--white);
+
+  pointer-events: none;
 }
 
+/* Überschrift darf den Himmel nutzen */
+
 .hero-text h1 {
-  margin-bottom: 3%;
+  width: 100%;
+  max-width: 100%;
 
-  font-size: clamp(1rem, 3.7vw, 3.3rem);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  margin: 0 0 2.1%;
 
+  color: var(--white);
+
+  font-size: clamp(
+    1.45rem,
+    4.1vw,
+    3.55rem
+  );
+
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.95),
+    0 4px 9px rgba(0, 0, 0, 0.75);
+}
+
+/* Kompetenz-Text */
+
+.hero-text p {
+  width: fit-content;
+
+  margin: 0 0 2.7%;
+
+  color: var(--white);
+
+  font-size: clamp(
+    0.82rem,
+    1.7vw,
+    1.25rem
+  );
+
+  line-height: 1.42;
   font-weight: 800;
 
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.95),
-    0 4px 8px rgba(0, 0, 0, 0.7);
-
-  animation:
-    hero-heading-in 0.75s ease 0.1s both;
+    0 3px 7px rgba(0, 0, 0, 0.75);
 }
 
-.hero-text p {
-  margin-bottom: 4%;
+/* =========================
+   GLAS-BUTTON IM HERO
+========================= */
 
-  color: white;
+.hero-text .button {
+  pointer-events: auto;
 
-  font-size: clamp(0.62rem, 1.45vw, 1.15rem);
-  line-height: 1.4;
+  min-height: 0;
+
+  padding:
+    clamp(10px, 1.5vw, 17px)
+    clamp(17px, 2.8vw, 31px);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.55);
+
+  border-radius:
+    clamp(12px, 2vw, 20px);
+
+  /*
+     Durchsichtige Glasoptik.
+     Das Fahrzeug bleibt darunter sichtbar.
+  */
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 168, 231, 0.42),
+      rgba(0, 86, 151, 0.28)
+    );
+
+  color: var(--white);
+
+  font-size:
+    clamp(
+      0.76rem,
+      1.45vw,
+      1.08rem
+    );
 
   font-weight: 800;
 
   text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.95);
+    0 1px 3px rgba(0, 0, 0, 0.45);
 
-  animation:
-    hero-text-in 0.75s ease 0.23s both;
+  box-shadow:
+    0 8px 22px rgba(0, 29, 52, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  backdrop-filter:
+    blur(7px)
+    saturate(1.15);
+
+  -webkit-backdrop-filter:
+    blur(7px)
+    saturate(1.15);
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
 }
 
+.hero-text .button:hover {
+  transform: translateY(-2px);
 
-/* =========================================================
-   BUTTON
-========================================================= */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(27, 182, 243, 0.54),
+      rgba(0, 101, 177, 0.38)
+    );
+
+  border-color:
+    rgba(255, 255, 255, 0.8);
+}
+
+.hero-text .button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   ALLGEMEINE BUTTONS
+========================= */
 
 .button {
-  position: relative;
-  overflow: hidden;
-
-  min-height: 44px;
-
-  padding:
-    clamp(8px, 1.2vw, 15px)
-    clamp(13px, 2vw, 24px);
+  min-height: 56px;
+  padding: 15px 24px;
 
   display: inline-flex;
   align-items: center;
@@ -430,36 +532,23 @@ header nav a:last-child {
       var(--blue-600)
     );
 
-  color: white;
+  color: var(--white);
 
-  font-size:
-    clamp(0.65rem, 1.25vw, 1rem);
-
+  font-size: 1rem;
   font-weight: 800;
   text-align: center;
 
   box-shadow:
-    0 9px 22px rgba(0, 126, 211, 0.35);
+    0 11px 27px rgba(0, 126, 211, 0.36);
 
   transition:
     transform 0.22s ease,
     box-shadow 0.22s ease;
-
-  animation:
-    hero-button-in 0.75s ease 0.36s both;
 }
 
-.button:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 14px 30px rgba(0, 126, 211, 0.42);
-}
-
-
-/* =========================================================
+/* =========================
    LEISTUNGEN
-========================================================= */
+========================= */
 
 #leistungen {
   padding: 76px 18px 88px;
@@ -489,7 +578,6 @@ header nav a:last-child {
 
   line-height: 1.08;
   letter-spacing: -0.025em;
-
   text-align: center;
 }
 
@@ -514,10 +602,9 @@ header nav a:last-child {
     );
 }
 
-
-/* =========================================================
+/* =========================
    KARTEN
-========================================================= */
+========================= */
 
 .cards {
   width: min(100%, var(--content-width));
@@ -525,6 +612,7 @@ header nav a:last-child {
 
   display: grid;
   grid-template-columns: 1fr;
+
   gap: 26px;
 }
 
@@ -538,21 +626,20 @@ header nav a:last-child {
   display: flex;
   flex-direction: column;
 
-  border:
-    1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
 
-  border-radius:
-    var(--radius-medium);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.99),
+      rgba(250, 252, 254, 0.99)
+    );
 
-  background: white;
-
-  box-shadow:
-    var(--shadow-small);
+  box-shadow: var(--shadow-small);
 
   opacity: 0;
-
-  transform:
-    translateY(36px);
+  transform: translateY(36px);
 
   transition:
     opacity 0.6s ease,
@@ -567,9 +654,7 @@ header nav a:last-child {
 
 .card:hover {
   transform: translateY(-7px);
-
-  box-shadow:
-    var(--shadow-medium);
+  box-shadow: var(--shadow-medium);
 }
 
 .card img {
@@ -578,18 +663,10 @@ header nav a:last-child {
 
   object-fit: cover;
   object-position: center;
-
-  transition:
-    transform 0.55s ease;
-}
-
-.card:hover img {
-  transform: scale(1.035);
 }
 
 .card h3 {
-  padding:
-    23px 21px 8px;
+  padding: 23px 21px 8px;
 
   color: var(--text-dark);
 
@@ -600,78 +677,26 @@ header nav a:last-child {
 .card p {
   flex-grow: 1;
 
-  padding:
-    0 21px 27px;
+  padding: 0 21px 27px;
 
   color: var(--gray-500);
 
   font-size: 1rem;
 }
 
-.card::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 5px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--cyan-400),
-      var(--blue-600)
-    );
-
-  transform: scaleX(0);
-  transform-origin: left;
-
-  transition:
-    transform 0.3s ease;
-}
-
-.card:hover::after {
-  transform: scaleX(1);
-}
-
-.card:nth-child(1) {
-  transition-delay: 0.04s;
-}
-
-.card:nth-child(2) {
-  transition-delay: 0.09s;
-}
-
-.card:nth-child(3) {
-  transition-delay: 0.14s;
-}
-
-.card:nth-child(4) {
-  transition-delay: 0.19s;
-}
-
-.card:nth-child(5) {
-  transition-delay: 0.24s;
-}
-
-
-/* =========================================================
+/* =========================
    KONTAKT
-========================================================= */
+========================= */
 
 #kontakt {
   position: relative;
 
-  padding:
-    82px 20px 92px;
+  padding: 82px 20px 92px;
 
   overflow: hidden;
 
   text-align: center;
-  color: white;
+  color: var(--white);
 
   background:
     linear-gradient(
@@ -682,7 +707,7 @@ header nav a:last-child {
 }
 
 #kontakt h2 {
-  color: white;
+  color: var(--white);
 }
 
 #kontakt p,
@@ -711,19 +736,9 @@ header nav a:last-child {
 
   margin-bottom: 10px;
 
-  padding: 14px 18px;
-
-  color: white;
+  color: var(--white);
 
   font-size: 1.25rem;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.14);
-
-  border-radius: 14px;
-
-  background:
-    rgba(255, 255, 255, 0.06);
 }
 
 #kontakt a:not(.button) {
@@ -735,10 +750,9 @@ header nav a:last-child {
   margin-top: 18px;
 }
 
-
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
   padding: 26px 18px;
@@ -750,6 +764,10 @@ footer {
 
   font-size: 0.9rem;
   text-align: center;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
 footer p {
@@ -757,389 +775,9 @@ footer p {
   margin: 0 auto;
 }
 
-
-/* =========================================================
-   ANIMATIONEN
-========================================================= */
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes hero-heading-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hero-text-in {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hero-button-in {
-  from {
-    opacity: 0;
-    transform:
-      translateY(12px)
-      scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform:
-      translateY(0)
-      scale(1);
-  }
-}
-
-
-/* =========================================================
-   SMARTPHONE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  :root {
-    --header-height: 68px;
-  }
-
-  header {
-    height: 68px;
-    min-height: 68px;
-
-    padding: 7px 14px;
-  }
-
-  .logo img {
-    width: 54px;
-    height: 54px;
-  }
-
-  .menu-button {
-    width: 46px;
-    height: 44px;
-
-    padding: 10px;
-  }
-
-  /*
-     Hero bleibt proportional zum Bild.
-     Schrift und Button skalieren mit.
-  */
-
-  .hero-text {
-    top: 5.5%;
-    left: 4.5%;
-
-    width: 55%;
-  }
-
-  .hero-text h1 {
-    margin-bottom: 4%;
-
-    font-size:
-      clamp(0.93rem, 4.45vw, 1.45rem);
-
-    line-height: 1.08;
-  }
-
-  .hero-text p {
-    margin-bottom: 5%;
-
-    font-size:
-      clamp(0.55rem, 2.3vw, 0.82rem);
-
-    line-height: 1.35;
-  }
-
-  .hero-text .button {
-    min-height: 34px;
-
-    padding: 7px 13px;
-
-    border-radius: 11px;
-
-    font-size:
-      clamp(0.57rem, 2.2vw, 0.76rem);
-  }
-
-  #leistungen {
-    padding:
-      62px 14px 76px;
-  }
-
-  #leistungen h2,
-  #kontakt h2 {
-    font-size: 2rem;
-  }
-
-  .cards {
-    gap: 22px;
-  }
-
-  .card img {
-    height: auto;
-    aspect-ratio: 16 / 9;
-
-    object-fit: cover;
-  }
-
-  .card h3 {
-    padding:
-      20px 18px 7px;
-
-    font-size: 1.2rem;
-  }
-
-  .card p {
-    padding:
-      0 18px 24px;
-  }
-
-  #kontakt {
-    padding:
-      70px 18px 82px;
-  }
-
-  #kontakt p,
-  #kontakt address {
-    font-size: 1rem;
-  }
-
-  #kontakt .button {
-    width: 100%;
-  }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (min-width: 700px) {
-
-  :root {
-    --header-height: 76px;
-  }
-
-  header {
-    height: 76px;
-    min-height: 76px;
-
-    padding: 9px 34px;
-  }
-
-  .logo img {
-    width: 58px;
-    height: 58px;
-  }
-
-  .menu-button {
-    display: none;
-  }
-
-  header nav {
-    position: static;
-
-    width: auto;
-    max-height: none;
-    padding: 0;
-
-    flex-direction: row;
-    align-items: center;
-
-    gap: 26px;
-
-    overflow: visible;
-
-    opacity: 1;
-    visibility: visible;
-
-    background: transparent;
-    box-shadow: none;
-  }
-
-  header nav a {
-    width: auto;
-
-    padding: 7px 0;
-
-    border: 0;
-
-    font-size: 0.98rem;
-  }
-
-  .hero-text {
-    top: 13%;
-    left: 4%;
-
-    width: 49%;
-  }
-
-  #leistungen {
-    padding:
-      92px 34px 105px;
-  }
-
-  .cards {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 28px;
-  }
-
-  .card img {
-    height: 240px;
-  }
-
-  #kontakt {
-    padding:
-      96px 34px 105px;
-  }
-}
-
-
-/* =========================================================
-   DESKTOP
-========================================================= */
-
-@media (min-width: 1050px) {
-
-  :root {
-    --header-height: 78px;
-  }
-
-  header {
-    height: 78px;
-    min-height: 78px;
-
-    padding:
-      9px
-      max(
-        45px,
-        calc((100vw - var(--content-width)) / 2)
-      );
-  }
-
-  .logo img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .hero-text {
-    top: 18%;
-    left:
-      max(
-        4%,
-        calc((100vw - var(--content-width)) / 2)
-      );
-
-    width: 48%;
-    max-width: 600px;
-  }
-
-  .hero-text h1 {
-    font-size:
-      clamp(2rem, 3.25vw, 3.35rem);
-  }
-
-  .hero-text p {
-    font-size:
-      clamp(0.8rem, 1.15vw, 1.15rem);
-  }
-
-  #leistungen {
-    padding:
-      100px
-      max(
-        50px,
-        calc((100vw - var(--content-width)) / 2)
-      )
-      120px;
-  }
-
-  .cards {
-    grid-template-columns:
-      repeat(6, minmax(0, 1fr));
-
-    gap: 30px;
-  }
-
-  .card {
-    grid-column: span 2;
-  }
-
-  .card:nth-child(4) {
-    grid-column: 2 / span 2;
-  }
-
-  .card:nth-child(5) {
-    grid-column: 4 / span 2;
-  }
-
-  .card img {
-    height: 235px;
-  }
-
-  #kontakt {
-    padding:
-      110px
-      max(
-        50px,
-        calc((100vw - 900px) / 2)
-      )
-      120px;
-  }
-}
-
-
-/* =========================================================
-   GROSSE BILDSCHIRME
-========================================================= */
-
-@media (min-width: 1500px) {
-
-  :root {
-    --content-width: 1280px;
-  }
-
-  .hero-text {
-    max-width: 650px;
-  }
-
-  .cards {
-    gap: 34px;
-  }
-
-  .card img {
-    height: 255px;
-  }
-}
-
-
-/* =========================================================
+/* =========================
    SCHWEBENDE KONTAKT-BUTTONS
-========================================================= */
+========================= */
 
 .contact-buttons {
   position: fixed;
@@ -1158,23 +796,22 @@ footer p {
 
 .quick-contact {
   position: relative;
-  overflow: hidden;
 
   min-width: 220px;
   min-height: 60px;
 
-  padding:
-    9px 17px 9px 10px;
+  padding: 9px 17px 9px 10px;
 
   display: flex;
   align-items: center;
 
   gap: 12px;
 
-  color: white;
+  color: #ffffff;
 
   border:
-    1px solid rgba(255, 255, 255, 0.44);
+    1px solid
+    rgba(255, 255, 255, 0.44);
 
   border-radius: 999px;
 
@@ -1216,6 +853,8 @@ footer p {
 }
 
 .contact-icon svg {
+  display: block;
+
   width: 24px;
   height: 24px;
 
@@ -1230,7 +869,7 @@ footer p {
 }
 
 .contact-label strong {
-  color: white;
+  color: #ffffff;
 
   font-size: 0.98rem;
   font-weight: 800;
@@ -1246,42 +885,274 @@ footer p {
   font-weight: 600;
 }
 
+/* =========================
+   ANIMATIONEN
+========================= */
+
+.hero-text h1 {
+  animation:
+    hero-heading-in
+    0.75s ease
+    0.1s both;
+}
+
+.hero-text p {
+  animation:
+    hero-text-in
+    0.75s ease
+    0.23s both;
+}
+
+.hero-text .button {
+  animation:
+    hero-button-in
+    0.75s ease
+    0.36s both;
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-heading-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-button-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* =========================================================
-   KONTAKT-BUTTONS SMARTPHONE
+   SMARTPHONE
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 699px) {
+
+  :root {
+    --header-height: 126px;
+  }
+
+  header {
+    padding: 12px 26px;
+
+    min-height: 126px;
+  }
+
+  .logo img {
+    width: 102px;
+    height: 102px;
+
+    border-radius: 12px;
+  }
+
+  .menu-button {
+    width: 86px;
+    height: 86px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .menu-button span {
+    height: 5px;
+  }
+
+  .menu-button.menu-open span:nth-child(1) {
+    transform:
+      translateY(20px)
+      rotate(45deg);
+  }
+
+  .menu-button.menu-open span:nth-child(3) {
+    transform:
+      translateY(-20px)
+      rotate(-45deg);
+  }
+
+  /*
+     Hero-Bild behält sein echtes Seitenverhältnis.
+     Dadurch ist wirklich das gesamte Bild sichtbar.
+  */
+
+  .hero {
+    width: 100%;
+  }
+
+  .hero > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /*
+     Überschrift breiter über den Himmel.
+     Rechts wird bewusst mehr Platz genutzt.
+  */
+
+  .hero-text {
+    top: 5%;
+    left: 4.5%;
+    right: 3%;
+
+    width: auto;
+  }
+
+  .hero-text h1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 2.1%;
+
+    font-size:
+      clamp(
+        1.18rem,
+        5.2vw,
+        2.05rem
+      );
+
+    line-height: 1.05;
+
+    /*
+       Auf Mobil soll die Schrift nicht
+       unnötig auf eine schmale linke
+       Spalte gezwungen werden.
+    */
+
+    text-wrap: pretty;
+  }
+
+  .hero-text p {
+    margin-bottom: 2.5%;
+
+    font-size:
+      clamp(
+        0.68rem,
+        3.1vw,
+        1rem
+      );
+
+    line-height: 1.35;
+  }
+
+  /*
+     Glasbutton.
+     Bewusst nicht über die Bildmitte/Lkw.
+  */
+
+  .hero-text .button {
+    width: auto;
+
+    padding:
+      11px
+      clamp(17px, 5vw, 27px);
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.62);
+
+    border-radius: 18px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(31, 178, 238, 0.44),
+        rgba(0, 84, 147, 0.28)
+      );
+
+    font-size:
+      clamp(
+        0.72rem,
+        3.1vw,
+        0.95rem
+      );
+
+    backdrop-filter:
+      blur(6px)
+      saturate(1.15);
+
+    -webkit-backdrop-filter:
+      blur(6px)
+      saturate(1.15);
+  }
+
+  #leistungen {
+    padding:
+      70px
+      26px
+      80px;
+  }
+
+  .cards {
+    gap: 24px;
+  }
+
+  .card img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+  }
 
   .contact-buttons {
-    left: 12px;
-    bottom: 12px;
+    left: 22px;
+    bottom: 18px;
 
-    gap: 8px;
+    gap: 10px;
   }
 
   .quick-contact {
-    min-width: 58px;
-    width: 58px;
+    width: 108px;
+    min-width: 108px;
 
-    min-height: 58px;
     height: 58px;
+    min-height: 58px;
 
-    padding: 8px;
+    padding: 7px 9px;
 
-    justify-content: center;
+    justify-content: flex-start;
+
+    gap: 7px;
   }
 
   .contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
-    flex-basis: 40px;
-  }
-
-  .contact-icon svg {
-    width: 23px;
-    height: 23px;
+    flex: 0 0 42px;
   }
 
   .contact-label {
@@ -1289,38 +1160,365 @@ footer p {
   }
 }
 
-
 /* =========================================================
    SEHR KLEINE SMARTPHONES
 ========================================================= */
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
 
-  .contact-buttons {
-    left: 9px;
-    bottom: 9px;
+  :root {
+    --header-height: 112px;
   }
 
-  .quick-contact {
-    width: 54px;
-    min-width: 54px;
+  header {
+    min-height: 112px;
 
-    height: 54px;
-    min-height: 54px;
+    padding:
+      10px
+      20px;
   }
 
-  .contact-icon {
-    width: 38px;
-    height: 38px;
+  .logo img {
+    width: 88px;
+    height: 88px;
+  }
 
-    flex-basis: 38px;
+  .menu-button {
+    width: 74px;
+    height: 74px;
+
+    padding: 17px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.08rem;
+  }
+
+  .hero-text p {
+    font-size: 0.66rem;
+  }
+
+  .hero-text .button {
+    padding:
+      9px
+      15px;
+
+    font-size: 0.7rem;
   }
 }
 
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+  :root {
+    --header-height: 86px;
+  }
+
+  header {
+    padding:
+      14px
+      34px;
+  }
+
+  .logo img {
+    width: 82px;
+    height: 62px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  header nav {
+    position: static;
+
+    width: auto;
+    max-height: none;
+
+    padding: 0;
+
+    flex-direction: row;
+    align-items: center;
+
+    gap: 26px;
+
+    overflow: visible;
+
+    opacity: 1;
+    visibility: visible;
+
+    background: transparent;
+
+    border: 0;
+    box-shadow: none;
+  }
+
+  header nav a {
+    position: relative;
+
+    width: auto;
+
+    padding: 7px 0;
+
+    border: 0;
+
+    font-size: 0.98rem;
+  }
+
+  header nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--cyan-400);
+
+    transition: width 0.25s ease;
+  }
+
+  header nav a:hover::after {
+    width: 100%;
+  }
+
+  /*
+     Auch Tablet/Desktop:
+     Bildhöhe kommt vom Bild selbst.
+  */
+
+  .hero > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /*
+     Auf breiten Bildschirmen kann die
+     Überschrift besonders viel Himmel nutzen.
+  */
+
+  .hero-text {
+    top: 13%;
+    left: 4%;
+    right: 4%;
+  }
+
+  .hero-text h1 {
+    max-width: 82%;
+
+    font-size:
+      clamp(
+        2rem,
+        4vw,
+        3.7rem
+      );
+  }
+
+  .hero-text p {
+    font-size:
+      clamp(
+        0.9rem,
+        1.4vw,
+        1.2rem
+      );
+  }
+
+  #leistungen {
+    padding:
+      92px
+      34px
+      105px;
+  }
+
+  .cards {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 28px;
+  }
+
+  .card img {
+    height: 240px;
+  }
+
+  #kontakt {
+    padding:
+      96px
+      34px
+      105px;
+  }
+}
 
 /* =========================================================
-   TOUCHGERÄTE
+   DESKTOP
 ========================================================= */
+
+@media (min-width: 1050px) {
+
+  header {
+    padding:
+      15px
+      max(
+        55px,
+        calc(
+          (100vw - var(--content-width))
+          / 2
+        )
+      );
+  }
+
+  .logo img {
+    width: 90px;
+    height: 68px;
+  }
+
+  /*
+     Breite Überschrift über den Himmel.
+     Trotzdem bleibt der Lkw weitgehend frei.
+  */
+
+  .hero-text {
+    top: 14%;
+    left:
+      max(
+        4%,
+        calc(
+          (100vw - var(--content-width))
+          / 2
+        )
+      );
+
+    right:
+      max(
+        4%,
+        calc(
+          (100vw - var(--content-width))
+          / 2
+        )
+      );
+  }
+
+  .hero-text h1 {
+    max-width: 74%;
+
+    font-size:
+      clamp(
+        2.4rem,
+        3.9vw,
+        4.25rem
+      );
+  }
+
+  .hero-text p {
+    font-size:
+      clamp(
+        1rem,
+        1.35vw,
+        1.35rem
+      );
+  }
+
+  .hero-text .button {
+    font-size:
+      clamp(
+        0.9rem,
+        1.15vw,
+        1.1rem
+      );
+  }
+
+  #leistungen {
+    padding:
+      110px
+      max(
+        50px,
+        calc(
+          (100vw - var(--content-width))
+          / 2
+        )
+      )
+      125px;
+  }
+
+  .cards {
+    grid-template-columns:
+      repeat(
+        6,
+        minmax(0, 1fr)
+      );
+
+    gap: 30px;
+  }
+
+  .card {
+    grid-column: span 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column:
+      2 / span 2;
+  }
+
+  .card:nth-child(5) {
+    grid-column:
+      4 / span 2;
+  }
+
+  .card img {
+    height: 235px;
+  }
+
+  #kontakt {
+    padding:
+      115px
+      max(
+        50px,
+        calc(
+          (100vw - 900px)
+          / 2
+        )
+      )
+      125px;
+  }
+}
+
+/* =========================================================
+   GROSSE BILDSCHIRME
+========================================================= */
+
+@media (min-width: 1500px) {
+
+  :root {
+    --content-width: 1280px;
+  }
+
+  .hero-text h1 {
+    max-width: 70%;
+  }
+
+  .cards {
+    gap: 34px;
+  }
+
+  .card img {
+    height: 255px;
+  }
+}
+
+/* =========================
+   TOUCH / KEIN HOVER
+========================= */
 
 @media (hover: none) {
 
@@ -1328,20 +1526,11 @@ footer p {
     transform: none;
     box-shadow: var(--shadow-small);
   }
-
-  .card:hover img {
-    transform: none;
-  }
-
-  .card:hover::after {
-    transform: scaleX(0);
-  }
 }
 
-
-/* =========================================================
+/* =========================
    WENIGER BEWEGUNG
-========================================================= */
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1352,14 +1541,18 @@ footer p {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
   }
 
   .card {
     opacity: 1;
     transform: none;
-    transition-delay: 0s;
   }
 }
