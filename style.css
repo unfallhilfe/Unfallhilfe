@@ -1,6 +1,7 @@
 /* =========================================================
    SVB-MV – SACHVERSTÄNDIGENBÜRO BERND HACKBARTH
    KOMPLETTE STYLE.CSS
+   Hero: vollständiges Bild ohne Beschnitt
 ========================================================= */
 
 :root {
@@ -32,20 +33,17 @@
   --shadow-medium:
     0 16px 38px rgba(0, 38, 68, 0.18);
 
-  --shadow-large:
-    0 28px 65px rgba(0, 26, 48, 0.3);
-
   --radius-small: 10px;
   --radius-medium: 18px;
-  --radius-large: 28px;
 
   --content-width: 1180px;
   --header-height: 78px;
 }
 
-/* =========================
-   Reset und Basis
-========================= */
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -65,11 +63,7 @@ body {
   background: var(--gray-50);
   color: var(--text);
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -79,15 +73,11 @@ button,
 input,
 textarea,
 select {
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
   display: block;
-  width: 100%;
   max-width: 100%;
 }
 
@@ -127,9 +117,10 @@ h3 {
   color: var(--white);
 }
 
-/* =========================
-   Fokus
-========================= */
+
+/* =========================================================
+   FOKUS
+========================================================= */
 
 a:focus-visible,
 button:focus-visible {
@@ -137,9 +128,10 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* =========================
-   Header
-========================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header {
   position: sticky;
@@ -165,14 +157,12 @@ header {
 
   box-shadow:
     0 6px 20px rgba(0, 0, 0, 0.2);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
 }
 
-/* =========================
-   Logo
-========================= */
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
   position: relative;
@@ -193,14 +183,14 @@ header {
   height: 56px;
 
   object-fit: contain;
-  object-position: left center;
 
   border-radius: 8px;
 }
 
-/* =========================
-   Hamburger
-========================= */
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
 
 .menu-button {
   position: relative;
@@ -208,31 +198,23 @@ header {
 
   width: 48px;
   height: 46px;
+
   padding: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.24);
+
   border-radius: var(--radius-small);
 
-  background: rgba(255, 255, 255, 0.08);
+  background:
+    rgba(255, 255, 255, 0.08);
+
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.menu-button:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.42);
-}
-
-.menu-button:active {
-  transform: scale(0.96);
 }
 
 .menu-button span {
@@ -242,6 +224,7 @@ header {
   height: 3px;
 
   border-radius: 999px;
+
   background: var(--white);
 
   transition:
@@ -261,9 +244,10 @@ header {
   transform: translateY(-11px) rotate(-45deg);
 }
 
-/* =========================
-   Navigation
-========================= */
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 header nav {
   position: absolute;
@@ -272,12 +256,14 @@ header nav {
 
   width: 100%;
   max-height: 0;
+
   padding: 0 18px;
 
   display: flex;
   flex-direction: column;
 
   overflow: hidden;
+
   opacity: 0;
   visibility: hidden;
 
@@ -288,18 +274,17 @@ header nav {
       rgba(0, 27, 50, 0.995)
     );
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: var(--shadow-medium);
 
   transition:
     max-height 0.35s ease,
     padding 0.35s ease,
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+    opacity 0.25s ease;
 }
 
 header nav.nav-open {
   max-height: 360px;
+
   padding: 14px 18px 22px;
 
   opacity: 1;
@@ -308,65 +293,72 @@ header nav.nav-open {
 
 header nav a {
   width: 100%;
+
   padding: 15px 7px;
 
   color: var(--white);
+
   font-weight: 700;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.13);
 }
 
 header nav a:last-child {
   border-bottom: 0;
 }
 
+
 /* =========================================================
    HERO
-   Originalbild ohne dunklen Verlauf / ohne Mattierung
+   WICHTIG:
+   Das Bild selbst bestimmt die Höhe.
+   Kein cover.
+   Kein Beschnitt.
 ========================================================= */
 
 .hero {
   position: relative;
 
-  min-height: 660px;
-
-  display: flex;
-  align-items: flex-start;
+  width: 100%;
 
   overflow: hidden;
 
-  background: #006aa4;
+  background: #006ba7;
 }
 
+
 /*
-   Das Bild bleibt kräftig.
-   Kein Filter.
-   Keine Abdunklung.
-   Keine Skalierung.
+   Das Hero-Bild bleibt im normalen Dokumentfluss.
+
+   width: 100%
+   height: auto
+
+   = komplettes Bild bleibt sichtbar.
 */
 
 .hero > img {
-  position: absolute;
-  inset: 0;
+  position: relative;
 
   width: 100%;
-  height: 100%;
+  height: auto;
 
-  object-fit: cover;
+  max-width: none;
 
-  /*
-     Auf dem Smartphone wird mehr von der rechten Bildhälfte
-     gezeigt, damit LKW, Traktor und Boot sichtbar bleiben.
-  */
-  object-position: 58% center;
+  object-fit: contain;
 
   filter: none;
   transform: none;
+
+  z-index: 0;
 }
 
+
 /*
-   WICHTIG:
-   Keine dunkle Ebene mehr über dem Bild.
+   KEINE Abdunklung.
+   KEIN Verlauf.
+   KEIN Farbschleier.
 */
 
 .hero::before,
@@ -374,72 +366,113 @@ header nav a:last-child {
   display: none;
 }
 
-/* =========================
-   Hero Text
-========================= */
+
+/* =========================================================
+   HERO-TEXT
+
+   Absolut über dem Bild.
+   Schriftgrößen skalieren mit der Bildschirmbreite.
+========================================================= */
 
 .hero-text {
-  position: relative;
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
   z-index: 2;
 
-  width: min(100%, var(--content-width));
-  margin: 0 auto;
+  transform: translateX(-50%);
 
-  padding: 42px 28px 40px;
+  width: min(100%, var(--content-width));
+  height: 100%;
+
+  padding:
+    clamp(22px, 5vw, 72px)
+    clamp(20px, 4vw, 50px);
 
   color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-/*
-   Der Text erhält nur einen Schatten.
-   Dadurch bleibt das Bild selbst unverändert.
-*/
+
+/* =========================================================
+   HERO ÜBERSCHRIFT
+========================================================= */
 
 .hero-text h1 {
-  max-width: 620px;
-  margin-bottom: 24px;
+  width: 56%;
+  max-width: 720px;
 
-  font-size: clamp(2rem, 8vw, 4.8rem);
-  line-height: 1.05;
+  margin-bottom:
+    clamp(8px, 1.7vw, 24px);
+
+  font-size:
+    clamp(1.25rem, 4.1vw, 3.65rem);
+
+  line-height: 1.04;
+
   letter-spacing: -0.035em;
+
   font-weight: 800;
-
-  text-shadow:
-    0 2px 3px rgba(0, 0, 0, 0.8),
-    0 4px 12px rgba(0, 0, 0, 0.45);
-}
-
-.hero-text p {
-  margin-bottom: 26px;
 
   color: #ffffff;
 
-  font-size: 1.12rem;
-  line-height: 1.45;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.95),
+    0 4px 10px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   HERO UNTERTEXT
+========================================================= */
+
+.hero-text p {
+  margin-bottom:
+    clamp(10px, 2vw, 26px);
+
+  color: #ffffff;
+
+  font-size:
+    clamp(0.78rem, 1.45vw, 1.3rem);
+
+  line-height: 1.4;
+
   font-weight: 800;
 
   text-shadow:
-    0 2px 3px rgba(0, 0, 0, 0.85),
-    0 3px 9px rgba(0, 0, 0, 0.5);
+    0 2px 3px rgba(0, 0, 0, 0.95),
+    0 3px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* =========================
-   Buttons
-========================= */
+
+/* =========================================================
+   NORMALER BUTTON
+========================================================= */
 
 .button {
   position: relative;
-  overflow: hidden;
 
-  min-height: 56px;
-  padding: 15px 24px;
+  min-height:
+    clamp(38px, 5vw, 56px);
+
+  padding:
+    clamp(8px, 1.3vw, 15px)
+    clamp(14px, 2.1vw, 24px);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   border: 0;
-  border-radius: 14px;
+
+  border-radius:
+    clamp(9px, 1.2vw, 14px);
 
   background:
     linear-gradient(
@@ -449,59 +482,35 @@ header nav a:last-child {
     );
 
   color: var(--white);
-  font-size: 1rem;
+
+  font-size:
+    clamp(0.72rem, 1.2vw, 1rem);
+
   font-weight: 800;
+
   text-align: center;
 
   box-shadow:
-    0 11px 27px rgba(0, 126, 211, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 8px 22px
+    rgba(0, 126, 211, 0.38);
 
   transition:
     transform 0.22s ease,
-    box-shadow 0.22s ease,
-    filter 0.22s ease;
-}
-
-.button::before {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: -130%;
-
-  width: 80%;
-  height: 100%;
-
-  background:
-    linear-gradient(
-      115deg,
-      transparent,
-      rgba(255, 255, 255, 0.34),
-      transparent
-    );
-
-  transform: skewX(-18deg);
-  transition: left 0.55s ease;
+    box-shadow 0.22s ease;
 }
 
 .button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 17px 36px rgba(0, 126, 211, 0.44),
-    inset 0 1px 0 rgba(255, 255, 255, 0.32);
-
-  filter: brightness(1.05);
+    0 14px 30px
+    rgba(0, 126, 211, 0.45);
 }
 
-.button:hover::before {
-  left: 145%;
-}
 
-/* =========================
-   Leistungen
-========================= */
+/* =========================================================
+   LEISTUNGEN
+========================================================= */
 
 #leistungen {
   padding: 76px 18px 88px;
@@ -516,7 +525,8 @@ header nav a:last-child {
 
 #leistungen,
 #kontakt {
-  scroll-margin-top: calc(var(--header-height) + 10px);
+  scroll-margin-top:
+    calc(var(--header-height) + 10px);
 }
 
 #leistungen h2,
@@ -525,8 +535,11 @@ header nav a:last-child {
 
   color: var(--navy-950);
 
-  font-size: clamp(2rem, 7vw, 3.35rem);
+  font-size:
+    clamp(2rem, 7vw, 3.35rem);
+
   line-height: 1.08;
+
   letter-spacing: -0.025em;
 
   text-align: center;
@@ -540,6 +553,7 @@ header nav a:last-child {
 
   width: 76px;
   height: 5px;
+
   margin: 15px auto 0;
 
   border-radius: 999px;
@@ -552,15 +566,19 @@ header nav a:last-child {
     );
 }
 
-/* =========================
-   Karten
-========================= */
+
+/* =========================================================
+   KARTEN
+========================================================= */
 
 .cards {
-  width: min(100%, var(--content-width));
+  width:
+    min(100%, var(--content-width));
+
   margin: 0 auto;
 
   display: grid;
+
   grid-template-columns: 1fr;
 
   gap: 26px;
@@ -570,20 +588,28 @@ header nav a:last-child {
   position: relative;
 
   min-height: 100%;
+
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
 
-  border: 1px solid var(--border);
-  border-radius: var(--radius-medium);
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-medium);
 
   background: #ffffff;
 
-  box-shadow: var(--shadow-small);
+  box-shadow:
+    var(--shadow-small);
 
   opacity: 0;
-  transform: translateY(36px);
+
+  transform:
+    translateY(36px);
 
   transition:
     opacity 0.6s ease,
@@ -593,12 +619,17 @@ header nav a:last-child {
 
 .card.show {
   opacity: 1;
-  transform: translateY(0);
+
+  transform:
+    translateY(0);
 }
 
 .card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow-medium);
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    var(--shadow-medium);
 }
 
 .card img {
@@ -610,36 +641,46 @@ header nav a:last-child {
 }
 
 .card h3 {
-  padding: 23px 21px 8px;
+  padding:
+    23px 21px 8px;
 
-  color: var(--text-dark);
+  color:
+    var(--text-dark);
 
   font-size: 1.3rem;
+
   line-height: 1.25;
 }
 
 .card p {
   flex-grow: 1;
 
-  padding: 0 21px 27px;
+  padding:
+    0 21px 27px;
 
-  color: var(--gray-500);
+  color:
+    var(--gray-500);
+
   font-size: 1rem;
 }
 
-/* =========================
-   Kontakt
-========================= */
+
+/* =========================================================
+   KONTAKT
+========================================================= */
 
 #kontakt {
   position: relative;
 
-  padding: 82px 20px 92px;
+  padding:
+    82px 20px 92px;
 
   overflow: hidden;
 
   text-align: center;
-  color: var(--white);
+
+  color:
+    var(--white);
 
   background:
     linear-gradient(
@@ -661,10 +702,13 @@ header nav a:last-child {
 #kontakt p,
 #kontakt address {
   width: min(100%, 650px);
+
   margin-right: auto;
   margin-left: auto;
 
-  color: rgba(255, 255, 255, 0.9);
+  color:
+    rgba(255, 255, 255, 0.9);
+
   font-size: 1.07rem;
 }
 
@@ -680,9 +724,9 @@ header nav a:last-child {
   display: inline-block;
 
   margin-bottom: 10px;
-  padding: 14px 18px;
 
   color: var(--white);
+
   font-size: 1.25rem;
 }
 
@@ -695,45 +739,35 @@ header nav a:last-child {
   margin-top: 18px;
 }
 
-/* =========================
-   Footer
-========================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
   padding: 26px 18px;
 
   background: #00182b;
 
-  color: rgba(255, 255, 255, 0.76);
+  color:
+    rgba(255, 255, 255, 0.76);
 
   font-size: 0.9rem;
+
   text-align: center;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
 footer p {
-  width: min(100%, var(--content-width));
+  width:
+    min(100%, var(--content-width));
+
   margin: 0 auto;
 }
 
-/* =========================
-   Animationen
-========================= */
-
-body {
-  animation: page-fade-in 0.45s ease both;
-}
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
 
 /* =========================================================
    SMARTPHONE
@@ -750,76 +784,85 @@ body {
   }
 
   .logo img {
-    width: 94px;
-    height: 94px;
+    width: 74px;
+    height: 74px;
   }
 
   .menu-button {
-    width: 58px;
-    height: 54px;
+    width: 54px;
+    height: 50px;
   }
 
-  /*
-     Mehr Höhe für das Hero.
-     Dadurch wirkt das Bild nicht mehr wie ein schmaler Banner.
-  */
-
-  .hero {
-    min-height: 650px;
-  }
 
   /*
-     Keine Mattierung.
-     Das Bild wird nicht vergrößert.
+     WICHTIG:
+     Auch auf dem Smartphone bleibt das komplette
+     Bild im Original-Seitenverhältnis erhalten.
   */
 
   .hero > img {
-    object-fit: cover;
-    object-position: 58% center;
+    width: 100%;
+    height: auto;
 
-    filter: none;
-    transform: none;
+    object-fit: contain;
   }
+
+
+  /*
+     Der Text wird proportional kleiner,
+     damit er zum kleineren Hero-Bild passt.
+  */
 
   .hero-text {
     padding:
-      38px
-      28px
-      38px;
+      4.5vw
+      4.5vw;
+
+    justify-content: center;
   }
 
-  /*
-     Überschrift bewusst kleiner als vorher,
-     damit mehr vom Motiv sichtbar bleibt.
-  */
-
   .hero-text h1 {
-    max-width: 390px;
+    width: 59%;
 
-    margin-bottom: 24px;
+    margin-bottom: 1.8vw;
 
-    font-size: clamp(2rem, 9vw, 2.7rem);
-    line-height: 1.08;
+    font-size:
+      clamp(1.05rem, 5.2vw, 1.55rem);
+
+    line-height: 1.04;
+
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.95),
+      0 2px 5px rgba(0, 0, 0, 0.65);
   }
 
   .hero-text p {
-    margin-bottom: 26px;
+    margin-bottom: 2.3vw;
 
-    font-size: 1.08rem;
-    line-height: 1.45;
+    font-size:
+      clamp(0.62rem, 2.8vw, 0.85rem);
+
+    line-height: 1.32;
   }
 
   .hero-text .button {
     width: auto;
 
-    min-height: 58px;
-    padding: 15px 24px;
+    min-height: 34px;
 
-    font-size: 1rem;
+    padding:
+      7px 12px;
+
+    font-size:
+      clamp(0.62rem, 2.6vw, 0.8rem);
+
+    border-radius: 9px;
   }
 
+
   #leistungen {
-    padding: 70px 14px 80px;
+    padding:
+      64px 14px 76px;
   }
 
   .cards {
@@ -831,23 +874,27 @@ body {
   }
 
   .card h3 {
-    padding: 20px 18px 7px;
+    padding:
+      20px 18px 7px;
 
     font-size: 1.2rem;
   }
 
   .card p {
-    padding: 0 18px 24px;
+    padding:
+      0 18px 24px;
   }
 
   #kontakt {
-    padding: 70px 18px 82px;
+    padding:
+      70px 18px 82px;
   }
 }
 
-/* =========================
-   Tablet
-========================= */
+
+/* =========================================================
+   TABLET / DESKTOP NAVIGATION
+========================================================= */
 
 @media (min-width: 700px) {
 
@@ -856,7 +903,8 @@ body {
   }
 
   header {
-    padding: 14px 34px;
+    padding:
+      14px 34px;
   }
 
   .logo img {
@@ -872,10 +920,13 @@ body {
     position: static;
 
     width: auto;
+
     max-height: none;
+
     padding: 0;
 
     flex-direction: row;
+
     align-items: center;
 
     gap: 26px;
@@ -883,11 +934,11 @@ body {
     overflow: visible;
 
     opacity: 1;
+
     visibility: visible;
 
     background: transparent;
 
-    border: 0;
     box-shadow: none;
   }
 
@@ -901,25 +952,9 @@ body {
     font-size: 0.98rem;
   }
 
-  .hero {
-    min-height: 720px;
-    align-items: center;
-  }
-
-  .hero > img {
-    object-position: center center;
-  }
-
-  .hero-text {
-    padding: 90px 46px;
-  }
-
-  .hero-text p {
-    font-size: 1.28rem;
-  }
-
   #leistungen {
-    padding: 92px 34px 105px;
+    padding:
+      92px 34px 105px;
   }
 
   .cards {
@@ -934,13 +969,15 @@ body {
   }
 
   #kontakt {
-    padding: 96px 34px 105px;
+    padding:
+      96px 34px 105px;
   }
 }
 
-/* =========================
-   Desktop
-========================= */
+
+/* =========================================================
+   DESKTOP
+========================================================= */
 
 @media (min-width: 1050px) {
 
@@ -949,7 +986,9 @@ body {
       15px
       max(
         55px,
-        calc((100vw - var(--content-width)) / 2)
+        calc(
+          (100vw - var(--content-width)) / 2
+        )
       );
   }
 
@@ -958,28 +997,38 @@ body {
     height: 68px;
   }
 
-  .hero {
-    min-height: 790px;
-  }
+
+  /*
+     Auch Desktop:
+     keine feste Hero-Höhe.
+     Bild bestimmt die Höhe.
+  */
 
   .hero > img {
-    object-position: center center;
+    width: 100%;
+    height: auto;
   }
 
   .hero-text {
-    padding: 110px 0;
+    padding:
+      clamp(40px, 5vw, 80px)
+      0;
   }
 
   .hero-text h1 {
-    max-width: 920px;
+    width: 54%;
+    max-width: 720px;
   }
+
 
   #leistungen {
     padding:
       110px
       max(
         50px,
-        calc((100vw - var(--content-width)) / 2)
+        calc(
+          (100vw - var(--content-width)) / 2
+        )
       )
       125px;
   }
@@ -992,15 +1041,18 @@ body {
   }
 
   .card {
-    grid-column: span 2;
+    grid-column:
+      span 2;
   }
 
   .card:nth-child(4) {
-    grid-column: 2 / span 2;
+    grid-column:
+      2 / span 2;
   }
 
   .card:nth-child(5) {
-    grid-column: 4 / span 2;
+    grid-column:
+      4 / span 2;
   }
 
   .card img {
@@ -1012,11 +1064,14 @@ body {
       115px
       max(
         50px,
-        calc((100vw - 900px) / 2)
+        calc(
+          (100vw - 900px) / 2
+        )
       )
       125px;
   }
 }
+
 
 /* =========================================================
    SCHWEBENDE KONTAKT-BUTTONS
@@ -1024,26 +1079,30 @@ body {
 
 .contact-buttons {
   position: fixed;
+
   left: 18px;
   bottom: 18px;
+
   z-index: 1300;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: flex-start;
 
   gap: 10px;
 }
 
 .quick-contact {
-  position: relative;
-
   min-width: 220px;
   min-height: 60px;
 
-  padding: 9px 17px 9px 10px;
+  padding:
+    9px 17px 9px 10px;
 
   display: flex;
+
   align-items: center;
 
   gap: 12px;
@@ -1057,7 +1116,8 @@ body {
   border-radius: 999px;
 
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.3);
+    0 12px 30px
+    rgba(0, 0, 0, 0.3);
 }
 
 .phone-contact {
@@ -1085,6 +1145,7 @@ body {
   flex: 0 0 42px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 50%;
@@ -1102,6 +1163,7 @@ body {
 
 .contact-label {
   display: flex;
+
   flex-direction: column;
 
   line-height: 1.15;
@@ -1111,6 +1173,7 @@ body {
   color: #ffffff;
 
   font-size: 0.98rem;
+
   font-weight: 800;
 }
 
@@ -1121,12 +1184,14 @@ body {
     rgba(255, 255, 255, 0.86);
 
   font-size: 0.77rem;
+
   font-weight: 600;
 }
 
-/* =========================
-   Kontaktbuttons Smartphone
-========================= */
+
+/* =========================================================
+   KONTAKTBUTTONS SMARTPHONE
+========================================================= */
 
 @media (max-width: 480px) {
 
@@ -1166,9 +1231,10 @@ body {
   }
 }
 
-/* =========================
-   Sehr kleine Smartphones
-========================= */
+
+/* =========================================================
+   SEHR KLEINE SMARTPHONES
+========================================================= */
 
 @media (max-width: 350px) {
 
@@ -1193,9 +1259,10 @@ body {
   }
 }
 
-/* =========================
-   Weniger Bewegung
-========================= */
+
+/* =========================================================
+   WENIGER BEWEGUNG
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1206,9 +1273,14 @@ body {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
   }
 
   .card {
