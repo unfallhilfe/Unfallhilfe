@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
   // -------------------------------------------------------
   // Leistungskarten beim Scrollen einblenden
   // -------------------------------------------------------
@@ -58,6 +59,103 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // -------------------------------------------------------
+  // Einsatzgebiet – Bild in Großansicht öffnen
+  // -------------------------------------------------------
+
+  const serviceAreaButton = document.querySelector(
+    ".service-area-image-button"
+  );
+
+  const imageLightbox = document.querySelector(
+    ".image-lightbox"
+  );
+
+  const lightboxCloseButton = document.querySelector(
+    ".image-lightbox-close"
+  );
+
+  const openLightbox = () => {
+    if (!imageLightbox) {
+      return;
+    }
+
+    imageLightbox.classList.add("is-open");
+    document.body.classList.add("lightbox-open");
+
+    imageLightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    if (lightboxCloseButton) {
+      lightboxCloseButton.focus();
+    }
+  };
+
+
+  const closeLightbox = () => {
+    if (!imageLightbox) {
+      return;
+    }
+
+    imageLightbox.classList.remove("is-open");
+    document.body.classList.remove("lightbox-open");
+
+    imageLightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    if (serviceAreaButton) {
+      serviceAreaButton.focus();
+    }
+  };
+
+
+  if (serviceAreaButton && imageLightbox) {
+    serviceAreaButton.addEventListener(
+      "click",
+      openLightbox
+    );
+  }
+
+
+  if (lightboxCloseButton) {
+    lightboxCloseButton.addEventListener(
+      "click",
+      closeLightbox
+    );
+  }
+
+
+  if (imageLightbox) {
+    imageLightbox.addEventListener(
+      "click",
+      (event) => {
+        if (event.target === imageLightbox) {
+          closeLightbox();
+        }
+      }
+    );
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        imageLightbox &&
+        imageLightbox.classList.contains("is-open")
+      ) {
+        closeLightbox();
+      }
+    }
+  );
+
+
   // -------------------------------------------------------
   // Aktuelles Jahr im Footer
   // -------------------------------------------------------
@@ -65,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearElement = document.querySelector("#current-year");
 
   if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+    yearElement.textContent =
+      new Date().getFullYear();
   }
 });
