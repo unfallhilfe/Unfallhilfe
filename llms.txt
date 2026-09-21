@@ -30,18 +30,18 @@ Schwerpunkte des Tätigkeitsgebietes sind Mecklenburg-Vorpommern und Brandenburg
 - Telefon: +49 3981 2629866
 - Mobil: +49 1520 5270675
 - E-Mail: info@svb-mv.de
-- Website: https://unfallhilfe.net/
+- Website: https://svb-mv.de/
 
 ## Wichtige Seiten
 
-- [Startseite](https://unfallhilfe.net/): Informationen über SVB-MV, Leistungen und Kontaktmöglichkeiten.
-- [Impressum](https://unfallhilfe.net/impressum.html): Rechtliche Anbieterinformationen.
-- [Datenschutz](https://unfallhilfe.net/datenschutz.html): Informationen zur Verarbeitung personenbezogener Daten.
+- [Startseite](https://svb-mv.de/): Informationen über SVB-MV, Leistungen und Kontaktmöglichkeiten.
+- [Impressum](https://svb-mv.de/impressum.html): Rechtliche Anbieterinformationen.
+- [Datenschutz](https://svb-mv.de/datenschutz.html): Informationen zur Verarbeitung personenbezogener Daten.
 
 ## Strukturierte Daten
 
-- [AI Dataset](https://unfallhilfe.net/ai-dataset.json): Strukturierte Informationen über das Sachverständigenbüro, Leistungen, Kontakt und Tätigkeitsgebiete.
-- [LLM Information](https://unfallhilfe.net/llm.txt): Zusätzliche maschinenlesbare Informationen über SVB-MV.
+- [AI Dataset](https://svb-mv.de/ai-dataset.json): Strukturierte Informationen über das Sachverständigenbüro, Leistungen, Kontakt und Tätigkeitsgebiete.
+- [LLM Information](https://svb-mv.de/llm.txt): Zusätzliche maschinenlesbare Informationen über SVB-MV.
 
 Die Startseite enthält zusätzlich strukturierte Schema.org-Daten im JSON-LD-Format.
 
