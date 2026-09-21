@@ -559,6 +559,178 @@ header nav a:last-child {
 
 
 /* =========================================================
+   EINSATZGEBIET
+========================================================= */
+
+.service-area-section {
+  padding: 4px 18px 30px;
+
+  background: var(--gray-50);
+}
+
+.service-area-image-button {
+  width: min(100%, 760px);
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  display: block;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-small);
+
+  cursor: zoom-in;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.service-area-image-button img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.service-area-image-button:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(0, 126, 211, 0.28);
+
+  box-shadow: var(--shadow-medium);
+}
+
+.service-area-image-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EINSATZGEBIET – GROSSANSICHT / LIGHTBOX
+========================================================= */
+
+.image-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  padding: 70px 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(0, 18, 33, 0.94);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.image-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.image-lightbox img {
+  width: auto;
+  height: auto;
+
+  max-width: min(96vw, 1500px);
+  max-height: calc(100vh - 100px);
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  background: var(--white);
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.48);
+
+  transform: scale(0.97);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.image-lightbox.is-open img {
+  transform: scale(1);
+}
+
+.image-lightbox-close {
+  position: fixed;
+
+  top: 16px;
+  right: 18px;
+
+  z-index: 5001;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.42);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 40, 70, 0.9);
+
+  color: var(--white);
+
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.3);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.image-lightbox-close:hover {
+  background: var(--blue-600);
+
+  transform: scale(1.06);
+}
+
+.image-lightbox-close:active {
+  transform: scale(0.96);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+
+/* =========================================================
    LEISTUNGEN
 ========================================================= */
 
@@ -1502,6 +1674,38 @@ body {
   }
 
 
+  .service-area-section {
+    padding:
+      2px 12px 24px;
+  }
+
+  .service-area-image-button {
+    border-radius: 14px;
+  }
+
+  .image-lightbox {
+    padding:
+      62px 8px 14px;
+  }
+
+  .image-lightbox img {
+    max-width: 98vw;
+    max-height: calc(100vh - 80px);
+
+    border-radius: 6px;
+  }
+
+  .image-lightbox-close {
+    top: 10px;
+    right: 10px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.8rem;
+  }
+
+
   #leistungen {
     padding:
       64px 14px 76px;
@@ -1762,6 +1966,16 @@ body {
   }
 
 
+  .service-area-section {
+    padding:
+      6px 34px 38px;
+  }
+
+  .service-area-image-button {
+    width: min(100%, 800px);
+  }
+
+
   #leistungen {
     padding:
       92px 34px 105px;
@@ -1901,6 +2115,16 @@ body {
   }
 
 
+  .service-area-section {
+    padding:
+      4px 50px 48px;
+  }
+
+  .service-area-image-button {
+    width: min(100%, 900px);
+  }
+
+
   #leistungen {
     padding:
       110px
@@ -1985,6 +2209,10 @@ body {
   .card img {
     height: 255px;
   }
+
+  .service-area-image-button {
+    width: min(100%, 960px);
+  }
 }
 
 
@@ -1993,6 +2221,14 @@ body {
 ========================================================= */
 
 @media (hover: none) {
+
+  .service-area-image-button:hover {
+    transform: none;
+
+    border-color: var(--border);
+
+    box-shadow: var(--shadow-small);
+  }
 
   .card:hover {
     transform: none;
@@ -2016,48 +2252,4 @@ body {
   }
 
   .card-details[open] summary:hover {
-    color: var(--navy-800);
-    background: var(--gray-50);
-  }
-
-  .faq-main-summary:hover {
-    color:
-      rgba(255, 255, 255, 0.88);
-  }
-
-  .faq-item > summary:hover {
-    color:
-      rgba(255, 255, 255, 0.86);
-  }
-}
-
-
-/* =========================================================
-   WENIGER BEWEGUNG
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration:
-      0.01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
-  }
-
-  .card {
-    opacity: 1;
-    transform: none;
-    transition-delay: 0s;
-  }
-}
+   
