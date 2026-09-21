@@ -2,102 +2,65 @@
 
 SVB-MV ist das unabhängige Sachverständigenbüro von Bernd Hackbarth mit Sitz in Neustrelitz, Mecklenburg-Vorpommern.
 
-Das Sachverständigenbüro erstellt Gutachten und Bewertungen für Kraftfahrzeuge, Land- und Baumaschinen sowie Boote und Yachten.
-
-## Ansprechpartner
-
-Bernd Hackbarth
-Kfz-Sachverständiger für Fahrzeugschäden und Fahrzeugbewertung
-
-## Kontakt
-
-- Sachverständigenbüro: SVB-MV | Sachverständigenbüro Bernd Hackbarth
-- Ansprechpartner: Bernd Hackbarth
-- Adresse: Schillerstraße 12, 17235 Neustrelitz, Deutschland
-- Telefon: +49 3981 2629866
-- Mobil: +49 1520 5270675
-- E-Mail: info@svb-mv.de
-- Website: https://unfallhilfe.net
+Website:
+https://svb-mv.de/
 
 ## Leistungen
 
-### Kfz-Unfallgutachten
+SVB-MV bietet unter anderem folgende Sachverständigenleistungen an:
 
-Professionelle Schadenaufnahme, Fotodokumentation und nachvollziehbare Gutachtenerstellung nach einem Verkehrsunfall.
-
-### Wertgutachten
-
-Bewertung von Fahrzeugen und Ermittlung des Fahrzeugwertes, unter anderem für Verkauf, Versicherung, Leasingrückgabe, Erbschaft und zur Dokumentation des Fahrzeugwertes.
-
-### Beweissicherung
-
-Sorgfältige Fotodokumentation und technische Beweissicherung bei Schäden, Streitfällen und unklaren Schadenursachen.
-
-### Land- und Baumaschinen
-
-Gutachten und Bewertungen für Traktoren, landwirtschaftliche Maschinen und Baumaschinen.
-
-### Boote und Yachten
-
-Schaden- und Wertgutachten für Boote und Yachten. Einsätze sind auf Wunsch EU-weit möglich.
-
-## Tätigkeitsbereiche
-
-Zu den begutachteten Fahrzeugen, Maschinen und Wasserfahrzeugen gehören insbesondere:
-
-- Pkw
-- Motorräder
-- Transporter
-- Lkw
-- Wohnmobile
-- Wohnwagen und Anhänger
-- Oldtimer
-- Traktoren
-- Landmaschinen
-- Baumaschinen
-- Boote
-- Yachten
-
-## Einsatzgebiet
-
-SVB-MV hat seinen Sitz in Neustrelitz in Mecklenburg-Vorpommern.
-
-Zu den wesentlichen Tätigkeitsregionen gehören:
-
-- Mecklenburg-Vorpommern
-- Brandenburg
-- Deutschland
-- Boote und Yachten: Einsätze auf Wunsch EU-weit
-
-## Schwerpunkte
-
-- Kfz-Sachverständiger
-- Kfz-Gutachter
-- Unfallgutachten
+- Kfz-Unfallgutachten
 - Schadengutachten
-- Fahrzeugbewertung
 - Wertgutachten
+- Fahrzeugbewertungen
 - Beweissicherung
-- Landmaschinen-Gutachten
-- Baumaschinen-Gutachten
-- Bootsgutachten
-- Yachtgutachten
+- Gutachten und Bewertungen für Landmaschinen
+- Gutachten und Bewertungen für Baumaschinen
+- Schaden- und Wertgutachten für Boote
+- Schaden- und Wertgutachten für Yachten
 
-## Rechtliche Informationen
+## Tätigkeitsgebiet
+
+Schwerpunkte des Tätigkeitsgebietes sind Mecklenburg-Vorpommern und Brandenburg.
+
+Leistungen werden auch überregional angeboten.
+
+Gutachten für Boote und Yachten sind auf Wunsch EU-weit möglich.
+
+## Kontakt
+
+SVB-MV | Sachverständigenbüro Bernd Hackbarth
+
+Bernd Hackbarth
+Schillerstraße 12
+17235 Neustrelitz
+Deutschland
+
+Telefon:
++49 3981 2629866
+
+Mobil:
++49 1520 5270675
+
+E-Mail:
+info@svb-mv.de
+
+Website:
+https://svb-mv.de/
+
+## Weitere Informationen
+
+Startseite:
+https://svb-mv.de/
 
 Impressum:
-https://unfallhilfe.net/impressum.html
+https://svb-mv.de/impressum.html
 
 Datenschutz:
-https://unfallhilfe.net/datenschutz.html
+https://svb-mv.de/datenschutz.html
 
-## Maschinenlesbare Informationen
+AI Dataset:
+https://svb-mv.de/ai-dataset.json
 
-Strukturierte Unternehmensinformationen:
-https://unfallhilfe.net/ai-dataset.json
-
-Die Website enthält zusätzlich strukturierte Schema.org-Daten im JSON-LD-Format.
-
-## Stand
-
-September 2026
+LLMs:
+https://svb-mv.de/llms.txt
