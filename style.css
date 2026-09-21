@@ -349,16 +349,17 @@ header nav a:last-child {
 
   z-index: 2;
 
-  top: 4%;
-  left: 4%;
+  inset: 0;
 
-  width: 92%;
-  max-width: none;
+  width: 100%;
+  height: 100%;
 
   margin: 0;
-  padding: 0;
+  padding: 4% 4% 3.2%;
 
   color: var(--white);
+
+  pointer-events: none;
 }
 
 .hero-text h1 {
@@ -370,12 +371,12 @@ header nav a:last-child {
   color: var(--white);
 
   font-size: clamp(
-    1.35rem,
-    5.35vw,
-    4.25rem
+    1.55rem,
+    5.8vw,
+    4.5rem
   );
 
-  line-height: 1.02;
+  line-height: 1.01;
   letter-spacing: -0.04em;
   font-weight: 800;
 
@@ -386,10 +387,6 @@ header nav a:last-child {
     0 4px 8px rgba(0, 0, 0, 0.65);
 }
 
-/*
-   Der bisherige Absatz "Kompetent. Unabhängig. Zuverlässig."
-   wird im nächsten Schritt aus dem HTML entfernt.
-*/
 .hero-text p {
   display: none;
 }
@@ -458,18 +455,29 @@ header nav a:last-child {
   transform: translateY(0);
 }
 
-/*
-   Im Hero sitzt der Termin-Button bewusst unten.
-   So bleibt der Himmel für die Überschrift frei
-   und die Fahrzeuge werden nicht überdeckt.
-*/
 .hero-text .button {
   position: absolute;
 
-  top: auto;
-  left: 0;
+  left: 50%;
+  bottom: 3.2%;
 
-  transform: none;
+  transform: translateX(-50%);
+
+  pointer-events: auto;
+
+  white-space: nowrap;
+}
+
+.hero-text .button:hover {
+  transform:
+    translateX(-50%)
+    translateY(-2px);
+}
+
+.hero-text .button:active {
+  transform:
+    translateX(-50%)
+    translateY(0);
 }
 
 .hero > img.hero-image-fade {
@@ -1585,20 +1593,26 @@ body {
   /* HERO */
 
   .hero-text {
-    top: 4%;
-    left: 4.5%;
+    inset: 0;
 
-    width: 91%;
+    width: 100%;
+    height: 100%;
+
+    padding:
+      3.3%
+      4.5%
+      2.6%;
   }
 
   .hero-text h1 {
     width: 100%;
+    max-width: none;
 
     margin: 0;
 
-    font-size: 5.35vw;
-    line-height: 1.03;
-    letter-spacing: -0.035em;
+    font-size: 6.25vw;
+    line-height: 1.01;
+    letter-spacing: -0.04em;
 
     text-wrap: balance;
   }
@@ -1610,26 +1624,33 @@ body {
   .hero-text .button {
     position: absolute;
 
-    /*
-       Das Hero-Bild ist ungefähr 69,5vw hoch.
-       Der Button wird dadurch unterhalb der Fahrzeuge
-       nahe dem unteren Bildrand positioniert.
-    */
-    top: 57vw;
-    left: 0;
+    left: 50%;
+    bottom: 2.7%;
 
     width: auto;
 
     padding:
-      2.3vw
-      4.5vw;
+      2.5vw
+      5.5vw;
 
-    font-size: 3.15vw;
+    font-size: 3.35vw;
     line-height: 1.1;
 
     border-radius: 9px;
 
     white-space: nowrap;
+
+    transform: translateX(-50%);
+  }
+
+  .hero-text .button:hover {
+    transform: translateX(-50%);
+  }
+
+  .hero-text .button:active {
+    transform:
+      translateX(-50%)
+      scale(0.98);
   }
 
 
@@ -1920,17 +1941,25 @@ body {
   /* HERO */
 
   .hero-text {
-    top: 5%;
-    left: 4%;
+    inset: 0;
 
-    width: 92%;
+    width: 100%;
+    height: 100%;
+
+    padding:
+      4%
+      4%
+      3%;
   }
 
   .hero-text h1 {
-    font-size:
-      clamp(2rem, 4.7vw, 3.8rem);
+    width: 100%;
+    max-width: 1100px;
 
-    line-height: 1.02;
+    font-size:
+      clamp(2.35rem, 5vw, 4.15rem);
+
+    line-height: 1.01;
   }
 
   .hero-text p {
@@ -1938,12 +1967,15 @@ body {
   }
 
   .hero-text .button {
-    top: 57vw;
+    left: 50%;
+    bottom: 3%;
 
     padding:
-      12px 26px;
+      12px 28px;
 
     font-size: 1rem;
+
+    transform: translateX(-50%);
   }
 
 
@@ -2075,29 +2107,28 @@ body {
   /* HERO */
 
   .hero-text {
-    top: 6%;
+    inset: 0;
 
-    left:
+    width: 100%;
+    height: 100%;
+
+    padding:
+      4%
       max(
         4%,
         calc((100vw - var(--content-width)) / 2)
-      );
-
-    width:
-      min(
-        92%,
-        var(--content-width)
-      );
+      )
+      3%;
   }
 
   .hero-text h1 {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1200px;
 
     font-size:
-      clamp(2.7rem, 4.2vw, 4.5rem);
+      clamp(3rem, 4.6vw, 4.9rem);
 
-    line-height: 1.02;
+    line-height: 1;
   }
 
   .hero-text p {
@@ -2105,12 +2136,15 @@ body {
   }
 
   .hero-text .button {
-    top: 57vw;
+    left: 50%;
+    bottom: 3%;
 
     padding:
-      14px 30px;
+      14px 32px;
 
     font-size: 1.05rem;
+
+    transform: translateX(-50%);
   }
 
 
@@ -2231,8 +2265,18 @@ body {
     width: min(100%, 960px);
   }
 
+  .hero-text h1 {
+    max-width: 1280px;
+
+    font-size:
+      clamp(3.4rem, 4.4vw, 5.3rem);
+  }
+
   .hero-text .button {
-    top: 57vw;
+    left: 50%;
+    bottom: 3%;
+
+    transform: translateX(-50%);
   }
 }
 
@@ -2286,6 +2330,10 @@ body {
     color:
       rgba(255, 255, 255, 0.86);
   }
+
+  .hero-text .button:hover {
+    transform: translateX(-50%);
+  }
 }
 
 
@@ -2317,4 +2365,4 @@ body {
     transform: none;
     transition-delay: 0s;
   }
-}
+     }
