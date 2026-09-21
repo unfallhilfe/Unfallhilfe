@@ -2252,4 +2252,48 @@ body {
   }
 
   .card-details[open] summary:hover {
-   
+    color: var(--navy-800);
+    background: var(--gray-50);
+  }
+
+  .faq-main-summary:hover {
+    color:
+      rgba(255, 255, 255, 0.88);
+  }
+
+  .faq-item > summary:hover {
+    color:
+      rgba(255, 255, 255, 0.86);
+  }
+}
+
+
+/* =========================================================
+   WENIGER BEWEGUNG
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+  .card {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+}
