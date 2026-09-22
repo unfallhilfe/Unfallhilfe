@@ -64,6 +64,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
+
+  animation: page-fade-in 0.35s ease both;
 }
 
 body,
@@ -438,6 +440,9 @@ header nav a:last-child {
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.9),
     0 4px 8px rgba(0, 0, 0, 0.65);
+
+  animation:
+    hero-heading-in 0.6s ease 0.08s both;
 }
 
 .hero-text p {
@@ -520,6 +525,9 @@ header nav a:last-child {
   pointer-events: auto;
 
   white-space: nowrap;
+
+  animation:
+    hero-button-in 0.6s ease 0.16s both;
 }
 
 .hero-text .button:hover {
@@ -1268,19 +1276,15 @@ body.lightbox-open {
 
   font-size: 1.15rem;
   line-height: 1;
-
-  transition: transform 0.25s ease;
 }
 
 .card-details summary:hover {
   color: var(--navy-800);
-
   background: var(--gray-50);
 }
 
 .card-details[open] summary {
   color: var(--navy-800);
-
   background: var(--gray-50);
 }
 
@@ -1472,6 +1476,182 @@ body.lightbox-open {
 
 #kontakt .button {
   margin-top: 18px;
+}
+
+
+/* =========================================================
+   PRESSE UND LINKS
+========================================================= */
+
+.press-section {
+  padding: 0 18px;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 44, 78, 0.99),
+      rgba(0, 24, 44, 0.995)
+    );
+}
+
+.press-main {
+  width: min(100%, 900px);
+
+  margin: 0 auto;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.press-main-summary {
+  position: relative;
+
+  width: 100%;
+
+  padding: 20px 48px 22px 4px;
+
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  user-select: none;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.press-main-summary::-webkit-details-marker {
+  display: none;
+}
+
+.press-main-summary::after {
+  content: "＋";
+
+  position: absolute;
+
+  top: 50%;
+  right: 6px;
+
+  transform: translateY(-50%);
+
+  color: #91e0ff;
+
+  font-size: 1.25rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.press-main[open] > .press-main-summary::after {
+  content: "−";
+}
+
+.press-main-summary:hover {
+  color: var(--white);
+}
+
+.press-list {
+  padding: 0 0 30px;
+}
+
+.press-item {
+  padding: 18px 20px 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+}
+
+.press-source {
+  margin-bottom: 5px;
+
+  color: #91e0ff;
+
+  font-size: 0.8rem;
+  line-height: 1.3;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+.press-item h3 {
+  margin-bottom: 8px;
+
+  color: var(--white);
+
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.press-item p {
+  margin-bottom: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.press-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  color: #91e0ff;
+
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-weight: 800;
+
+  border:
+    1px solid rgba(145, 224, 255, 0.28);
+
+  border-radius: 8px;
+
+  background:
+    rgba(145, 224, 255, 0.06);
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.press-link::after {
+  content: "↗";
+
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.press-link:hover {
+  color: var(--white);
+
+  background:
+    rgba(145, 224, 255, 0.12);
+
+  border-color:
+    rgba(145, 224, 255, 0.5);
 }
 
 
@@ -1673,21 +1853,6 @@ footer p {
 /* =========================================================
    ANIMATION
 ========================================================= */
-
-body {
-  animation:
-    page-fade-in 0.35s ease both;
-}
-
-.hero-text h1 {
-  animation:
-    hero-heading-in 0.6s ease 0.08s both;
-}
-
-.hero-text .button {
-  animation:
-    hero-button-in 0.6s ease 0.16s both;
-}
 
 @keyframes page-fade-in {
   from {
@@ -2204,6 +2369,52 @@ body {
     padding: 15px 20px;
   }
 
+
+  /* PRESSE UND LINKS */
+
+  .press-section {
+    padding: 0 16px;
+  }
+
+  .press-main-summary {
+    padding:
+      18px 42px 20px 2px;
+
+    font-size: 0.95rem;
+  }
+
+  .press-main-summary::after {
+    right: 4px;
+  }
+
+  .press-list {
+    padding-bottom: 24px;
+  }
+
+  .press-item {
+    padding: 16px 14px 17px;
+  }
+
+  .press-source {
+    font-size: 0.72rem;
+  }
+
+  .press-item h3 {
+    font-size: 0.98rem;
+  }
+
+  .press-item p {
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  .press-link {
+    padding: 8px 10px;
+
+    font-size: 0.85rem;
+  }
+
+
   .faq-section {
     padding: 0 16px;
   }
@@ -2370,8 +2581,6 @@ body {
   }
 
 
-  /* HERO */
-
   .hero-text {
     inset: 0;
 
@@ -2394,10 +2603,6 @@ body {
     line-height: 1;
   }
 
-  .hero-text p {
-    display: none;
-  }
-
   .hero-text .button {
     left: 50%;
     bottom: 2.8%;
@@ -2410,8 +2615,6 @@ body {
     transform: translateX(-50%);
   }
 
-
-  /* KONTAKTLEISTE */
 
   .hero-contact-bar {
     padding: 9px 24px;
@@ -2538,6 +2741,24 @@ body {
       96px 34px 105px;
   }
 
+
+  .press-section {
+    padding:
+      0 34px;
+  }
+
+  .press-main-summary {
+    padding:
+      22px 52px 24px 6px;
+
+    font-size: 1.03rem;
+  }
+
+  .press-item {
+    padding: 20px 22px 22px;
+  }
+
+
   .faq-section {
     padding:
       0 34px;
@@ -2614,8 +2835,6 @@ body {
   }
 
 
-  /* HERO */
-
   .hero-text {
     inset: 0;
 
@@ -2641,10 +2860,6 @@ body {
     line-height: 0.99;
   }
 
-  .hero-text p {
-    display: none;
-  }
-
   .hero-text .button {
     left: 50%;
     bottom: 2.8%;
@@ -2657,8 +2872,6 @@ body {
     transform: translateX(-50%);
   }
 
-
-  /* KONTAKTLEISTE */
 
   .hero-contact-bar {
     padding:
@@ -2795,6 +3008,21 @@ body {
     font-size: 1.12rem;
   }
 
+
+  .press-section {
+    padding:
+      0
+      max(
+        50px,
+        calc((100vw - 900px) / 2)
+      );
+  }
+
+  .press-main {
+    width: min(100%, 900px);
+  }
+
+
   .faq-section {
     padding:
       0
@@ -2908,6 +3136,21 @@ body {
     background: var(--gray-50);
   }
 
+  .press-main-summary:hover {
+    color:
+      rgba(255, 255, 255, 0.88);
+  }
+
+  .press-link:hover {
+    color: #91e0ff;
+
+    background:
+      rgba(145, 224, 255, 0.06);
+
+    border-color:
+      rgba(145, 224, 255, 0.28);
+  }
+
   .faq-main-summary:hover {
     color:
       rgba(255, 255, 255, 0.88);
@@ -2956,4 +3199,4 @@ body {
     transform: none;
     transition-delay: 0s;
   }
-}
+     }
