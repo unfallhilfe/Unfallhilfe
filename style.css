@@ -188,9 +188,6 @@ header {
   border-radius: 5px;
 }
 
-
-/* Firmenname neben dem Logo */
-
 .header-business-name {
   min-width: 0;
 
@@ -540,6 +537,221 @@ header nav a:last-child {
 .hero > img.hero-image-fade {
   opacity: 1;
   transform: none;
+}
+
+
+/* =========================================================
+   KONTAKTLEISTE DIREKT UNTER DEM HERO
+========================================================= */
+
+.hero-contact-bar {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+
+  padding: 13px 18px;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      100deg,
+      #004c91 0%,
+      #006bc0 48%,
+      #004b8b 100%
+    );
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-bottom:
+    1px solid rgba(0, 28, 51, 0.18);
+
+  box-shadow:
+    0 5px 14px rgba(0, 38, 68, 0.16);
+}
+
+.hero-contact-inner {
+  width: min(100%, var(--content-width));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0;
+}
+
+.hero-contact-item {
+  min-width: 0;
+  min-height: 58px;
+
+  padding: 8px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--white);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.15);
+}
+
+a.hero-contact-item {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+a.hero-contact-item:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.hero-contact-item:nth-child(odd) {
+  border-right:
+    1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-contact-icon {
+  width: 35px;
+  height: 35px;
+
+  flex: 0 0 35px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--white);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.42);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 35, 70, 0.18);
+}
+
+.hero-contact-icon svg {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  fill: currentColor;
+}
+
+.hero-contact-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.2;
+}
+
+.hero-contact-text strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--white);
+
+  font-size: 0.76rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.hero-contact-text small {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  font-size: 0.68rem;
+  line-height: 1.25;
+  font-weight: 500;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* QR-Bereich */
+
+.hero-contact-qr {
+  grid-column: 1 / -1;
+
+  min-height: 64px;
+
+  padding: 8px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  color: var(--white);
+}
+
+.hero-contact-qr-placeholder {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--white);
+
+  color: var(--navy-900);
+
+  border-radius: 4px;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 3px 10px rgba(0, 30, 60, 0.2);
+}
+
+.hero-contact-qr-placeholder span {
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.hero-contact-qr-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.2;
+}
+
+.hero-contact-qr-text strong {
+  color: var(--white);
+
+  font-size: 0.76rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.hero-contact-qr-text small {
+  margin-top: 2px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 0.68rem;
+  line-height: 1.2;
 }
 
 
@@ -1730,6 +1942,73 @@ body {
   }
 
 
+  /* KONTAKTLEISTE */
+
+  .hero-contact-bar {
+    padding: 8px 8px 9px;
+  }
+
+  .hero-contact-inner {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-contact-item {
+    min-height: 52px;
+
+    padding: 6px 7px;
+
+    gap: 7px;
+  }
+
+  .hero-contact-icon {
+    width: 31px;
+    height: 31px;
+
+    flex-basis: 31px;
+  }
+
+  .hero-contact-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-contact-text strong {
+    font-size: 0.68rem;
+  }
+
+  .hero-contact-text small {
+    font-size: 0.59rem;
+  }
+
+  .hero-contact-qr {
+    min-height: 58px;
+
+    padding: 7px;
+
+    gap: 9px;
+  }
+
+  .hero-contact-qr-placeholder {
+    width: 44px;
+    height: 44px;
+
+    flex-basis: 44px;
+  }
+
+  .hero-contact-qr-placeholder span {
+    font-size: 0.65rem;
+  }
+
+  .hero-contact-qr-text strong {
+    font-size: 0.69rem;
+  }
+
+  .hero-contact-qr-text small {
+    font-size: 0.61rem;
+  }
+
+
   .expert-intro {
     padding: 16px 12px;
   }
@@ -2067,6 +2346,81 @@ body {
   }
 
 
+  /* KONTAKTLEISTE */
+
+  .hero-contact-bar {
+    padding: 11px 24px;
+  }
+
+  .hero-contact-inner {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+
+    align-items: stretch;
+  }
+
+  .hero-contact-item {
+    min-height: 68px;
+
+    padding: 8px 12px;
+
+    border-bottom: 0;
+
+    border-right:
+      1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-contact-item:nth-child(odd) {
+    border-right:
+      1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-contact-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+  .hero-contact-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .hero-contact-text strong {
+    font-size: 0.78rem;
+  }
+
+  .hero-contact-text small {
+    font-size: 0.68rem;
+  }
+
+  .hero-contact-qr {
+    grid-column: auto;
+
+    min-height: 68px;
+
+    padding: 6px 10px;
+
+    justify-content: flex-start;
+  }
+
+  .hero-contact-qr-placeholder {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+  .hero-contact-qr-text strong {
+    font-size: 0.75rem;
+  }
+
+  .hero-contact-qr-text small {
+    font-size: 0.65rem;
+  }
+
+
   .expert-intro {
     padding: 28px 34px;
   }
@@ -2248,6 +2602,74 @@ body {
   }
 
 
+  /* KONTAKTLEISTE */
+
+  .hero-contact-bar {
+    padding:
+      11px
+      max(
+        36px,
+        calc((100vw - var(--content-width)) / 2)
+      );
+  }
+
+  .hero-contact-inner {
+    grid-template-columns:
+      1fr 1fr 1.15fr 1.35fr 1.45fr;
+  }
+
+  .hero-contact-item {
+    min-height: 72px;
+
+    padding: 8px 15px;
+
+    gap: 10px;
+  }
+
+  .hero-contact-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .hero-contact-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero-contact-text strong {
+    font-size: 0.8rem;
+  }
+
+  .hero-contact-text small {
+    font-size: 0.7rem;
+  }
+
+  .hero-contact-qr {
+    min-height: 72px;
+
+    padding: 6px 15px;
+
+    gap: 12px;
+  }
+
+  .hero-contact-qr-placeholder {
+    width: 56px;
+    height: 56px;
+
+    flex-basis: 56px;
+  }
+
+  .hero-contact-qr-text strong {
+    font-size: 0.8rem;
+  }
+
+  .hero-contact-qr-text small {
+    font-size: 0.69rem;
+  }
+
+
   .expert-intro {
     padding: 32px 50px;
   }
@@ -2378,6 +2800,22 @@ body {
 
     transform: translateX(-50%);
   }
+
+  .hero-contact-text strong {
+    font-size: 0.84rem;
+  }
+
+  .hero-contact-text small {
+    font-size: 0.74rem;
+  }
+
+  .hero-contact-qr-text strong {
+    font-size: 0.84rem;
+  }
+
+  .hero-contact-qr-text small {
+    font-size: 0.72rem;
+  }
 }
 
 
@@ -2434,6 +2872,10 @@ body {
   .hero-text .button:hover {
     transform: translateX(-50%);
   }
+
+  a.hero-contact-item:hover {
+    background: transparent;
+  }
 }
 
 
@@ -2465,4 +2907,4 @@ body {
     transform: none;
     transition-delay: 0s;
   }
-     }
+}
