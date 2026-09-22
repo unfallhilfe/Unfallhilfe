@@ -550,7 +550,7 @@ header nav a:last-child {
 
   width: 100%;
 
-  padding: 13px 18px;
+  padding: 8px 12px;
 
   color: var(--white);
 
@@ -580,26 +580,39 @@ header nav a:last-child {
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(5, minmax(0, 1fr));
 
-  gap: 0;
+  align-items: stretch;
 }
 
-.hero-contact-item {
+.hero-contact-item,
+.hero-contact-qr {
   min-width: 0;
   min-height: 58px;
 
-  padding: 8px 10px;
+  padding: 5px 8px;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 9px;
+  gap: 7px;
 
   color: var(--white);
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.15);
+  border-right:
+    1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-contact-item:nth-child(4) {
+  border-right:
+    1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-contact-qr {
+  grid-column: auto;
+
+  border-right: 0;
 }
 
 a.hero-contact-item {
@@ -613,16 +626,11 @@ a.hero-contact-item:hover {
     rgba(255, 255, 255, 0.08);
 }
 
-.hero-contact-item:nth-child(odd) {
-  border-right:
-    1px solid rgba(255, 255, 255, 0.18);
-}
-
 .hero-contact-icon {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
 
-  flex: 0 0 35px;
+  flex: 0 0 32px;
 
   display: grid;
   place-items: center;
@@ -639,8 +647,8 @@ a.hero-contact-item:hover {
 }
 
 .hero-contact-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 
   display: block;
 
@@ -653,18 +661,18 @@ a.hero-contact-item:hover {
   display: flex;
   flex-direction: column;
 
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .hero-contact-text strong {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 
   color: var(--white);
 
-  font-size: 0.76rem;
-  line-height: 1.15;
+  font-size: 0.72rem;
+  line-height: 1.1;
   font-weight: 800;
 }
 
@@ -674,8 +682,8 @@ a.hero-contact-item:hover {
   color:
     rgba(255, 255, 255, 0.9);
 
-  font-size: 0.68rem;
-  line-height: 1.25;
+  font-size: 0.63rem;
+  line-height: 1.18;
   font-weight: 500;
 
   overflow-wrap: anywhere;
@@ -685,26 +693,14 @@ a.hero-contact-item:hover {
 /* QR-Bereich */
 
 .hero-contact-qr {
-  grid-column: 1 / -1;
-
-  min-height: 64px;
-
-  padding: 8px 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 11px;
-
-  color: var(--white);
+  gap: 7px;
 }
 
 .hero-contact-qr-placeholder {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
 
-  flex: 0 0 50px;
+  flex: 0 0 44px;
 
   display: grid;
   place-items: center;
@@ -723,35 +719,37 @@ a.hero-contact-item:hover {
 }
 
 .hero-contact-qr-placeholder span {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   line-height: 1;
   font-weight: 900;
   letter-spacing: 0.04em;
 }
 
 .hero-contact-qr-text {
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
 
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .hero-contact-qr-text strong {
   color: var(--white);
 
-  font-size: 0.76rem;
-  line-height: 1.15;
+  font-size: 0.7rem;
+  line-height: 1.1;
   font-weight: 800;
 }
 
 .hero-contact-qr-text small {
-  margin-top: 2px;
+  margin-top: 1px;
 
   color:
     rgba(255, 255, 255, 0.88);
 
-  font-size: 0.68rem;
-  line-height: 1.2;
+  font-size: 0.61rem;
+  line-height: 1.15;
 }
 
 
@@ -1942,70 +1940,137 @@ body {
   }
 
 
-  /* KONTAKTLEISTE */
+  /* KONTAKTLEISTE – EINE FLACHE ZEILE */
 
   .hero-contact-bar {
-    padding: 8px 8px 9px;
+    padding: 5px 3px;
   }
 
   .hero-contact-inner {
+    width: 100%;
+
     grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+      1fr 1fr 1fr 1.12fr 0.86fr;
+
+    align-items: stretch;
   }
 
-  .hero-contact-item {
-    min-height: 52px;
+  .hero-contact-item,
+  .hero-contact-qr {
+    min-width: 0;
+    min-height: 58px;
 
-    padding: 6px 7px;
+    padding: 4px 3px;
 
-    gap: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    text-align: center;
+
+    border-bottom: 0;
+
+    border-right:
+      1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .hero-contact-item:nth-child(odd),
+  .hero-contact-item:nth-child(even) {
+    border-right:
+      1px solid rgba(255, 255, 255, 0.18);
   }
 
   .hero-contact-icon {
-    width: 31px;
-    height: 31px;
+    width: 25px;
+    height: 25px;
 
-    flex-basis: 31px;
+    flex: 0 0 25px;
+
+    border-width: 1px;
   }
 
   .hero-contact-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .hero-contact-text {
+    width: 100%;
+
+    align-items: center;
+
+    line-height: 1.05;
   }
 
   .hero-contact-text strong {
-    font-size: 0.68rem;
+    margin: 0;
+
+    font-size: 0.55rem;
+    line-height: 1.05;
+
+    white-space: nowrap;
   }
 
   .hero-contact-text small {
-    font-size: 0.59rem;
+    width: 100%;
+
+    margin-top: 1px;
+
+    font-size: 0.47rem;
+    line-height: 1.08;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
   }
 
+
+  /* QR ebenfalls in derselben Zeile */
+
   .hero-contact-qr {
-    min-height: 58px;
+    grid-column: auto;
 
-    padding: 7px;
-
-    gap: 9px;
+    border-right: 0;
   }
 
   .hero-contact-qr-placeholder {
-    width: 44px;
-    height: 44px;
+    width: 27px;
+    height: 27px;
 
-    flex-basis: 44px;
+    flex: 0 0 27px;
+
+    border-width: 1px;
+
+    border-radius: 3px;
   }
 
   .hero-contact-qr-placeholder span {
-    font-size: 0.65rem;
+    font-size: 0.48rem;
+  }
+
+  .hero-contact-qr-text {
+    width: 100%;
+
+    align-items: center;
+
+    text-align: center;
   }
 
   .hero-contact-qr-text strong {
-    font-size: 0.69rem;
+    font-size: 0.52rem;
+    line-height: 1.05;
+
+    white-space: nowrap;
   }
 
   .hero-contact-qr-text small {
-    font-size: 0.61rem;
+    margin-top: 1px;
+
+    font-size: 0.45rem;
+    line-height: 1.05;
   }
 
 
@@ -2349,7 +2414,7 @@ body {
   /* KONTAKTLEISTE */
 
   .hero-contact-bar {
-    padding: 11px 24px;
+    padding: 9px 24px;
   }
 
   .hero-contact-inner {
@@ -2359,10 +2424,11 @@ body {
     align-items: stretch;
   }
 
-  .hero-contact-item {
-    min-height: 68px;
+  .hero-contact-item,
+  .hero-contact-qr {
+    min-height: 66px;
 
-    padding: 8px 12px;
+    padding: 7px 10px;
 
     border-bottom: 0;
 
@@ -2370,54 +2436,44 @@ body {
       1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .hero-contact-item:nth-child(odd) {
-    border-right:
-      1px solid rgba(255, 255, 255, 0.2);
+  .hero-contact-qr {
+    grid-column: auto;
+    border-right: 0;
   }
 
   .hero-contact-icon {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
 
-    flex-basis: 38px;
+    flex-basis: 36px;
   }
 
   .hero-contact-icon svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
   }
 
   .hero-contact-text strong {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
   }
 
   .hero-contact-text small {
-    font-size: 0.68rem;
-  }
-
-  .hero-contact-qr {
-    grid-column: auto;
-
-    min-height: 68px;
-
-    padding: 6px 10px;
-
-    justify-content: flex-start;
+    font-size: 0.66rem;
   }
 
   .hero-contact-qr-placeholder {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
-    flex-basis: 52px;
+    flex-basis: 50px;
   }
 
   .hero-contact-qr-text strong {
-    font-size: 0.75rem;
+    font-size: 0.73rem;
   }
 
   .hero-contact-qr-text small {
-    font-size: 0.65rem;
+    font-size: 0.63rem;
   }
 
 
@@ -2606,7 +2662,7 @@ body {
 
   .hero-contact-bar {
     padding:
-      11px
+      10px
       max(
         36px,
         calc((100vw - var(--content-width)) / 2)
@@ -2618,19 +2674,20 @@ body {
       1fr 1fr 1.15fr 1.35fr 1.45fr;
   }
 
-  .hero-contact-item {
-    min-height: 72px;
+  .hero-contact-item,
+  .hero-contact-qr {
+    min-height: 70px;
 
-    padding: 8px 15px;
+    padding: 7px 14px;
 
     gap: 10px;
   }
 
   .hero-contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 39px;
+    height: 39px;
 
-    flex-basis: 40px;
+    flex-basis: 39px;
   }
 
   .hero-contact-icon svg {
@@ -2646,19 +2703,11 @@ body {
     font-size: 0.7rem;
   }
 
-  .hero-contact-qr {
-    min-height: 72px;
-
-    padding: 6px 15px;
-
-    gap: 12px;
-  }
-
   .hero-contact-qr-placeholder {
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
 
-    flex-basis: 56px;
+    flex-basis: 54px;
   }
 
   .hero-contact-qr-text strong {
@@ -2666,7 +2715,7 @@ body {
   }
 
   .hero-contact-qr-text small {
-    font-size: 0.69rem;
+    font-size: 0.68rem;
   }
 
 
