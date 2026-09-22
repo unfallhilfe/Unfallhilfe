@@ -450,7 +450,7 @@ header nav a:last-child {
 
 
 /* =========================================================
-   TERMIN-BUTTON
+   ALLGEMEINER BUTTON
 ========================================================= */
 
 .button {
@@ -510,34 +510,6 @@ header nav a:last-child {
 
 .button:active {
   transform: translateY(0);
-}
-
-.hero-text .button {
-  position: absolute;
-
-  left: 50%;
-  bottom: 2.8%;
-
-  transform: translateX(-50%);
-
-  pointer-events: auto;
-
-  white-space: nowrap;
-
-  animation:
-    hero-button-in 0.6s ease 0.16s both;
-}
-
-.hero-text .button:hover {
-  transform:
-    translateX(-50%)
-    translateY(-2px);
-}
-
-.hero-text .button:active {
-  transform:
-    translateX(-50%)
-    translateY(0);
 }
 
 .hero > img.hero-image-fade {
@@ -2110,16 +2082,6 @@ footer p {
   }
 }
 
-@keyframes hero-button-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 
 /* =========================================================
    SCHWEBENDE KONTAKT-BUTTONS
@@ -2304,38 +2266,6 @@ footer p {
 
   .hero-text p {
     display: none;
-  }
-
-  .hero-text .button {
-    position: absolute;
-
-    left: 50%;
-    bottom: 2.5%;
-
-    width: auto;
-
-    padding:
-      2vw
-      4vw;
-
-    font-size: 2.9vw;
-    line-height: 1.1;
-
-    border-radius: 8px;
-
-    white-space: nowrap;
-
-    transform: translateX(-50%);
-  }
-
-  .hero-text .button:hover {
-    transform: translateX(-50%);
-  }
-
-  .hero-text .button:active {
-    transform:
-      translateX(-50%)
-      scale(0.98);
   }
 
 
@@ -2947,18 +2877,6 @@ footer p {
     line-height: 1;
   }
 
-  .hero-text .button {
-    left: 50%;
-    bottom: 2.8%;
-
-    padding:
-      10px 24px;
-
-    font-size: 0.94rem;
-
-    transform: translateX(-50%);
-  }
-
 
   /* KONTAKTLEISTE */
 
@@ -3228,18 +3146,6 @@ footer p {
     line-height: 0.99;
   }
 
-  .hero-text .button {
-    left: 50%;
-    bottom: 2.8%;
-
-    padding:
-      12px 28px;
-
-    font-size: 1rem;
-
-    transform: translateX(-50%);
-  }
-
 
   /* KONTAKTLEISTE */
 
@@ -3458,13 +3364,6 @@ footer p {
       clamp(3.6rem, 4.6vw, 5.5rem);
   }
 
-  .hero-text .button {
-    left: 50%;
-    bottom: 2.8%;
-
-    transform: translateX(-50%);
-  }
-
   .hero-contact-icon {
     width: 48px;
     height: 48px;
@@ -3575,10 +3474,6 @@ footer p {
       rgba(255, 255, 255, 0.86);
   }
 
-  .hero-text .button:hover {
-    transform: translateX(-50%);
-  }
-
   a.hero-contact-item:hover {
     background: transparent;
   }
@@ -3613,4 +3508,4 @@ footer p {
     transform: none;
     transition-delay: 0s;
   }
-   }
+     }
