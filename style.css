@@ -156,21 +156,26 @@ header {
 
 
 /* =========================================================
-   LOGO
+   LOGO + FIRMENNAME
 ========================================================= */
 
 .logo {
   position: relative;
   z-index: 1002;
 
+  min-width: 0;
+
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  gap: 12px;
+
+  flex-shrink: 1;
 }
 
-.logo a {
+.logo > a:first-child {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo img {
@@ -181,6 +186,50 @@ header {
   object-position: center;
 
   border-radius: 5px;
+}
+
+
+/* Firmenname neben dem Logo */
+
+.header-business-name {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: var(--white);
+
+  line-height: 1.08;
+
+  white-space: nowrap;
+}
+
+.header-business-name span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 0.76rem;
+  line-height: 1.1;
+  font-weight: 500;
+
+  letter-spacing: 0.01em;
+}
+
+.header-business-name strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--white);
+
+  font-size: 0.93rem;
+  line-height: 1.08;
+  font-weight: 800;
+
+  letter-spacing: 0.005em;
 }
 
 
@@ -195,6 +244,8 @@ header {
   width: 45px;
   height: 42px;
   padding: 9px;
+
+  flex: 0 0 45px;
 
   display: flex;
   flex-direction: column;
@@ -1582,6 +1633,11 @@ body {
   header {
     min-height: 56px;
     padding: 6px 14px;
+    gap: 10px;
+  }
+
+  .logo {
+    gap: 9px;
   }
 
   .logo img {
@@ -1589,10 +1645,24 @@ body {
     height: 44px;
   }
 
+  .header-business-name span {
+    font-size: 0.68rem;
+    line-height: 1.05;
+  }
+
+  .header-business-name strong {
+    margin-top: 3px;
+
+    font-size: 0.82rem;
+    line-height: 1.05;
+  }
+
   .menu-button {
     width: 43px;
     height: 40px;
     padding: 8px;
+
+    flex-basis: 43px;
   }
 
 
@@ -1874,9 +1944,21 @@ body {
     padding: 8px 34px;
   }
 
+  .logo {
+    gap: 14px;
+  }
+
   .logo img {
     width: 48px;
     height: 48px;
+  }
+
+  .header-business-name span {
+    font-size: 0.82rem;
+  }
+
+  .header-business-name strong {
+    font-size: 1rem;
   }
 
   .menu-button {
@@ -2104,9 +2186,21 @@ body {
       );
   }
 
+  .logo {
+    gap: 15px;
+  }
+
   .logo img {
     width: 50px;
     height: 50px;
+  }
+
+  .header-business-name span {
+    font-size: 0.84rem;
+  }
+
+  .header-business-name strong {
+    font-size: 1.03rem;
   }
 
 
@@ -2371,4 +2465,4 @@ body {
     transform: none;
     transition-delay: 0s;
   }
-}
+     }
