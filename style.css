@@ -1606,7 +1606,7 @@ body.lightbox-open {
 
 /* =========================================================
    SIEGEL / VERTRAUENSBEREICH
-   3 SIEGEL NEBENEINANDER
+   4 SIEGEL NEBENEINANDER
 ========================================================= */
 
 .trust-badges {
@@ -1622,7 +1622,7 @@ body.lightbox-open {
   justify-content: center !important;
   flex-wrap: nowrap !important;
 
-  gap: 24px !important;
+  gap: 22px !important;
 
   background:
     linear-gradient(
@@ -1634,8 +1634,9 @@ body.lightbox-open {
 
 .trust-badges > a,
 .trust-badges > div {
-  width: 150px;
+  width: 145px;
   min-width: 0;
+  flex: 0 1 145px;
 
   display: flex !important;
   align-items: center !important;
@@ -1648,7 +1649,7 @@ body.lightbox-open {
   width: auto !important;
   height: auto !important;
 
-  max-width: 140px !important;
+  max-width: 135px !important;
   max-height: 115px;
 
   display: block;
@@ -1667,14 +1668,30 @@ body.lightbox-open {
   filter: brightness(1.03);
 }
 
+
 /* SSLCanary ist ein flaches Badge */
+
 .trust-badges .sslcanary-badge img,
 .trust-badges a[href*="sslcanary.com"] img {
   width: auto !important;
   height: 28px !important;
 
-  max-width: 150px !important;
+  max-width: 140px !important;
   max-height: 28px !important;
+}
+
+
+/* Barrierefreiheits-Siegel */
+
+.trust-badges .accessibility-badge img,
+.trust-badges a[href*="webseiten-barrierefreiheit.de"] img {
+  width: 112px !important;
+  height: 112px !important;
+
+  max-width: 112px !important;
+  max-height: 112px !important;
+
+  object-fit: contain;
 }
 
 
@@ -2294,30 +2311,32 @@ footer p {
   }
 
 
-  /* DREI SIEGEL AUCH AUF DEM HANDY NEBENEINANDER */
+  /* VIER SIEGEL AUCH AUF DEM HANDY NEBENEINANDER */
 
   .trust-badges {
-    min-height: 110px;
+    min-height: 98px;
 
     padding:
-      16px 7px 18px !important;
+      13px 4px 15px !important;
 
-    gap: 7px !important;
+    gap: 4px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: calc((100% - 14px) / 3);
-    max-width: 115px;
-    flex: 0 1 calc((100% - 14px) / 3);
+    width: calc((100% - 12px) / 4);
+    max-width: none;
+
+    flex:
+      0 1 calc((100% - 12px) / 4);
   }
 
   .trust-badges img {
     width: auto !important;
     height: auto !important;
 
-    max-width: 94px !important;
-    max-height: 82px;
+    max-width: 76px !important;
+    max-height: 72px;
   }
 
   .trust-badges .sslcanary-badge img,
@@ -2325,8 +2344,17 @@ footer p {
     width: 100% !important;
     height: auto !important;
 
-    max-width: 105px !important;
+    max-width: 80px !important;
     max-height: 28px !important;
+  }
+
+  .trust-badges .accessibility-badge img,
+  .trust-badges a[href*="webseiten-barrierefreiheit.de"] img {
+    width: 70px !important;
+    height: 70px !important;
+
+    max-width: 70px !important;
+    max-height: 70px !important;
   }
 
 
@@ -2489,7 +2517,7 @@ footer p {
   }
 
 
-  /* DREI SIEGEL TABLET */
+  /* VIER SIEGEL TABLET */
 
   .trust-badges {
     min-height: 160px;
@@ -2497,23 +2525,33 @@ footer p {
     padding:
       25px 34px 30px !important;
 
-    gap: 30px !important;
+    gap: 24px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: 160px;
+    width: 145px;
+    flex: 0 1 145px;
   }
 
   .trust-badges img {
-    max-width: 145px !important;
+    max-width: 135px !important;
     max-height: 125px;
   }
 
   .trust-badges .sslcanary-badge img,
   .trust-badges a[href*="sslcanary.com"] img {
-    max-width: 150px !important;
+    max-width: 140px !important;
     max-height: 28px !important;
+  }
+
+  .trust-badges .accessibility-badge img,
+  .trust-badges a[href*="webseiten-barrierefreiheit.de"] img {
+    width: 112px !important;
+    height: 112px !important;
+
+    max-width: 112px !important;
+    max-height: 112px !important;
   }
 
 
@@ -2665,7 +2703,7 @@ footer p {
   }
 
 
-  /* DREI SIEGEL DESKTOP */
+  /* VIER SIEGEL DESKTOP */
 
   .trust-badges {
     min-height: 170px;
@@ -2673,23 +2711,33 @@ footer p {
     padding:
       28px 50px 34px !important;
 
-    gap: 40px !important;
+    gap: 34px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: 175px;
+    width: 165px;
+    flex: 0 1 165px;
   }
 
   .trust-badges img {
-    max-width: 160px !important;
+    max-width: 150px !important;
     max-height: 135px;
   }
 
   .trust-badges .sslcanary-badge img,
   .trust-badges a[href*="sslcanary.com"] img {
-    max-width: 165px !important;
+    max-width: 155px !important;
     max-height: 28px !important;
+  }
+
+  .trust-badges .accessibility-badge img,
+  .trust-badges a[href*="webseiten-barrierefreiheit.de"] img {
+    width: 122px !important;
+    height: 122px !important;
+
+    max-width: 122px !important;
+    max-height: 122px !important;
   }
 
 
@@ -2763,28 +2811,38 @@ footer p {
   }
 
 
-  /* DREI SIEGEL GROSSE BILDSCHIRME */
+  /* VIER SIEGEL GROSSE BILDSCHIRME */
 
   .trust-badges {
     min-height: 180px;
 
-    gap: 48px !important;
+    gap: 42px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: 190px;
+    width: 180px;
+    flex: 0 1 180px;
   }
 
   .trust-badges img {
-    max-width: 170px !important;
+    max-width: 165px !important;
     max-height: 145px;
   }
 
   .trust-badges .sslcanary-badge img,
   .trust-badges a[href*="sslcanary.com"] img {
-    max-width: 175px !important;
+    max-width: 170px !important;
     max-height: 28px !important;
+  }
+
+  .trust-badges .accessibility-badge img,
+  .trust-badges a[href*="webseiten-barrierefreiheit.de"] img {
+    width: 128px !important;
+    height: 128px !important;
+
+    max-width: 128px !important;
+    max-height: 128px !important;
   }
 }
 
@@ -2863,4 +2921,4 @@ footer p {
     transform: none;
     transition-delay: 0s;
   }
-     }
+   }
