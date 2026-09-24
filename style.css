@@ -1687,6 +1687,70 @@ body.lightbox-open {
 
 
 /* =========================================================
+   SIEGEL / VERTRAUENSBEREICH
+========================================================= */
+
+.trust-badges {
+  width: 100%;
+
+  min-height: 150px;
+
+  margin: 0;
+
+  padding: 22px 18px 26px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+
+  gap: 24px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--gray-100) 0%,
+      var(--gray-50) 100%
+    );
+}
+
+.trust-badges > a,
+.trust-badges > div {
+  width: 150px;
+  min-width: 0;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  line-height: 0 !important;
+}
+
+.trust-badges img {
+  width: auto !important;
+  max-width: 140px !important;
+  height: auto !important;
+  max-height: 115px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.trust-badges > a {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.trust-badges > a:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.03);
+}
+
+
+/* =========================================================
    KONTAKT
 ========================================================= */
 
@@ -2807,6 +2871,30 @@ footer p {
   }
 
 
+  /* SIEGEL */
+
+  .trust-badges {
+    min-height: 125px;
+
+    padding:
+      18px 12px 22px !important;
+
+    gap: 14px !important;
+  }
+
+  .trust-badges > a,
+  .trust-badges > div {
+    width: calc(50% - 7px);
+    max-width: 145px;
+  }
+
+  .trust-badges img {
+    width: auto !important;
+    max-width: 125px !important;
+    max-height: 100px;
+  }
+
+
   /* KONTAKT */
 
   #kontakt {
@@ -3215,6 +3303,28 @@ footer p {
   }
 
 
+  /* SIEGEL */
+
+  .trust-badges {
+    min-height: 160px;
+
+    padding:
+      25px 34px 30px !important;
+
+    gap: 34px !important;
+  }
+
+  .trust-badges > a,
+  .trust-badges > div {
+    width: 170px;
+  }
+
+  .trust-badges img {
+    max-width: 150px !important;
+    max-height: 125px;
+  }
+
+
   /* KONTAKT */
 
   #kontakt {
@@ -3494,6 +3604,28 @@ footer p {
   }
 
 
+  /* SIEGEL */
+
+  .trust-badges {
+    min-height: 170px;
+
+    padding:
+      28px 50px 34px !important;
+
+    gap: 42px !important;
+  }
+
+  .trust-badges > a,
+  .trust-badges > div {
+    width: 180px;
+  }
+
+  .trust-badges img {
+    max-width: 160px !important;
+    max-height: 135px;
+  }
+
+
   /* KONTAKT */
 
   #kontakt {
@@ -3619,6 +3751,25 @@ footer p {
   .hero-contact-qr-text small {
     font-size: 0.75rem;
   }
+
+
+  /* SIEGEL */
+
+  .trust-badges {
+    min-height: 180px;
+
+    gap: 48px !important;
+  }
+
+  .trust-badges > a,
+  .trust-badges > div {
+    width: 190px;
+  }
+
+  .trust-badges img {
+    max-width: 170px !important;
+    max-height: 145px;
+  }
 }
 
 
@@ -3714,6 +3865,11 @@ footer p {
   a.hero-contact-item:hover {
     background: transparent;
   }
+
+  .trust-badges > a:hover {
+    transform: none;
+    filter: none;
+  }
 }
 
 
@@ -3745,4 +3901,4 @@ footer p {
     transform: none;
     transition-delay: 0s;
   }
-}
+   }
