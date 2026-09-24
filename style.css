@@ -605,7 +605,7 @@ a.hero-contact-item:hover {
 
 
 /* =========================================================
-   KONTAKTLEISTE – GROSSE, KLARE SYMBOLE
+   KONTAKTLEISTE – SYMBOLE
 ========================================================= */
 
 .hero-contact-icon {
@@ -741,7 +741,7 @@ a.hero-contact-item:hover {
 
 
 /* =========================================================
-   SACHVERSTÄNDIGER – LEISTUNGSKACHEL-OPTIK
+   SACHVERSTÄNDIGER
 ========================================================= */
 
 .expert-intro {
@@ -821,11 +821,6 @@ a.hero-contact-item:hover {
   transform: scaleX(1);
 }
 
-
-/* =========================================================
-   SACHVERSTÄNDIGER – FOTO OBEN
-========================================================= */
-
 .expert-photo {
   width: 100%;
   height: 260px;
@@ -833,8 +828,6 @@ a.hero-contact-item:hover {
   flex: none;
 
   overflow: hidden;
-
-  border-radius: 0;
 
   background: var(--gray-100);
 }
@@ -860,11 +853,6 @@ a.hero-contact-item:hover {
     saturate(1.06)
     contrast(1.03);
 }
-
-
-/* =========================================================
-   SACHVERSTÄNDIGER – NAME UND QUALIFIKATION
-========================================================= */
 
 .expert-text {
   width: 100%;
@@ -911,11 +899,6 @@ a.hero-contact-item:hover {
   font-size: 1rem;
   line-height: 1.6;
 }
-
-
-/* =========================================================
-   SACHVERSTÄNDIGER – MEHR ERFAHREN
-========================================================= */
 
 .expert-details {
   width: 100%;
@@ -1008,8 +991,6 @@ a.hero-contact-item:hover {
   border: 0;
   border-top:
     1px solid rgba(0, 59, 104, 0.08);
-
-  border-radius: 0;
 
   background:
     linear-gradient(
@@ -1105,11 +1086,6 @@ a.hero-contact-item:hover {
   transform: translateY(0);
 }
 
-
-/* =========================================================
-   EINSATZGEBIET – GROSSANSICHT / LIGHTBOX
-========================================================= */
-
 .image-lightbox {
   position: fixed;
 
@@ -1194,26 +1170,11 @@ a.hero-contact-item:hover {
 
   font-size: 2rem;
   line-height: 1;
-  font-weight: 400;
 
   cursor: pointer;
 
   box-shadow:
     0 6px 18px rgba(0, 0, 0, 0.3);
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.image-lightbox-close:hover {
-  background: var(--blue-600);
-
-  transform: scale(1.06);
-}
-
-.image-lightbox-close:active {
-  transform: scale(0.96);
 }
 
 body.lightbox-open {
@@ -1256,11 +1217,6 @@ body.lightbox-open {
     );
 
   box-shadow: var(--shadow-small);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
 }
 
 .cost-card::before {
@@ -1282,15 +1238,6 @@ body.lightbox-open {
     );
 }
 
-.cost-card:hover {
-  transform: translateY(-5px);
-
-  border-color:
-    rgba(0, 127, 211, 0.35);
-
-  box-shadow: var(--shadow-medium);
-}
-
 .cost-card h2 {
   margin: 0 0 16px;
 
@@ -1305,8 +1252,6 @@ body.lightbox-open {
 
   line-height: 1.15;
   font-weight: 800;
-
-  letter-spacing: -0.02em;
 }
 
 .cost-card .cost-question {
@@ -1359,14 +1304,6 @@ body.lightbox-open {
 
   background:
     rgba(31, 168, 91, 0.07);
-}
-
-.cost-card .cost-transparency {
-  margin-top: 16px;
-
-  color: var(--navy-800);
-
-  font-weight: 800;
 }
 
 
@@ -1575,7 +1512,7 @@ body.lightbox-open {
 
 
 /* =========================================================
-   KARTEN – MEHR ERFAHREN / AUSKLAPPEN
+   KARTEN – MEHR ERFAHREN
 ========================================================= */
 
 .card-details {
@@ -1606,10 +1543,6 @@ body.lightbox-open {
   list-style: none;
 
   user-select: none;
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
 }
 
 .card-details summary::-webkit-details-marker {
@@ -1629,17 +1562,6 @@ body.lightbox-open {
   color: var(--blue-600);
 
   font-size: 1.15rem;
-  line-height: 1;
-}
-
-.card-details summary:hover {
-  color: var(--navy-800);
-  background: var(--gray-50);
-}
-
-.card-details[open] summary {
-  color: var(--navy-800);
-  background: var(--gray-50);
 }
 
 .card-details[open] summary::after {
@@ -1681,18 +1603,14 @@ body.lightbox-open {
   line-height: 1.6;
 }
 
-.card-more p + p {
-  padding-top: 4px;
-}
-
 
 /* =========================================================
    SIEGEL / VERTRAUENSBEREICH
+   3 SIEGEL NEBENEINANDER
 ========================================================= */
 
 .trust-badges {
   width: 100%;
-
   min-height: 150px;
 
   margin: 0;
@@ -1728,8 +1646,9 @@ body.lightbox-open {
 
 .trust-badges img {
   width: auto !important;
-  max-width: 140px !important;
   height: auto !important;
+
+  max-width: 140px !important;
   max-height: 115px;
 
   display: block;
@@ -1745,8 +1664,17 @@ body.lightbox-open {
 
 .trust-badges > a:hover {
   transform: translateY(-2px);
-
   filter: brightness(1.03);
+}
+
+/* SSLCanary ist ein flaches Badge */
+.trust-badges .sslcanary-badge img,
+.trust-badges a[href*="sslcanary.com"] img {
+  width: auto !important;
+  height: 28px !important;
+
+  max-width: 150px !important;
+  max-height: 28px !important;
 }
 
 
@@ -1773,48 +1701,6 @@ body.lightbox-open {
     );
 }
 
-#kontakt::before {
-  content: "";
-
-  position: absolute;
-
-  top: -130px;
-  right: -130px;
-
-  width: 340px;
-  height: 340px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(32, 184, 243, 0.27),
-      transparent 70%
-    );
-}
-
-#kontakt::after {
-  content: "";
-
-  position: absolute;
-
-  bottom: -170px;
-  left: -170px;
-
-  width: 380px;
-  height: 380px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0, 126, 211, 0.2),
-      transparent 72%
-    );
-}
-
 #kontakt > * {
   position: relative;
   z-index: 2;
@@ -1822,15 +1708,6 @@ body.lightbox-open {
 
 #kontakt h2 {
   color: var(--white);
-}
-
-#kontakt h2::after {
-  background:
-    linear-gradient(
-      90deg,
-      #9ae5ff,
-      var(--cyan-400)
-    );
 }
 
 #kontakt p,
@@ -1881,15 +1758,6 @@ body.lightbox-open {
   color: #91e0ff;
 
   font-weight: 700;
-
-  border-radius: 5px;
-}
-
-#kontakt a:not(.button):hover {
-  color: var(--white);
-
-  background:
-    rgba(255, 255, 255, 0.08);
 }
 
 #kontakt .button {
@@ -1898,10 +1766,11 @@ body.lightbox-open {
 
 
 /* =========================================================
-   PRESSE UND LINKS
+   PRESSE UND FAQ
 ========================================================= */
 
-.press-section {
+.press-section,
+.faq-section {
   padding: 0 18px;
 
   color: var(--white);
@@ -1914,7 +1783,8 @@ body.lightbox-open {
     );
 }
 
-.press-main {
+.press-main,
+.faq-main {
   width: min(100%, 900px);
 
   margin: 0 auto;
@@ -1923,7 +1793,8 @@ body.lightbox-open {
     1px solid rgba(255, 255, 255, 0.12);
 }
 
-.press-main-summary {
+.press-main-summary,
+.faq-main-summary {
   position: relative;
 
   width: 100%;
@@ -1942,19 +1813,10 @@ body.lightbox-open {
   cursor: pointer;
 
   list-style: none;
-
-  user-select: none;
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
 }
 
-.press-main-summary::-webkit-details-marker {
-  display: none;
-}
-
-.press-main-summary::after {
+.press-main-summary::after,
+.faq-main-summary::after {
   content: "＋";
 
   position: absolute;
@@ -1967,19 +1829,15 @@ body.lightbox-open {
   color: #91e0ff;
 
   font-size: 1.25rem;
-  line-height: 1;
-  font-weight: 400;
 }
 
-.press-main[open] > .press-main-summary::after {
+.press-main[open] > .press-main-summary::after,
+.faq-main[open] > .faq-main-summary::after {
   content: "−";
 }
 
-.press-main-summary:hover {
-  color: var(--white);
-}
-
-.press-list {
+.press-list,
+.faq-list {
   padding: 0 0 30px;
 }
 
@@ -2001,12 +1859,7 @@ body.lightbox-open {
   color: #91e0ff;
 
   font-size: 0.8rem;
-  line-height: 1.3;
   font-weight: 800;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.04em;
 }
 
 .press-item h3 {
@@ -2015,7 +1868,6 @@ body.lightbox-open {
   color: var(--white);
 
   font-size: 1.08rem;
-  line-height: 1.35;
 }
 
 .press-item p {
@@ -2025,150 +1877,28 @@ body.lightbox-open {
     rgba(255, 255, 255, 0.72);
 
   font-size: 0.92rem;
-  line-height: 1.6;
 }
 
 .press-link {
   display: inline-flex;
-  align-items: center;
-  gap: 7px;
 
   padding: 8px 12px;
 
   color: #91e0ff;
 
   font-size: 0.9rem;
-  line-height: 1.2;
   font-weight: 800;
 
   border:
     1px solid rgba(145, 224, 255, 0.28);
 
   border-radius: 8px;
-
-  background:
-    rgba(145, 224, 255, 0.06);
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.press-link::after {
-  content: "↗";
-
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-.press-link:hover {
-  color: var(--white);
-
-  background:
-    rgba(145, 224, 255, 0.12);
-
-  border-color:
-    rgba(145, 224, 255, 0.5);
-}
-
-
-/* =========================================================
-   HÄUFIG GESTELLTE FRAGEN
-========================================================= */
-
-.faq-section {
-  padding: 0 18px;
-
-  color: var(--white);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0, 44, 78, 0.99),
-      rgba(0, 24, 44, 0.995)
-    );
-}
-
-.faq-main {
-  width: min(100%, 900px);
-
-  margin: 0 auto;
-
-  border-top:
-    1px solid rgba(255, 255, 255, 0.12);
-}
-
-.faq-main-summary {
-  position: relative;
-
-  width: 100%;
-
-  padding: 20px 48px 22px 4px;
-
-  display: block;
-
-  color:
-    rgba(255, 255, 255, 0.88);
-
-  font-size: 1rem;
-  line-height: 1.35;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  list-style: none;
-
-  user-select: none;
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
-}
-
-.press-main-summary::-webkit-details-marker,
-.faq-main-summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-main-summary::after {
-  content: "＋";
-
-  position: absolute;
-
-  top: 50%;
-  right: 6px;
-
-  transform: translateY(-50%);
-
-  color: #91e0ff;
-
-  font-size: 1.25rem;
-  line-height: 1;
-  font-weight: 400;
-}
-
-.faq-main[open] > .faq-main-summary::after {
-  content: "−";
-}
-
-.faq-main-summary:hover {
-  color: var(--white);
-}
-
-.faq-list {
-  padding: 0 0 30px;
 }
 
 .faq-item {
   width: 100%;
 
   border-top:
-    1px solid rgba(255, 255, 255, 0.09);
-}
-
-.faq-item:last-child {
-  border-bottom:
     1px solid rgba(255, 255, 255, 0.09);
 }
 
@@ -2185,22 +1915,11 @@ body.lightbox-open {
     rgba(255, 255, 255, 0.86);
 
   font-size: 0.96rem;
-  line-height: 1.45;
   font-weight: 700;
 
   cursor: pointer;
 
   list-style: none;
-
-  user-select: none;
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease;
-}
-
-.faq-item > summary::-webkit-details-marker {
-  display: none;
 }
 
 .faq-item > summary::after {
@@ -2215,18 +1934,10 @@ body.lightbox-open {
 
   color:
     rgba(145, 224, 255, 0.9);
-
-  font-size: 1.05rem;
-  line-height: 1;
-  font-weight: 400;
 }
 
 .faq-item[open] > summary::after {
   content: "−";
-}
-
-.faq-item > summary:hover {
-  color: #91e0ff;
 }
 
 .faq-answer {
@@ -2311,14 +2022,10 @@ footer p {
   display: flex;
   flex-direction: column;
 
-  align-items: flex-start;
-
   gap: 8px;
 }
 
 .quick-contact {
-  position: relative;
-
   width: 52px;
   height: 52px;
 
@@ -2341,10 +2048,6 @@ footer p {
 
   box-shadow:
     0 7px 18px rgba(0, 0, 0, 0.24);
-
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
 }
 
 .phone-contact {
@@ -2369,15 +2072,8 @@ footer p {
   width: 38px;
   height: 38px;
 
-  flex: 0 0 38px;
-
   display: grid;
   place-items: center;
-
-  border-radius: 50%;
-
-  background:
-    rgba(255, 255, 255, 0.08);
 }
 
 .contact-icon svg {
@@ -2391,16 +2087,6 @@ footer p {
 
 .contact-label {
   display: none;
-}
-
-.quick-contact:hover {
-  transform: translateY(-2px);
-
-  filter: brightness(1.07);
-}
-
-.quick-contact:active {
-  transform: scale(0.96);
 }
 
 
@@ -2431,14 +2117,10 @@ footer p {
 
   .header-business-name span {
     font-size: 0.68rem;
-    line-height: 1.05;
   }
 
   .header-business-name strong {
-    margin-top: 3px;
-
     font-size: 0.82rem;
-    line-height: 1.05;
   }
 
   .menu-button {
@@ -2449,15 +2131,7 @@ footer p {
     flex-basis: 43px;
   }
 
-
-  /* HERO */
-
   .hero-text {
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
     padding:
       3%
       4.2%
@@ -2465,35 +2139,12 @@ footer p {
   }
 
   .hero-text h1 {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-
     font-size: 7.1vw;
     line-height: 0.99;
-    letter-spacing: -0.045em;
-
-    text-wrap: balance;
   }
-
-  .hero-text p {
-    display: none;
-  }
-
-
-  /* KONTAKTLEISTE SMARTPHONE */
 
   .hero-contact-bar {
     padding: 7px 2px 8px;
-
-    background:
-      linear-gradient(
-        100deg,
-        #00498d 0%,
-        #0075c9 50%,
-        #00498d 100%
-      );
   }
 
   .hero-contact-inner {
@@ -2501,36 +2152,19 @@ footer p {
 
     grid-template-columns:
       1fr 1fr 1fr 1.15fr 0.9fr;
-
-    align-items: stretch;
   }
 
   .hero-contact-item,
   .hero-contact-qr {
-    min-width: 0;
     min-height: 78px;
 
     padding: 5px 2px;
 
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
 
     gap: 4px;
 
     text-align: center;
-
-    border-bottom: 0;
-
-    border-right:
-      1px solid rgba(255, 255, 255, 0.25);
-  }
-
-  .hero-contact-item:nth-child(odd),
-  .hero-contact-item:nth-child(even) {
-    border-right:
-      1px solid rgba(255, 255, 255, 0.25);
   }
 
   .hero-contact-icon {
@@ -2538,75 +2172,31 @@ footer p {
     height: 34px;
 
     flex: 0 0 34px;
-
-    display: grid;
-    place-items: center;
-
-    border:
-      1.5px solid rgba(255, 255, 255, 0.82);
-
-    background:
-      rgba(0, 32, 64, 0.24);
-
-    box-shadow:
-      0 2px 6px rgba(0, 25, 50, 0.15);
   }
 
   .hero-contact-icon svg {
     width: 19px;
     height: 19px;
-
-    display: block;
-
-    fill: #ffffff;
   }
 
   .hero-contact-text {
     width: 100%;
 
     align-items: center;
-
-    line-height: 1.04;
   }
 
   .hero-contact-text strong {
-    margin: 0;
-
-    color: #ffffff;
-
     font-size: 0.64rem;
-    line-height: 1.06;
-    font-weight: 800;
-
-    white-space: nowrap;
   }
 
   .hero-contact-text small {
     width: 100%;
 
-    margin-top: 2px;
-
-    color:
-      rgba(255, 255, 255, 0.96);
-
     font-size: 0.52rem;
-    line-height: 1.08;
-    font-weight: 600;
-
-    white-space: normal;
-
-    overflow-wrap: anywhere;
   }
 
   .hero-contact-address .hero-contact-text small {
     font-size: 0.49rem;
-    line-height: 1.08;
-  }
-
-  .hero-contact-qr {
-    grid-column: auto;
-
-    border-right: 0;
   }
 
   .hero-contact-qr-placeholder {
@@ -2614,65 +2204,28 @@ footer p {
     height: 34px;
 
     flex: 0 0 34px;
-
-    border-width: 1px;
-
-    border-radius: 4px;
-
-    box-shadow:
-      0 2px 7px rgba(0, 25, 50, 0.2);
-  }
-
-  .hero-contact-qr-placeholder span {
-    font-size: 0.58rem;
-    font-weight: 900;
   }
 
   .hero-contact-qr-text {
-    width: 100%;
-
     align-items: center;
 
     text-align: center;
   }
 
   .hero-contact-qr-text strong {
-    color: #ffffff;
-
     font-size: 0.57rem;
-    line-height: 1.05;
-    font-weight: 800;
-
-    white-space: nowrap;
   }
 
   .hero-contact-qr-text small {
-    margin-top: 2px;
-
-    color:
-      rgba(255, 255, 255, 0.94);
-
     font-size: 0.47rem;
-    line-height: 1.05;
-    font-weight: 600;
   }
-
-
-  /* SACHVERSTÄNDIGER */
 
   .expert-intro {
     padding:
       16px 14px 26px;
   }
 
-  .expert-card {
-    width: 100%;
-
-    border-radius: var(--radius-medium);
-  }
-
   .expert-photo {
-    width: 100%;
     height: 190px;
   }
 
@@ -2681,105 +2234,29 @@ footer p {
       20px 18px 2px;
 
     font-size: 1.2rem;
-    line-height: 1.25;
   }
 
   .expert-text h3 {
     padding:
       0 18px 20px;
 
-    color: var(--text-dark);
-
     font-size: 1.2rem;
-    line-height: 1.25;
-    font-weight: 800;
-  }
-
-  .expert-text > p {
-    padding:
-      0 18px 20px;
-
-    font-size: 0.92rem;
-  }
-
-  .expert-details {
-    margin-top: 0;
   }
 
   .expert-details summary {
-    width: 100%;
-
     padding:
       14px 44px 16px 18px;
-
-    font-size: 0.92rem;
-  }
-
-  .expert-details summary::after {
-    right: 18px;
-
-    font-size: 1.15rem;
   }
 
   .expert-more {
-    margin: 0;
-
     padding:
       12px 18px 18px;
-
-    border-radius: 0;
   }
-
-  .expert-more h4 {
-    margin-bottom: 8px;
-
-    font-size: 0.98rem;
-    line-height: 1.35;
-  }
-
-  .expert-more p {
-    margin-bottom: 10px;
-
-    font-size: 0.92rem;
-    line-height: 1.55;
-  }
-
-
-  /* EINSATZGEBIET */
 
   .service-area-section {
     padding:
       2px 12px 24px;
   }
-
-  .service-area-image-button {
-    border-radius: 14px;
-  }
-
-  .image-lightbox {
-    padding:
-      62px 8px 14px;
-  }
-
-  .image-lightbox img {
-    max-width: 98vw;
-    max-height: calc(100vh - 80px);
-
-    border-radius: 6px;
-  }
-
-  .image-lightbox-close {
-    top: 10px;
-    right: 10px;
-
-    width: 42px;
-    height: 42px;
-
-    font-size: 1.8rem;
-  }
-
-
-  /* KOSTEN & HONORAR */
 
   .cost-section {
     padding:
@@ -2787,45 +2264,9 @@ footer p {
   }
 
   .cost-card {
-    width: 100%;
-
     padding:
       25px 18px 24px;
-
-    border-radius: 14px;
   }
-
-  .cost-card h2 {
-    margin-bottom: 14px;
-
-    font-size: 1.55rem;
-  }
-
-  .cost-card .cost-question {
-    margin-bottom: 10px;
-
-    font-size: 1.08rem;
-  }
-
-  .cost-card p {
-    font-size: 0.94rem;
-    line-height: 1.55;
-  }
-
-  .cost-card .cost-highlight {
-    margin:
-      15px auto 12px;
-
-    padding:
-      14px 13px;
-  }
-
-  .cost-card .cost-transparency {
-    margin-top: 14px;
-  }
-
-
-  /* LEISTUNGEN */
 
   #leistungen {
     padding:
@@ -2852,50 +2293,42 @@ footer p {
       0 18px 24px;
   }
 
-  .card-details summary {
-    padding:
-      14px 44px 16px 18px;
 
-    font-size: 0.92rem;
-  }
-
-  .card-details summary::after {
-    right: 18px;
-  }
-
-  .card-more p {
-    padding:
-      9px 18px;
-
-    font-size: 0.92rem;
-  }
-
-
-  /* SIEGEL */
+  /* DREI SIEGEL AUCH AUF DEM HANDY NEBENEINANDER */
 
   .trust-badges {
-    min-height: 125px;
+    min-height: 110px;
 
     padding:
-      18px 12px 22px !important;
+      16px 7px 18px !important;
 
-    gap: 14px !important;
+    gap: 7px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: calc(50% - 7px);
-    max-width: 145px;
+    width: calc((100% - 14px) / 3);
+    max-width: 115px;
+    flex: 0 1 calc((100% - 14px) / 3);
   }
 
   .trust-badges img {
     width: auto !important;
-    max-width: 125px !important;
-    max-height: 100px;
+    height: auto !important;
+
+    max-width: 94px !important;
+    max-height: 82px;
   }
 
+  .trust-badges .sslcanary-badge img,
+  .trust-badges a[href*="sslcanary.com"] img {
+    width: 100% !important;
+    height: auto !important;
 
-  /* KONTAKT */
+    max-width: 105px !important;
+    max-height: 28px !important;
+  }
+
 
   #kontakt {
     padding:
@@ -2915,103 +2348,14 @@ footer p {
     padding: 15px 20px;
   }
 
-
-  /* PRESSE UND LINKS */
-
-  .press-section {
-    padding: 0 16px;
-  }
-
-  .press-main-summary {
-    padding:
-      18px 42px 20px 2px;
-
-    font-size: 0.95rem;
-  }
-
-  .press-main-summary::after {
-    right: 4px;
-  }
-
-  .press-list {
-    padding-bottom: 24px;
-  }
-
-  .press-item {
-    padding: 16px 14px 17px;
-  }
-
-  .press-source {
-    font-size: 0.72rem;
-  }
-
-  .press-item h3 {
-    font-size: 0.98rem;
-  }
-
-  .press-item p {
-    font-size: 0.87rem;
-    line-height: 1.55;
-  }
-
-  .press-link {
-    padding: 8px 10px;
-
-    font-size: 0.85rem;
-  }
-
-
-  /* FAQ */
-
+  .press-section,
   .faq-section {
     padding: 0 16px;
   }
 
-  .faq-main-summary {
-    padding:
-      18px 42px 20px 2px;
-
-    font-size: 0.95rem;
-  }
-
-  .faq-main-summary::after {
-    right: 4px;
-  }
-
-  .faq-list {
-    padding-bottom: 24px;
-  }
-
-  .faq-item > summary {
-    padding:
-      15px 38px 15px 2px;
-
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .faq-item > summary::after {
-    right: 4px;
-  }
-
-  .faq-answer {
-    padding:
-      0 30px 16px 2px;
-  }
-
-  .faq-answer p {
-    font-size: 0.87rem;
-    line-height: 1.6;
-  }
-
-
-  /* SCHWEBENDE BUTTONS */
-
   .contact-buttons {
     left: 12px;
     bottom: 12px;
-
-    gap: 7px;
   }
 
   .quick-contact {
@@ -3020,18 +2364,6 @@ footer p {
 
     min-width: 50px;
     min-height: 50px;
-  }
-
-  .contact-icon {
-    width: 36px;
-    height: 36px;
-
-    flex-basis: 36px;
-  }
-
-  .contact-icon svg {
-    width: 22px;
-    height: 22px;
   }
 }
 
@@ -3050,21 +2382,9 @@ footer p {
     padding: 8px 34px;
   }
 
-  .logo {
-    gap: 14px;
-  }
-
   .logo img {
     width: 48px;
     height: 48px;
-  }
-
-  .header-business-name span {
-    font-size: 0.82rem;
-  }
-
-  .header-business-name strong {
-    font-size: 1rem;
   }
 
   .menu-button {
@@ -3097,8 +2417,6 @@ footer p {
   }
 
   header nav a {
-    position: relative;
-
     width: auto;
 
     padding: 7px 0;
@@ -3108,38 +2426,7 @@ footer p {
     font-size: 0.92rem;
   }
 
-  header nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 0;
-    height: 2px;
-
-    border-radius: 999px;
-
-    background: var(--cyan-400);
-
-    transition:
-      width 0.25s ease;
-  }
-
-  header nav a:hover::after {
-    width: 100%;
-  }
-
-
-  /* HERO */
-
   .hero-text {
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
     padding:
       3.5%
       4%
@@ -3147,119 +2434,24 @@ footer p {
   }
 
   .hero-text h1 {
-    width: 100%;
     max-width: 1150px;
 
     font-size:
       clamp(2.55rem, 5.25vw, 4.4rem);
-
-    line-height: 1;
   }
-
-
-  /* KONTAKTLEISTE */
 
   .hero-contact-bar {
     padding: 10px 24px;
   }
-
-  .hero-contact-inner {
-    grid-template-columns:
-      repeat(5, minmax(0, 1fr));
-
-    align-items: stretch;
-  }
-
-  .hero-contact-item,
-  .hero-contact-qr {
-    min-height: 74px;
-
-    padding: 7px 10px;
-
-    border-bottom: 0;
-
-    border-right:
-      1px solid rgba(255, 255, 255, 0.22);
-  }
-
-  .hero-contact-qr {
-    grid-column: auto;
-    border-right: 0;
-  }
-
-  .hero-contact-icon {
-    width: 43px;
-    height: 43px;
-
-    flex-basis: 43px;
-  }
-
-  .hero-contact-icon svg {
-    width: 23px;
-    height: 23px;
-  }
-
-  .hero-contact-text strong {
-    font-size: 0.8rem;
-  }
-
-  .hero-contact-text small {
-    font-size: 0.69rem;
-  }
-
-  .hero-contact-qr-placeholder {
-    width: 54px;
-    height: 54px;
-
-    flex-basis: 54px;
-  }
-
-  .hero-contact-qr-text strong {
-    font-size: 0.77rem;
-  }
-
-  .hero-contact-qr-text small {
-    font-size: 0.67rem;
-  }
-
-
-  /* SACHVERSTÄNDIGER */
 
   .expert-intro {
     padding:
       28px 34px 40px;
   }
 
-  .expert-card {
-    width: min(100%, 760px);
-  }
-
   .expert-photo {
     height: 300px;
   }
-
-  .expert-text h2 {
-    font-size: 1.35rem;
-  }
-
-  .expert-text h3 {
-    font-size: 1.35rem;
-  }
-
-  .expert-details summary {
-    font-size: 0.95rem;
-  }
-
-  .expert-more h4 {
-    font-size: 1.05rem;
-  }
-
-  .expert-more p {
-    font-size: 0.95rem;
-  }
-
-
-  /* EINSATZGEBIET */
 
   .service-area-section {
     padding:
@@ -3270,9 +2462,6 @@ footer p {
     width: min(100%, 800px);
   }
 
-
-  /* KOSTEN & HONORAR */
-
   .cost-section {
     padding:
       30px 34px 30px;
@@ -3282,9 +2471,6 @@ footer p {
     padding:
       34px 40px;
   }
-
-
-  /* LEISTUNGEN */
 
   #leistungen {
     padding:
@@ -3303,7 +2489,7 @@ footer p {
   }
 
 
-  /* SIEGEL */
+  /* DREI SIEGEL TABLET */
 
   .trust-badges {
     min-height: 160px;
@@ -3311,79 +2497,36 @@ footer p {
     padding:
       25px 34px 30px !important;
 
-    gap: 34px !important;
+    gap: 30px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: 170px;
+    width: 160px;
   }
 
   .trust-badges img {
-    max-width: 150px !important;
+    max-width: 145px !important;
     max-height: 125px;
   }
 
+  .trust-badges .sslcanary-badge img,
+  .trust-badges a[href*="sslcanary.com"] img {
+    max-width: 150px !important;
+    max-height: 28px !important;
+  }
 
-  /* KONTAKT */
 
   #kontakt {
     padding:
       96px 34px 105px;
   }
 
-
-  /* PRESSE */
-
-  .press-section {
-    padding:
-      0 34px;
-  }
-
-  .press-main-summary {
-    padding:
-      22px 52px 24px 6px;
-
-    font-size: 1.03rem;
-  }
-
-  .press-item {
-    padding: 20px 22px 22px;
-  }
-
-
-  /* FAQ */
-
+  .press-section,
   .faq-section {
     padding:
       0 34px;
   }
-
-  .faq-main-summary {
-    padding:
-      22px 52px 24px 6px;
-
-    font-size: 1.03rem;
-  }
-
-  .faq-item > summary {
-    padding:
-      18px 50px 18px 6px;
-
-    font-size: 0.98rem;
-  }
-
-  .faq-answer {
-    padding:
-      0 44px 20px 6px;
-  }
-
-  .faq-answer p {
-    font-size: 0.94rem;
-  }
-
-
-  /* SCHWEBENDE BUTTONS */
 
   .contact-buttons {
     left: 18px;
@@ -3415,32 +2558,12 @@ footer p {
       );
   }
 
-  .logo {
-    gap: 15px;
-  }
-
   .logo img {
     width: 50px;
     height: 50px;
   }
 
-  .header-business-name span {
-    font-size: 0.84rem;
-  }
-
-  .header-business-name strong {
-    font-size: 1.03rem;
-  }
-
-
-  /* HERO */
-
   .hero-text {
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
     padding:
       3.5%
       max(
@@ -3451,17 +2574,11 @@ footer p {
   }
 
   .hero-text h1 {
-    width: 100%;
     max-width: 1250px;
 
     font-size:
       clamp(3.2rem, 4.8vw, 5.1rem);
-
-    line-height: 0.99;
   }
-
-
-  /* KONTAKTLEISTE */
 
   .hero-contact-bar {
     padding:
@@ -3477,53 +2594,6 @@ footer p {
       1fr 1fr 1.15fr 1.35fr 1.45fr;
   }
 
-  .hero-contact-item,
-  .hero-contact-qr {
-    min-height: 76px;
-
-    padding: 7px 14px;
-
-    gap: 11px;
-  }
-
-  .hero-contact-icon {
-    width: 46px;
-    height: 46px;
-
-    flex-basis: 46px;
-  }
-
-  .hero-contact-icon svg {
-    width: 25px;
-    height: 25px;
-  }
-
-  .hero-contact-text strong {
-    font-size: 0.84rem;
-  }
-
-  .hero-contact-text small {
-    font-size: 0.73rem;
-  }
-
-  .hero-contact-qr-placeholder {
-    width: 58px;
-    height: 58px;
-
-    flex-basis: 58px;
-  }
-
-  .hero-contact-qr-text strong {
-    font-size: 0.84rem;
-  }
-
-  .hero-contact-qr-text small {
-    font-size: 0.72rem;
-  }
-
-
-  /* SACHVERSTÄNDIGER */
-
   .expert-intro {
     padding:
       32px 50px 48px;
@@ -3537,9 +2607,6 @@ footer p {
     height: 340px;
   }
 
-
-  /* EINSATZGEBIET */
-
   .service-area-section {
     padding:
       4px 50px 48px;
@@ -3548,9 +2615,6 @@ footer p {
   .service-area-image-button {
     width: min(100%, 900px);
   }
-
-
-  /* KOSTEN & HONORAR */
 
   .cost-section {
     padding:
@@ -3566,9 +2630,6 @@ footer p {
     padding:
       38px 50px;
   }
-
-
-  /* LEISTUNGEN */
 
   #leistungen {
     padding:
@@ -3604,7 +2665,7 @@ footer p {
   }
 
 
-  /* SIEGEL */
+  /* DREI SIEGEL DESKTOP */
 
   .trust-badges {
     min-height: 170px;
@@ -3612,12 +2673,12 @@ footer p {
     padding:
       28px 50px 34px !important;
 
-    gap: 42px !important;
+    gap: 40px !important;
   }
 
   .trust-badges > a,
   .trust-badges > div {
-    width: 180px;
+    width: 175px;
   }
 
   .trust-badges img {
@@ -3625,8 +2686,12 @@ footer p {
     max-height: 135px;
   }
 
+  .trust-badges .sslcanary-badge img,
+  .trust-badges a[href*="sslcanary.com"] img {
+    max-width: 165px !important;
+    max-height: 28px !important;
+  }
 
-  /* KONTAKT */
 
   #kontakt {
     padding:
@@ -3638,30 +2703,7 @@ footer p {
       125px;
   }
 
-  #kontakt p,
-  #kontakt address {
-    font-size: 1.12rem;
-  }
-
-
-  /* PRESSE */
-
-  .press-section {
-    padding:
-      0
-      max(
-        50px,
-        calc((100vw - 900px) / 2)
-      );
-  }
-
-  .press-main {
-    width: min(100%, 900px);
-  }
-
-
-  /* FAQ */
-
+  .press-section,
   .faq-section {
     padding:
       0
@@ -3669,10 +2711,6 @@ footer p {
         50px,
         calc((100vw - 900px) / 2)
       );
-  }
-
-  .faq-main {
-    width: min(100%, 900px);
   }
 
   footer {
@@ -3724,36 +2762,8 @@ footer p {
       clamp(3.6rem, 4.6vw, 5.5rem);
   }
 
-  .hero-contact-icon {
-    width: 48px;
-    height: 48px;
 
-    flex-basis: 48px;
-  }
-
-  .hero-contact-icon svg {
-    width: 26px;
-    height: 26px;
-  }
-
-  .hero-contact-text strong {
-    font-size: 0.88rem;
-  }
-
-  .hero-contact-text small {
-    font-size: 0.77rem;
-  }
-
-  .hero-contact-qr-text strong {
-    font-size: 0.88rem;
-  }
-
-  .hero-contact-qr-text small {
-    font-size: 0.75rem;
-  }
-
-
-  /* SIEGEL */
+  /* DREI SIEGEL GROSSE BILDSCHIRME */
 
   .trust-badges {
     min-height: 180px;
@@ -3770,6 +2780,12 @@ footer p {
     max-width: 170px !important;
     max-height: 145px;
   }
+
+  .trust-badges .sslcanary-badge img,
+  .trust-badges a[href*="sslcanary.com"] img {
+    max-width: 175px !important;
+    max-height: 28px !important;
+  }
 }
 
 
@@ -3783,15 +2799,6 @@ footer p {
     transform: none;
 
     border-color: var(--border);
-
-    box-shadow: var(--shadow-small);
-  }
-
-  .cost-card:hover {
-    transform: none;
-
-    border-color:
-      rgba(0, 127, 211, 0.22);
 
     box-shadow: var(--shadow-small);
   }
@@ -3815,51 +2822,6 @@ footer p {
   .card:hover::after,
   .expert-card:hover::after {
     transform: scaleX(0);
-  }
-
-  .card-details summary:hover {
-    color: var(--blue-600);
-    background: transparent;
-  }
-
-  .card-details[open] summary:hover {
-    color: var(--navy-800);
-    background: var(--gray-50);
-  }
-
-  .expert-details summary:hover {
-    color: var(--blue-600);
-    background: transparent;
-  }
-
-  .expert-details[open] summary:hover {
-    color: var(--navy-800);
-    background: var(--gray-50);
-  }
-
-  .press-main-summary:hover {
-    color:
-      rgba(255, 255, 255, 0.88);
-  }
-
-  .press-link:hover {
-    color: #91e0ff;
-
-    background:
-      rgba(145, 224, 255, 0.06);
-
-    border-color:
-      rgba(145, 224, 255, 0.28);
-  }
-
-  .faq-main-summary:hover {
-    color:
-      rgba(255, 255, 255, 0.88);
-  }
-
-  .faq-item > summary:hover {
-    color:
-      rgba(255, 255, 255, 0.86);
   }
 
   a.hero-contact-item:hover {
@@ -3901,4 +2863,4 @@ footer p {
     transform: none;
     transition-delay: 0s;
   }
-   }
+     }
